@@ -1,0 +1,877 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bianca Carmela Roman — Data Science Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --sand:    #E3D6C8;
+      --sage:    #8D957E;
+      --slate:   #788990;
+      --forest:  #2E3628;
+      --cream:   #F7F4F0;
+      --white:   #FFFFFF;
+      --text-1:  #1E2418;
+      --text-2:  #4A5240;
+      --text-3:  #7A8570;
+      --border:  #D6C9B8;
+      --sidebar-w: 280px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--cream);
+      color: var(--text-1);
+      display: flex;
+      min-height: 100vh;
+    }
+
+    /* ── SIDEBAR ── */
+    .sidebar {
+      position: fixed;
+      top: 0; left: 0;
+      width: var(--sidebar-w);
+      height: 100vh;
+      background: var(--forest);
+      color: var(--white);
+      display: flex;
+      flex-direction: column;
+      padding: 36px 28px;
+      overflow-y: auto;
+      z-index: 100;
+    }
+
+    .sidebar-name {
+      font-size: 1.05rem;
+      font-weight: 800;
+      letter-spacing: -0.01em;
+      line-height: 1.2;
+      margin-bottom: 6px;
+      color: var(--sand);
+    }
+
+    .sidebar-title {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.63rem;
+      color: var(--sage);
+      text-transform: uppercase;
+      letter-spacing: 0.09em;
+      margin-bottom: 16px;
+    }
+
+    .sidebar-meta {
+      font-size: 0.75rem;
+      color: rgba(227,214,200,0.5);
+      line-height: 1.75;
+    }
+
+    .sidebar-meta a {
+      color: rgba(227,214,200,0.6);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .sidebar-meta a:hover { color: var(--sage); }
+
+    .sidebar-divider {
+      width: 28px;
+      height: 2px;
+      background: var(--sage);
+      margin: 22px 0;
+      border-radius: 2px;
+    }
+
+    .nav-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.58rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: rgba(227,214,200,0.3);
+      margin-bottom: 12px;
+    }
+
+    .nav-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      padding: 9px 0;
+      cursor: pointer;
+      text-decoration: none;
+      border-bottom: 1px solid rgba(227,214,200,0.07);
+      transition: all 0.2s;
+    }
+
+    .nav-item:hover .nav-item-title { color: var(--sage); }
+    .nav-item:hover .nav-num { color: var(--sage); }
+
+    .nav-num {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.6rem;
+      color: rgba(227,214,200,0.2);
+      margin-top: 2px;
+      flex-shrink: 0;
+      transition: color 0.2s;
+    }
+
+    .nav-item-title {
+      font-size: 0.77rem;
+      font-weight: 500;
+      color: rgba(227,214,200,0.7);
+      line-height: 1.3;
+      transition: color 0.2s;
+    }
+
+    .nav-item-tag {
+      font-size: 0.61rem;
+      color: rgba(227,214,200,0.3);
+      margin-top: 2px;
+    }
+
+    .sidebar-footer { margin-top: auto; padding-top: 24px; }
+
+    .availability-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(141,149,126,0.15);
+      border: 1px solid rgba(141,149,126,0.35);
+      border-radius: 20px;
+      padding: 5px 12px;
+      font-size: 0.67rem;
+      color: rgba(227,214,200,0.65);
+    }
+
+    .availability-dot {
+      width: 6px; height: 6px;
+      background: var(--sage);
+      border-radius: 50%;
+      animation: pulse 2.2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.35; }
+    }
+
+    /* ── MAIN ── */
+    .main { margin-left: var(--sidebar-w); flex: 1; }
+
+    /* ── HERO ── */
+    .hero {
+      background: var(--forest);
+      color: var(--white);
+      padding: 76px 64px 60px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -40px; right: 40px;
+      width: 260px; height: 260px;
+      border-radius: 50%;
+      border: 1px solid rgba(141,149,126,0.12);
+      pointer-events: none;
+    }
+
+    .hero-eyebrow {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.68rem;
+      color: var(--sage);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+
+    .hero-headline {
+      font-size: clamp(1.9rem, 3.8vw, 3rem);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.05;
+      margin-bottom: 18px;
+      max-width: 640px;
+      color: var(--sand);
+    }
+
+    .hero-headline em {
+      font-style: normal;
+      color: var(--sage);
+    }
+
+    .hero-sub {
+      font-size: 0.95rem;
+      color: rgba(227,214,200,0.55);
+      max-width: 540px;
+      line-height: 1.75;
+      margin-bottom: 40px;
+    }
+
+    .hero-stats {
+      display: flex;
+      gap: 0;
+      flex-wrap: wrap;
+      border: 1px solid rgba(141,149,126,0.2);
+      border-radius: 12px;
+      overflow: hidden;
+      width: fit-content;
+    }
+
+    .stat {
+      display: flex;
+      flex-direction: column;
+      padding: 16px 28px;
+      border-right: 1px solid rgba(141,149,126,0.15);
+    }
+
+    .stat:last-child { border-right: none; }
+
+    .stat-num {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 1.6rem;
+      font-weight: 500;
+      color: var(--sand);
+      line-height: 1;
+    }
+
+    .stat-label {
+      font-size: 0.68rem;
+      color: rgba(227,214,200,0.4);
+      margin-top: 5px;
+      letter-spacing: 0.03em;
+    }
+
+    /* ── SECTION ── */
+    .section { padding: 60px 64px; }
+
+    .section-header {
+      display: flex;
+      align-items: baseline;
+      gap: 14px;
+      margin-bottom: 36px;
+    }
+
+    .section-num {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.68rem;
+      color: var(--text-3);
+      letter-spacing: 0.06em;
+    }
+
+    .section-title {
+      font-size: 1.3rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--text-1);
+    }
+
+    .section-line {
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+
+    /* ── PROJECT CARD ── */
+    .project-card {
+      background: var(--white);
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      overflow: hidden;
+      margin-bottom: 36px;
+      transition: box-shadow 0.3s, transform 0.3s;
+    }
+
+    .project-card:hover {
+      box-shadow: 0 16px 48px rgba(46,54,40,0.1);
+      transform: translateY(-2px);
+    }
+
+    .project-card.featured {
+      border-color: var(--sage);
+      border-width: 2px;
+    }
+
+    .project-meta { padding: 26px 30px 18px; }
+
+    .project-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.6rem;
+      color: var(--slate);
+      text-transform: uppercase;
+      letter-spacing: 0.09em;
+      margin-bottom: 8px;
+    }
+
+    .project-badge.featured-badge { color: var(--sage); }
+
+    .badge-dot {
+      width: 5px; height: 5px;
+      border-radius: 50%;
+      background: currentColor;
+    }
+
+    .project-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--text-1);
+      margin-bottom: 8px;
+      line-height: 1.25;
+    }
+
+    .project-desc {
+      font-size: 0.86rem;
+      color: var(--text-2);
+      line-height: 1.7;
+      max-width: 640px;
+    }
+
+    .project-tools {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 14px;
+    }
+
+    .tool-tag {
+      background: var(--sand);
+      color: var(--forest);
+      font-size: 0.67rem;
+      font-weight: 600;
+      padding: 3px 10px;
+      border-radius: 20px;
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    .project-insight {
+      background: #F2EDE5;
+      border-left: 3px solid var(--sage);
+      padding: 13px 20px;
+      margin: 0 30px 18px;
+      border-radius: 0 8px 8px 0;
+    }
+
+    .insight-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.58rem;
+      color: var(--sage);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 4px;
+    }
+
+    .insight-text {
+      font-size: 0.81rem;
+      color: var(--text-1);
+      font-weight: 500;
+      line-height: 1.55;
+    }
+
+    .embed-label {
+      background: var(--forest);
+      color: rgba(227,214,200,0.5);
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.6rem;
+      padding: 8px 30px;
+      letter-spacing: 0.05em;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .embed-label::before {
+      content: '▶';
+      color: var(--sage);
+      font-size: 0.48rem;
+    }
+
+    .project-embed-container iframe {
+      width: 100%;
+      height: 700px;
+      border: none;
+      display: block;
+    }
+
+    .project-embed-container iframe.short { height: 500px; }
+
+    /* ── ABOUT ── */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin-bottom: 32px;
+    }
+
+    .about-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 22px;
+    }
+
+    .about-card-title {
+      font-size: 0.84rem;
+      font-weight: 700;
+      color: var(--text-1);
+      margin-bottom: 7px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .about-card-title::before {
+      content: '';
+      display: inline-block;
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: var(--sage);
+      flex-shrink: 0;
+    }
+
+    .about-card-text {
+      font-size: 0.8rem;
+      color: var(--text-2);
+      line-height: 1.65;
+    }
+
+    .skills-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .skill-pill {
+      background: var(--white);
+      border: 1px solid var(--border);
+      color: var(--text-2);
+      font-size: 0.74rem;
+      font-weight: 500;
+      padding: 5px 13px;
+      border-radius: 24px;
+      transition: all 0.2s;
+      cursor: default;
+    }
+
+    .skill-pill:hover {
+      border-color: var(--sage);
+      color: var(--forest);
+    }
+
+    .skill-pill.core {
+      background: var(--forest);
+      border-color: var(--forest);
+      color: var(--sand);
+    }
+
+    /* ── LANGUAGES ── */
+    .lang-grid {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+
+    .lang-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 14px 20px;
+      min-width: 140px;
+    }
+
+    .lang-name {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--text-1);
+      margin-bottom: 3px;
+    }
+
+    .lang-level {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.68rem;
+      color: var(--sage);
+    }
+
+    /* ── CONTACT ── */
+    .contact-section {
+      background: var(--forest);
+      padding: 60px 64px;
+      color: var(--white);
+    }
+
+    .contact-sub {
+      color: rgba(227,214,200,0.5);
+      font-size: 0.88rem;
+      margin-bottom: 30px;
+      max-width: 460px;
+      line-height: 1.7;
+    }
+
+    .contact-links { display: flex; gap: 14px; flex-wrap: wrap; }
+
+    .contact-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(227,214,200,0.08);
+      border: 1px solid rgba(227,214,200,0.15);
+      color: var(--sand);
+      text-decoration: none;
+      padding: 10px 18px;
+      border-radius: 8px;
+      font-size: 0.81rem;
+      font-weight: 500;
+      transition: all 0.2s;
+    }
+
+    .contact-link:hover {
+      background: var(--sage);
+      border-color: var(--sage);
+      color: var(--forest);
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      :root { --sidebar-w: 0px; }
+      .sidebar { display: none; }
+      .main { margin-left: 0; }
+      .hero, .section { padding: 40px 24px; }
+      .about-grid { grid-template-columns: 1fr; }
+      .hero-stats { width: 100%; }
+      .stat { padding: 14px 20px; }
+      .contact-section { padding: 48px 24px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .project-card { transition: none; }
+      .availability-dot { animation: none; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- SIDEBAR -->
+<aside class="sidebar">
+  <div style="margin-bottom:36px;">
+    <div class="sidebar-name">Bianca Carmela Roman</div>
+    <div class="sidebar-title">Data Science · BI · Analytics</div>
+    <div class="sidebar-meta">
+      Granada, Spain<br>
+      <a href="mailto:carmelaroman94@gmail.com">carmelaroman94@gmail.com</a><br>
+      <a href="https://linkedin.com/in/carmelaroman" target="_blank">linkedin.com/in/carmelaroman</a>
+    </div>
+  </div>
+
+  <div class="sidebar-divider"></div>
+
+  <div class="nav-label">Projects</div>
+
+  <a class="nav-item" href="#project-ciclos">
+    <span class="nav-num">01</span>
+    <div>
+      <div class="nav-item-title">Sales Cycle Analysis</div>
+      <div class="nav-item-tag">Python · Plotly · CRM</div>
+    </div>
+  </a>
+  <a class="nav-item" href="#project-cloud">
+    <span class="nav-num">02</span>
+    <div>
+      <div class="nav-item-title">Cloud Business Unit</div>
+      <div class="nav-item-tag">Python · Plotly · Stats</div>
+    </div>
+  </a>
+  <a class="nav-item" href="#project-oportunidades">
+    <span class="nav-num">03</span>
+    <div>
+      <div class="nav-item-title">Opportunity Pipeline</div>
+      <div class="nav-item-tag">Python · Plotly · CRM</div>
+    </div>
+  </a>
+  <a class="nav-item" href="#project-childlabour">
+    <span class="nav-num">04</span>
+    <div>
+      <div class="nav-item-title">Child Labour & Trade</div>
+      <div class="nav-item-tag">Power BI · Python · UN Data</div>
+    </div>
+  </a>
+  <a class="nav-item" href="#project-sentiment">
+    <span class="nav-num">05</span>
+    <div>
+      <div class="nav-item-title">Political Sentiment</div>
+      <div class="nav-item-tag">Power BI · NLP · YouTube API</div>
+    </div>
+  </a>
+
+  <div class="sidebar-footer">
+    <div class="availability-badge">
+      <span class="availability-dot"></span>
+      Available from July 2026
+    </div>
+  </div>
+</aside>
+
+<!-- MAIN -->
+<main class="main">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-eyebrow">Data Science Portfolio</div>
+    <h1 class="hero-headline">
+      Turning raw data into<br><em>decisions that matter</em>
+    </h1>
+    <p class="hero-sub">
+      Five end-to-end projects spanning CRM analytics, machine learning, international development research, and political data science — built from collection to insight delivery.
+    </p>
+    <div class="hero-stats">
+      <div class="stat">
+        <span class="stat-num">5</span>
+        <span class="stat-label">projects</span>
+      </div>
+      <div class="stat">
+        <span class="stat-num">2+</span>
+        <span class="stat-label">years in data roles</span>
+      </div>
+      <div class="stat">
+        <span class="stat-label" style="font-size:0.78rem; color:rgba(227,214,200,0.65); padding-top:4px; line-height:1.6;">
+          Spanish (native)<br>
+          English B2 · Italian C1<br>
+          German A2
+        </span>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section class="section" id="projects">
+    <div class="section-header">
+      <span class="section-num">§01</span>
+      <h2 class="section-title">Projects</h2>
+      <div class="section-line"></div>
+    </div>
+
+    <!-- 01 CICLOS -->
+    <div class="project-card featured" id="project-ciclos">
+      <div class="project-meta">
+        <div class="project-badge featured-badge"><span class="badge-dot"></span>Featured · CRM Analytics</div>
+        <h3 class="project-title">Sales Cycle Analysis — Full Commercial Funnel</h3>
+        <p class="project-desc">End-to-end analysis of a tech company's sales pipeline using Microsoft 365 CRM data. Covers the complete journey from lead origin to final outcome, with focus on funnel efficiency, conversion rates, and cycle time stability across business units and opportunity types. Data range: Jan 2025 – Apr 2026.</p>
+        <div class="project-tools">
+          <span class="tool-tag">Python</span>
+          <span class="tool-tag">Plotly</span>
+          <span class="tool-tag">MS365 CRM</span>
+          <span class="tool-tag">Funnel Analysis</span>
+          <span class="tool-tag">Boxplot</span>
+          <span class="tool-tag">Sankey Diagram</span>
+          <span class="tool-tag">Descriptive Stats</span>
+        </div>
+      </div>
+      <div class="project-insight">
+        <div class="insight-label">Key analysis</div>
+        <div class="insight-text">Identified funnel leakage patterns across stages, compared cycle distributions (potential vs. opportunity vs. total) via boxplots, and segmented KPIs by business unit — from macro overview to granular breakdown.</div>
+      </div>
+      <div class="project-embed-container">
+        <div class="embed-label">Interactive Dashboard — Sales Cycle Analysis</div>
+        <iframe src="dashboard_ciclos.html" title="Sales Cycle Analysis"></iframe>
+      </div>
+    </div>
+
+    <!-- 02 CLOUD -->
+    <div class="project-card" id="project-cloud">
+      <div class="project-meta">
+        <div class="project-badge"><span class="badge-dot"></span>Business Unit Deep-Dive · Statistical Analysis</div>
+        <h3 class="project-title">Cloud Business Unit — Cycle Time & Efficiency</h3>
+        <p class="project-desc">Focused statistical analysis of the Cloud unit's sales performance. Examines cycle time dispersion between open and closed opportunities, applies outlier removal to isolate typical behavior, and investigates whether longer cycles correlate with higher deal value — broken down by opportunity type and acquisition channel.</p>
+        <div class="project-tools">
+          <span class="tool-tag">Python</span>
+          <span class="tool-tag">Plotly</span>
+          <span class="tool-tag">Outlier Removal</span>
+          <span class="tool-tag">Scatterplot</span>
+          <span class="tool-tag">Heatmap</span>
+          <span class="tool-tag">Channel Attribution</span>
+        </div>
+      </div>
+      <div class="project-insight">
+        <div class="insight-label">Key finding</div>
+        <div class="insight-text">Open opportunities show shorter cycles than closed ones, but high dispersion required outlier removal for reliable interpretation. Heatmap and scatterplot tested whether cycle length predicts deal value, segmented by opportunity type.</div>
+      </div>
+      <div class="project-embed-container">
+        <div class="embed-label">Interactive Dashboard — Cloud Business Unit</div>
+        <iframe src="dashboard_cloud.html" title="Cloud Business Unit"></iframe>
+      </div>
+    </div>
+
+    <!-- 03 OPORTUNIDADES -->
+    <div class="project-card" id="project-oportunidades">
+      <div class="project-meta">
+        <div class="project-badge"><span class="badge-dot"></span>Pipeline Analytics · Time Series</div>
+        <h3 class="project-title">Opportunity Pipeline — Temporal Trends</h3>
+        <p class="project-desc">Temporal analysis of commercial opportunities from a Microsoft 365 CRM dataset. Tracks the evolution of won and lost opportunities over time, mapping creation and closing patterns to identify velocity shifts and pipeline health signals.</p>
+        <div class="project-tools">
+          <span class="tool-tag">Python</span>
+          <span class="tool-tag">Plotly</span>
+          <span class="tool-tag">Time Series</span>
+          <span class="tool-tag">MS365 CRM</span>
+          <span class="tool-tag">Pipeline KPIs</span>
+        </div>
+      </div>
+      <div class="project-embed-container">
+        <div class="embed-label">Interactive Dashboard — Opportunity Pipeline</div>
+        <iframe src="dashboard_oportunidades.html" title="Opportunity Pipeline" class="short"></iframe>
+      </div>
+    </div>
+
+    <!-- 04 CHILD LABOUR -->
+    <div class="project-card" id="project-childlabour">
+      <div class="project-meta">
+        <div class="project-badge"><span class="badge-dot"></span>International Research · Power BI</div>
+        <h3 class="project-title">Child Labour & International Trade Flows</h3>
+        <p class="project-desc">Research project for Development International (Germany). Consolidated datasets from the U.S. Census Bureau, U.S. Department of Labor, and WTO using Python and Excel Power Query into a unified repository. Designed custom ratios and visualized global patterns in child labour-linked trade flows across sectors and regions.</p>
+        <div class="project-tools">
+          <span class="tool-tag">Power BI</span>
+          <span class="tool-tag">Python</span>
+          <span class="tool-tag">Excel Power Query</span>
+          <span class="tool-tag">UN / ILO Data</span>
+          <span class="tool-tag">Custom KPIs</span>
+          <span class="tool-tag">DAX</span>
+        </div>
+      </div>
+      <div class="project-insight">
+        <div class="insight-label">Scope</div>
+        <div class="insight-text">Cross-referenced international sources to identify import patterns associated with child labour. Designed custom ratios to measure exposure by product category, with temporal and regional breakdowns.</div>
+      </div>
+      <div class="project-embed-container">
+        <div class="embed-label">Power BI Report — Child Labour & Trade</div>
+        <iframe src="https://app.powerbi.com/view?r=eyJrIjoiMzcyMThjM2ItOGJhOS00YmM1LTk2OTktMTk0YTRmOTA1MjZmIiwidCI6Ijg3YmNjZDBkLTdiMjUtNGUzZC04OWZiLWMyYWI5M2E2OGVjOCIsImMiOjh9" allowFullScreen="true" title="Child Labour Report"></iframe>
+      </div>
+    </div>
+
+    <!-- 05 SENTIMENT -->
+    <div class="project-card" id="project-sentiment">
+      <div class="project-meta">
+        <div class="project-badge"><span class="badge-dot"></span>NLP · Social Data · Power BI</div>
+        <h3 class="project-title">Political Sentiment Analysis — 2016 U.S. Election</h3>
+        <p class="project-desc">Sentiment analysis of YouTube comments collected via the YouTube Data API, focused on political discourse around the 2016 U.S. presidential election. Applied NLP techniques to classify comment sentiment and visualized distribution patterns and temporal evolution in Power BI.</p>
+        <div class="project-tools">
+          <span class="tool-tag">Power BI</span>
+          <span class="tool-tag">YouTube API</span>
+          <span class="tool-tag">NLP</span>
+          <span class="tool-tag">Sentiment Analysis</span>
+          <span class="tool-tag">Social Data</span>
+          <span class="tool-tag">DAX</span>
+        </div>
+      </div>
+      <div class="project-insight">
+        <div class="insight-label">Methodology</div>
+        <div class="insight-text">Extracted comments from election-related YouTube videos via API, applied sentiment classification, and built an interactive Power BI report to explore how public opinion evolved across the campaign period.</div>
+      </div>
+      <div class="project-embed-container">
+        <div class="embed-label">Power BI Report — Political Sentiment Analysis</div>
+        <iframe src="https://app.powerbi.com/view?r=eyJrIjoiMWMyZTlmNDItZjk0OS00NTAxLThiMmUtNjY4OTIxNzMxYjc3IiwidCI6Ijg3YmNjZDBkLTdiMjUtNGUzZC04OWZiLWMyYWI5M2E2OGVjOCIsImMiOjh9" allowFullScreen="true" title="Political Sentiment"></iframe>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ABOUT -->
+  <section class="section" id="about" style="background:var(--white); border-top:1px solid var(--border);">
+    <div class="section-header">
+      <span class="section-num">§02</span>
+      <h2 class="section-title">Background & Skills</h2>
+      <div class="section-line"></div>
+    </div>
+
+    <div class="about-grid">
+      <div class="about-card">
+        <div class="about-card-title">Data Science & Analytics</div>
+        <div class="about-card-text">Master's in Data Science applied to Social Sciences (Universidad de Granada, 2026). Specialized in the full data lifecycle — from collection and cleaning to modeling, visualization, and stakeholder communication.</div>
+      </div>
+      <div class="about-card">
+        <div class="about-card-title">Agile Project Management</div>
+        <div class="about-card-text">5+ years managing cross-functional projects in public sector, consulting, and tech. PMI and PM4R certified. Comfortable bridging the gap between technical teams and business decision-makers.</div>
+      </div>
+      <div class="about-card">
+        <div class="about-card-title">International Research</div>
+        <div class="about-card-text">Experience working with international datasets (UN, ILO, WTO, U.S. Census Bureau) across Germany, Argentina, and Spain. Background in political science adds a social research perspective to data work.</div>
+      </div>
+      <div class="about-card">
+        <div class="about-card-title">Technical Stack</div>
+        <div class="about-card-text">Python (pandas, scikit-learn, Plotly), SQL, R, Microsoft Power BI, DAX, Excel Power Query, MongoDB. Experienced with CRM systems and Microsoft 365 ecosystems.</div>
+      </div>
+    </div>
+
+    <div class="section-header" style="margin-top:8px; margin-bottom:18px;">
+      <span class="section-num" style="font-size:0.62rem;">TOOLS</span>
+      <div class="section-line"></div>
+    </div>
+
+    <div class="skills-grid">
+      <span class="skill-pill core">Python</span>
+      <span class="skill-pill core">Power BI</span>
+      <span class="skill-pill core">SQL</span>
+      <span class="skill-pill core">Machine Learning</span>
+      <span class="skill-pill">R</span>
+      <span class="skill-pill">Plotly</span>
+      <span class="skill-pill">DAX</span>
+      <span class="skill-pill">Excel Power Query</span>
+      <span class="skill-pill">scikit-learn</span>
+      <span class="skill-pill">MongoDB</span>
+      <span class="skill-pill">Random Forest</span>
+      <span class="skill-pill">Gradient Boosting</span>
+      <span class="skill-pill">NLP</span>
+      <span class="skill-pill">Agile / PM4R</span>
+      <span class="skill-pill">Stakeholder Management</span>
+      <span class="skill-pill">Data Storytelling</span>
+    </div>
+
+    <div class="section-header" style="margin-top:36px; margin-bottom:0;">
+      <span class="section-num" style="font-size:0.62rem;">LANGUAGES</span>
+      <div class="section-line"></div>
+    </div>
+
+    <div class="lang-grid">
+      <div class="lang-card">
+        <div class="lang-name">Spanish</div>
+        <div class="lang-level">Native</div>
+      </div>
+      <div class="lang-card">
+        <div class="lang-name">Italian</div>
+        <div class="lang-level">C1</div>
+      </div>
+      <div class="lang-card">
+        <div class="lang-name">English</div>
+        <div class="lang-level">B2</div>
+      </div>
+      <div class="lang-card">
+        <div class="lang-name">German</div>
+        <div class="lang-level">A2</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact-section" id="contact">
+    <div class="section-header" style="margin-bottom:20px;">
+      <span class="section-num" style="color:rgba(227,214,200,0.3);">§03</span>
+      <h2 class="section-title" style="color:var(--sand); font-size:1.3rem; margin-bottom:0;">Let's work together</h2>
+      <div class="section-line" style="background:rgba(227,214,200,0.1);"></div>
+    </div>
+    <p class="contact-sub">Available for full-time and part-time roles from July 2026. Open to data analysis, BI, and ML projects across sectors. Based in Granada, Spain — working remotely or hybrid.</p>
+    <div class="contact-links">
+      <a class="contact-link" href="mailto:carmelaroman94@gmail.com">✉ carmelaroman94@gmail.com</a>
+      <a class="contact-link" href="https://linkedin.com/in/carmelaroman" target="_blank">in linkedin.com/in/carmelaroman</a>
+    </div>
+  </section>
+
+</main>
+</body>
+</html>
