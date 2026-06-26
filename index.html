@@ -69,16 +69,11 @@
 
     .sidebar-meta {
       font-size: 0.75rem;
-      color: rgba(227,214,200,0.5);
       line-height: 1.75;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
     }
-
-    .sidebar-meta a {
-      color: rgba(227,214,200,0.6);
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-    .sidebar-meta a:hover { color: var(--sage); }
 
     .sidebar-divider {
       width: 28px;
@@ -136,30 +131,6 @@
 
     .sidebar-footer { margin-top: auto; padding-top: 24px; }
 
-    .availability-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      background: rgba(141,149,126,0.15);
-      border: 1px solid rgba(141,149,126,0.35);
-      border-radius: 20px;
-      padding: 5px 12px;
-      font-size: 0.67rem;
-      color: rgba(227,214,200,0.65);
-    }
-
-    .availability-dot {
-      width: 6px; height: 6px;
-      background: var(--sage);
-      border-radius: 50%;
-      animation: pulse 2.2s infinite;
-    }
-
-    @keyframes pulse {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.35; }
-    }
-
     /* ── MAIN ── */
     .main { margin-left: var(--sidebar-w); flex: 1; }
 
@@ -211,7 +182,38 @@
       color: rgba(227,214,200,0.55);
       max-width: 540px;
       line-height: 1.75;
-      margin-bottom: 40px;
+      margin-bottom: 28px;
+    }
+
+    /* ── HERO LANGUAGES ── */
+    .hero-languages {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 32px;
+    }
+
+    .hero-lang-card {
+      background: rgba(227,214,200,0.07);
+      border: 1px solid rgba(141,149,126,0.25);
+      border-radius: 8px;
+      padding: 8px 14px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .hero-lang-name {
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--sand);
+      line-height: 1.2;
+    }
+
+    .hero-lang-level {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.62rem;
+      color: var(--sage);
+      margin-top: 2px;
     }
 
     .hero-stats {
@@ -450,10 +452,11 @@
       gap: 8px;
     }
 
+    /* MOD 5: all pills same background */
     .skill-pill {
-      background: var(--white);
-      border: 1px solid var(--border);
-      color: var(--text-2);
+      background: var(--forest);
+      border: 1px solid var(--forest);
+      color: var(--sand);
       font-size: 0.74rem;
       font-weight: 500;
       padding: 5px 13px;
@@ -463,43 +466,9 @@
     }
 
     .skill-pill:hover {
+      background: var(--sage);
       border-color: var(--sage);
       color: var(--forest);
-    }
-
-    .skill-pill.core {
-      background: var(--forest);
-      border-color: var(--forest);
-      color: var(--sand);
-    }
-
-    /* ── LANGUAGES ── */
-    .lang-grid {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-      margin-top: 20px;
-    }
-
-    .lang-card {
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 14px 20px;
-      min-width: 140px;
-    }
-
-    .lang-name {
-      font-size: 0.9rem;
-      font-weight: 700;
-      color: var(--text-1);
-      margin-bottom: 3px;
-    }
-
-    .lang-level {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.68rem;
-      color: var(--sage);
     }
 
     /* ── CONTACT ── */
@@ -507,14 +476,6 @@
       background: var(--forest);
       padding: 60px 64px;
       color: var(--white);
-    }
-
-    .contact-sub {
-      color: rgba(227,214,200,0.5);
-      font-size: 0.88rem;
-      margin-bottom: 30px;
-      max-width: 460px;
-      line-height: 1.7;
     }
 
     .contact-links { display: flex; gap: 14px; flex-wrap: wrap; }
@@ -554,7 +515,6 @@
 
     @media (prefers-reduced-motion: reduce) {
       .project-card { transition: none; }
-      .availability-dot { animation: none; }
     }
   </style>
 </head>
@@ -565,10 +525,10 @@
   <div style="margin-bottom:36px;">
     <div class="sidebar-name">Bianca Carmela Roman</div>
     <div class="sidebar-title">Data Science · BI · Analytics</div>
+    <!-- MOD 6E: contact links only here, in the styled format -->
     <div class="sidebar-meta">
-      Granada, Spain<br>
-      <a href="mailto:carmelaroman94@gmail.com">carmelaroman94@gmail.com</a><br>
-      <a href="https://linkedin.com/in/carmelaroman" target="_blank">linkedin.com/in/carmelaroman</a>
+      <a class="contact-link" href="mailto:carmelaroman94@gmail.com" style="font-size:0.72rem; padding:7px 12px;">✉ carmelaroman94@gmail.com</a>
+      <a class="contact-link" href="https://linkedin.com/in/carmelaroman" target="_blank" style="font-size:0.72rem; padding:7px 12px;">in linkedin.com/in/carmelaroman</a>
     </div>
   </div>
 
@@ -593,7 +553,7 @@
   <a class="nav-item" href="#project-oportunidades">
     <span class="nav-num">03</span>
     <div>
-      <div class="nav-item-title">Opportunity Pipeline</div>
+      <div class="nav-item-title">Initial Exploratory Analysis</div>
       <div class="nav-item-tag">Python · Plotly · CRM</div>
     </div>
   </a>
@@ -612,12 +572,7 @@
     </div>
   </a>
 
-  <div class="sidebar-footer">
-    <div class="availability-badge">
-      <span class="availability-dot"></span>
-      Available from July 2026
-    </div>
-  </div>
+  <!-- MOD 6D: removed availability badge -->
 </aside>
 
 <!-- MAIN -->
@@ -630,8 +585,30 @@
       Turning raw data into<br><em>decisions that matter</em>
     </h1>
     <p class="hero-sub">
-     This portfolio brings together five projects where data is the main tool for answering real-world questions. It includes business data analysis in Microsoft 365 environments to identify process improvements, the development of international databases for social research on child labour, and electoral and sentiment analysis projects aimed at understanding trends and behaviours.
+      This portfolio brings together five projects where data is the main tool for answering real-world questions. It includes business data analysis in Microsoft 365 environments to identify process improvements, the development of international databases for social research on child labour, and electoral and sentiment analysis projects aimed at understanding trends and behaviours.
     </p>
+
+    <!-- MOD 6A: languages moved here, below the description -->
+    <div class="hero-languages">
+      <div class="hero-lang-card">
+        <span class="hero-lang-name">Spanish</span>
+        <span class="hero-lang-level">Native</span>
+      </div>
+      <div class="hero-lang-card">
+        <span class="hero-lang-name">Italian</span>
+        <span class="hero-lang-level">C1</span>
+      </div>
+      <div class="hero-lang-card">
+        <span class="hero-lang-name">English</span>
+        <span class="hero-lang-level">B2</span>
+      </div>
+      <div class="hero-lang-card">
+        <span class="hero-lang-name">German</span>
+        <span class="hero-lang-level">A2</span>
+      </div>
+    </div>
+
+    <!-- MOD 6B: stats without languages block -->
     <div class="hero-stats">
       <div class="stat">
         <span class="stat-num">5</span>
@@ -640,13 +617,6 @@
       <div class="stat">
         <span class="stat-num">2+</span>
         <span class="stat-label">years in data roles</span>
-      </div>
-      <div class="stat">
-        <span class="stat-label" style="font-size:0.78rem; color:rgba(227,214,200,0.65); padding-top:4px; line-height:1.6;">
-          Spanish (native)<br>
-          English B2 · Italian C1<br>
-          German A2
-        </span>
       </div>
     </div>
   </section>
@@ -664,7 +634,9 @@
       <div class="project-meta">
         <div class="project-badge featured-badge"><span class="badge-dot"></span>Featured · CRM Analytics</div>
         <h3 class="project-title">Sales Cycle Analysis — Full Commercial Funnel</h3>
-        <p class="project-desc">End-to-end analysis of a tech company's sales pipeline using Microsoft 365 CRM data. Covers the complete journey from lead origin to final outcome, with focus on funnel efficiency, conversion rates, and cycle time stability across business units and opportunity types. Data range: Jan 2025 – Apr 2026.</p>
+        <!-- MOD 2A: removed "Data range: Jan 2025 – Apr 2026." -->
+        <p class="project-desc">End-to-end analysis of a tech company's sales pipeline using Microsoft 365 CRM data. Covers the complete journey from lead origin to final outcome, with focus on funnel efficiency, conversion rates, and cycle time stability across business units and opportunity types.</p>
+        <!-- MOD 1: tools only here, not in embed-label -->
         <div class="project-tools">
           <span class="tool-tag">Python</span>
           <span class="tool-tag">Plotly</span>
@@ -677,9 +649,10 @@
       </div>
       <div class="project-insight">
         <div class="insight-label">Key analysis</div>
-        <div class="insight-text">Identified funnel leakage patterns across stages, compared cycle distributions (potential vs. opportunity vs. total) via boxplots, and segmented KPIs by business unit — from macro overview to granular breakdown.</div>
+        <div class="insight-text">Leakage patterns were identified in the sales funnel across all stages, the cycle distributions (potential vs. opportunity vs. total) were compared using box plots, and segmentation was performed by business unit and opportunity type (from a more general perspective to a more specific one).</div>
       </div>
       <div class="project-embed-container">
+        <!-- MOD 1: no tools listed here -->
         <div class="embed-label">Interactive Dashboard — Sales Cycle Analysis</div>
         <iframe src="dashboard_ciclos.html" title="Sales Cycle Analysis"></iframe>
       </div>
@@ -690,7 +663,9 @@
       <div class="project-meta">
         <div class="project-badge"><span class="badge-dot"></span>Business Unit Deep-Dive · Statistical Analysis</div>
         <h3 class="project-title">Cloud Business Unit — Cycle Time & Efficiency</h3>
-        <p class="project-desc">Focused statistical analysis of the Cloud unit's sales performance. Examines cycle time dispersion between open and closed opportunities, applies outlier removal to isolate typical behavior, and investigates whether longer cycles correlate with higher deal value — broken down by opportunity type and acquisition channel.</p>
+        <!-- MOD 2B: new text -->
+        <p class="project-desc">This analysis focuses on the sales cycle of the Cloud business unit, comparing closing times between won and lost opportunities. Extreme values are identified and excluded in order to obtain averages that better reflect the actual behavior of the data. In addition, the relationship between sales cycle duration and deal value is explored. The study is segmented both by acquisition channel and by different categories within the Cloud unit itself, in order to better understand the specific dynamics of each segment.</p>
+        <!-- MOD 1: tools only here -->
         <div class="project-tools">
           <span class="tool-tag">Python</span>
           <span class="tool-tag">Plotly</span>
@@ -702,20 +677,24 @@
       </div>
       <div class="project-insight">
         <div class="insight-label">Key finding</div>
-        <div class="insight-text">Open opportunities show shorter cycles than closed ones, but high dispersion required outlier removal for reliable interpretation. Heatmap and scatterplot tested whether cycle length predicts deal value, segmented by opportunity type.</div>
+        <!-- MOD 2C: new text -->
+        <div class="insight-text">Won sales opportunities show significantly shorter sales cycles than lost ones. This suggests that, beyond a certain time threshold, the likelihood of closing a deal decreases notably. This hypothesis was further explored in other analyses.<br><br>Additionally, a significant inefficiency was identified: there are very long sales cycles that consume a considerable amount of resources but ultimately result in low-value deals.</div>
       </div>
       <div class="project-embed-container">
+        <!-- MOD 1: no tools listed here -->
         <div class="embed-label">Interactive Dashboard — Cloud Business Unit</div>
         <iframe src="dashboard_cloud.html" title="Cloud Business Unit"></iframe>
       </div>
     </div>
 
-    <!-- 03 OPORTUNIDADES -->
+    <!-- 03 OPORTUNIDADES — MOD 3A: new title -->
     <div class="project-card" id="project-oportunidades">
       <div class="project-meta">
         <div class="project-badge"><span class="badge-dot"></span>Pipeline Analytics · Time Series</div>
-        <h3 class="project-title">Opportunity Pipeline — Temporal Trends</h3>
-        <p class="project-desc">Temporal analysis of commercial opportunities from a Microsoft 365 CRM dataset. Tracks the evolution of won and lost opportunities over time, mapping creation and closing patterns to identify velocity shifts and pipeline health signals.</p>
+        <h3 class="project-title">Initial exploratory analysis of the sales CRM</h3>
+        <!-- MOD 2D: new text -->
+        <p class="project-desc">It examines the evolution of sales opportunity creation over time, as well as the distribution of sales cycles in open opportunities. It also identifies the most frequent opportunity types, segmented by business unit, and analyzes how this frequency varies depending on whether they are targeted at the public sector, the private sector, or both.<br><br>Finally, it explores success and failure rates across sales opportunities for each business unit, along with the distribution of sales cycles for won deals.</p>
+        <!-- MOD 1: tools only here -->
         <div class="project-tools">
           <span class="tool-tag">Python</span>
           <span class="tool-tag">Plotly</span>
@@ -724,7 +703,13 @@
           <span class="tool-tag">Pipeline KPIs</span>
         </div>
       </div>
+      <!-- MOD 3B: added Key finding block -->
+      <div class="project-insight">
+        <div class="insight-label">Key finding</div>
+        <div class="insight-text">Through the temporal analysis, a standout success case was identified in a marketing campaign that had a significant impact on a specific business unit. This finding was particularly relevant, as it had not been previously considered. Moreover, this success was concentrated in the very unit that also shows the highest failure rate, making it a key area for further attention and reinforcement.<br><br>Additionally, sales opportunities were identified that remain open for excessively long periods and consume a considerable amount of resources. These cases were flagged and segmented into a dedicated database for further analysis with the relevant sales stakeholders.<br><br>On the other hand, one of the company's strategic objectives for that year was to increase sales in the public sector. However, it was observed that the products are primarily oriented toward the private sector or both markets, with no services specifically designed for the public sector alone. This insight was shared with the marketing and management teams to support the development of strategies better aligned with the yearly goals.<br><br>Finally, a significant difference was observed in the distribution of sales cycles, both across open opportunities and closed ones (won and lost), highlighting the need for a more segmented and differentiated analysis.</div>
+      </div>
       <div class="project-embed-container">
+        <!-- MOD 1: no tools listed here -->
         <div class="embed-label">Interactive Dashboard — Opportunity Pipeline</div>
         <iframe src="dashboard_oportunidades.html" title="Opportunity Pipeline" class="short"></iframe>
       </div>
@@ -736,13 +721,13 @@
         <div class="project-badge"><span class="badge-dot"></span>International Research · Power BI</div>
         <h3 class="project-title">Child Labour & International Trade Flows</h3>
         <p class="project-desc">Research project for Development International (Germany). Consolidated datasets from the U.S. Census Bureau, U.S. Department of Labor, and WTO using Python and Excel Power Query into a unified repository. Designed custom ratios and visualized global patterns in child labour-linked trade flows across sectors and regions.</p>
+        <!-- MOD 3C: updated tags -->
         <div class="project-tools">
           <span class="tool-tag">Power BI</span>
-          <span class="tool-tag">Python</span>
-          <span class="tool-tag">Excel Power Query</span>
-          <span class="tool-tag">UN / ILO Data</span>
-          <span class="tool-tag">Custom KPIs</span>
           <span class="tool-tag">DAX</span>
+          <span class="tool-tag">Excel</span>
+          <span class="tool-tag">Microsoft Power Query</span>
+          <span class="tool-tag">Ratios</span>
         </div>
       </div>
       <div class="project-insight">
@@ -750,6 +735,7 @@
         <div class="insight-text">Cross-referenced international sources to identify import patterns associated with child labour. Designed custom ratios to measure exposure by product category, with temporal and regional breakdowns.</div>
       </div>
       <div class="project-embed-container">
+        <!-- MOD 1: no tools listed here -->
         <div class="embed-label">Power BI Report — Child Labour & Trade</div>
         <iframe src="https://app.powerbi.com/view?r=eyJrIjoiMzcyMThjM2ItOGJhOS00YmM1LTk2OTktMTk0YTRmOTA1MjZmIiwidCI6Ijg3YmNjZDBkLTdiMjUtNGUzZC04OWZiLWMyYWI5M2E2OGVjOCIsImMiOjh9" allowFullScreen="true" title="Child Labour Report"></iframe>
       </div>
@@ -761,6 +747,7 @@
         <div class="project-badge"><span class="badge-dot"></span>NLP · Social Data · Power BI</div>
         <h3 class="project-title">Political Sentiment Analysis — 2016 U.S. Election</h3>
         <p class="project-desc">Sentiment analysis of YouTube comments collected via the YouTube Data API, focused on political discourse around the 2016 U.S. presidential election. Applied NLP techniques to classify comment sentiment and visualized distribution patterns and temporal evolution in Power BI.</p>
+        <!-- MOD 4B: added Machine Learning tag -->
         <div class="project-tools">
           <span class="tool-tag">Power BI</span>
           <span class="tool-tag">YouTube API</span>
@@ -768,13 +755,12 @@
           <span class="tool-tag">Sentiment Analysis</span>
           <span class="tool-tag">Social Data</span>
           <span class="tool-tag">DAX</span>
+          <span class="tool-tag">Machine Learning</span>
         </div>
       </div>
-      <div class="project-insight">
-        <div class="insight-label">Methodology</div>
-        <div class="insight-text">Extracted comments from election-related YouTube videos via API, applied sentiment classification, and built an interactive Power BI report to explore how public opinion evolved across the campaign period.</div>
-      </div>
+      <!-- MOD 4A: methodology block removed entirely -->
       <div class="project-embed-container">
+        <!-- MOD 1: no tools listed here -->
         <div class="embed-label">Power BI Report — Political Sentiment Analysis</div>
         <iframe src="https://app.powerbi.com/view?r=eyJrIjoiMWMyZTlmNDItZjk0OS00NTAxLThiMmUtNjY4OTIxNzMxYjc3IiwidCI6Ijg3YmNjZDBkLTdiMjUtNGUzZC04OWZiLWMyYWI5M2E2OGVjOCIsImMiOjh9" allowFullScreen="true" title="Political Sentiment"></iframe>
       </div>
@@ -814,61 +800,33 @@
       <div class="section-line"></div>
     </div>
 
+    <!-- MOD 5: all same background, removed MongoDB/Random Forest/Gradient Boosting/NLP -->
     <div class="skills-grid">
-      <span class="skill-pill core">Python</span>
-      <span class="skill-pill core">Power BI</span>
-      <span class="skill-pill core">SQL</span>
-      <span class="skill-pill core">Machine Learning</span>
+      <span class="skill-pill">Python</span>
+      <span class="skill-pill">Power BI</span>
+      <span class="skill-pill">SQL</span>
+      <span class="skill-pill">Machine Learning</span>
       <span class="skill-pill">R</span>
       <span class="skill-pill">Plotly</span>
       <span class="skill-pill">DAX</span>
       <span class="skill-pill">Excel Power Query</span>
       <span class="skill-pill">scikit-learn</span>
-      <span class="skill-pill">MongoDB</span>
-      <span class="skill-pill">Random Forest</span>
-      <span class="skill-pill">Gradient Boosting</span>
-      <span class="skill-pill">NLP</span>
       <span class="skill-pill">Agile / PM4R</span>
       <span class="skill-pill">Stakeholder Management</span>
       <span class="skill-pill">Data Storytelling</span>
     </div>
 
-    <div class="section-header" style="margin-top:36px; margin-bottom:0;">
-      <span class="section-num" style="font-size:0.62rem;">LANGUAGES</span>
-      <div class="section-line"></div>
-    </div>
+    <!-- MOD 6A: languages section removed from here -->
 
-    <div class="lang-grid">
-      <div class="lang-card">
-        <div class="lang-name">Spanish</div>
-        <div class="lang-level">Native</div>
-      </div>
-      <div class="lang-card">
-        <div class="lang-name">Italian</div>
-        <div class="lang-level">C1</div>
-      </div>
-      <div class="lang-card">
-        <div class="lang-name">English</div>
-        <div class="lang-level">B2</div>
-      </div>
-      <div class="lang-card">
-        <div class="lang-name">German</div>
-        <div class="lang-level">A2</div>
-      </div>
-    </div>
   </section>
 
   <!-- CONTACT -->
+  <!-- MOD 6C: removed subtitle text; MOD 6E: removed duplicate contact links -->
   <section class="contact-section" id="contact">
     <div class="section-header" style="margin-bottom:20px;">
       <span class="section-num" style="color:rgba(227,214,200,0.3);">§03</span>
       <h2 class="section-title" style="color:var(--sand); font-size:1.3rem; margin-bottom:0;">Let's work together</h2>
       <div class="section-line" style="background:rgba(227,214,200,0.1);"></div>
-    </div>
-    <p class="contact-sub">Available for full-time and part-time roles from July 2026. Open to data analysis, BI, and ML projects across sectors. Based in Granada, Spain — working remotely or hybrid.</p>
-    <div class="contact-links">
-      <a class="contact-link" href="mailto:carmelaroman94@gmail.com">✉ carmelaroman94@gmail.com</a>
-      <a class="contact-link" href="https://linkedin.com/in/carmelaroman" target="_blank">in linkedin.com/in/carmelaroman</a>
     </div>
   </section>
 
