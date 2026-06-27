@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Bianca Carmela Roman — Portfolio de Ciencia de Datos</title>
+  <title>Bianca Carmela Roman — Data Science Portfolio</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -452,6 +452,7 @@
       gap: 8px;
     }
 
+    /* MOD 5: all pills same background */
     .skill-pill {
       background: var(--forest);
       border: 1px solid var(--forest);
@@ -574,11 +575,12 @@
 <body>
 
 <!-- SIDEBAR -->
-<a class="lang-switcher lang-btn" href="index_en.html">🌐 EN</a>
+<a class="lang-switcher lang-btn" href="index_es.html">🌐 ES</a>
 <aside class="sidebar">
   <div style="margin-bottom:36px;">
     <div class="sidebar-name">Bianca Carmela Roman</div>
-    <div class="sidebar-title">Ciencia de Datos · BI · Analítica</div>
+    <div class="sidebar-title">Data Science · BI · Analytics</div>
+    <!-- MOD 6E: contact links only here, in the styled format -->
     <div class="sidebar-meta">
       <a class="contact-link" href="mailto:carmelaroman94@gmail.com" style="font-size:0.72rem; padding:7px 12px;">✉ carmelaroman94@gmail.com</a>
       <a class="contact-link" href="https://linkedin.com/in/carmelaroman" target="_blank" style="font-size:0.72rem; padding:7px 12px;">in linkedin.com/in/carmelaroman</a>
@@ -587,50 +589,52 @@
 
   <div class="sidebar-divider"></div>
 
-  <div class="nav-label">Proyectos</div>
+  <div class="nav-label">Projects</div>
 
   <a class="nav-item" href="#project-ciclos">
     <span class="nav-num">01</span>
     <div>
-      <div class="nav-item-title">Análisis del Ciclo de Ventas</div>
+      <div class="nav-item-title">Sales Cycle Analysis</div>
       <div class="nav-item-tag">Python · Plotly · CRM</div>
     </div>
   </a>
   <a class="nav-item" href="#project-cloud">
     <span class="nav-num">02</span>
     <div>
-      <div class="nav-item-title">Unidad de Negocio Cloud</div>
-      <div class="nav-item-tag">Python · Plotly · Estadística</div>
+      <div class="nav-item-title">Cloud Business Unit</div>
+      <div class="nav-item-tag">Python · Plotly · Stats</div>
     </div>
   </a>
   <a class="nav-item" href="#project-oportunidades">
     <span class="nav-num">03</span>
     <div>
-      <div class="nav-item-title">Análisis Exploratorio CRM</div>
+      <div class="nav-item-title">Initial Exploratory Analysis</div>
       <div class="nav-item-tag">Python · Plotly · CRM</div>
     </div>
   </a>
   <a class="nav-item" href="#project-childlabour">
     <span class="nav-num">04</span>
     <div>
-      <div class="nav-item-title">Trabajo Infantil y Comercio</div>
-      <div class="nav-item-tag">Power BI · Python · Datos ONU</div>
+      <div class="nav-item-title">Child Labour & Trade</div>
+      <div class="nav-item-tag">Power BI · Python · UN Data</div>
     </div>
   </a>
   <a class="nav-item" href="#project-sentiment">
     <span class="nav-num">05</span>
     <div>
-      <div class="nav-item-title">Análisis de Sentimiento</div>
+      <div class="nav-item-title">Political Sentiment</div>
       <div class="nav-item-tag">Power BI · NLP · YouTube API</div>
     </div>
   </a>
-  <a class="nav-item" href="proyecto_gestion_es.html">
+  <a class="nav-item" href="proyecto_gestion_en.html">
     <span class="nav-num">06</span>
     <div>
-      <div class="nav-item-title">Gestión de Proyectos</div>
-      <div class="nav-item-tag">PM4R · Ágil · Sector Público</div>
+      <div class="nav-item-title">Project Management</div>
+      <div class="nav-item-tag">PM4R · Agile · Public Sector</div>
     </div>
   </a>
+
+  <!-- MOD 6D: removed availability badge -->
 </aside>
 
 <!-- MAIN -->
@@ -638,41 +642,43 @@
 
   <!-- HERO -->
   <section class="hero">
-    <div class="hero-eyebrow">Portfolio de Ciencia de Datos</div>
+    <div class="hero-eyebrow">Data Science Portfolio</div>
     <h1 class="hero-headline">
-      Transformar datos en<br><em>decisiones que importan</em>
+      Turning raw data into<br><em>decisions that matter</em>
     </h1>
     <p class="hero-sub">
-      Este portfolio reúne cinco proyectos donde los datos son la herramienta principal para responder preguntas del mundo real. Incluye análisis de datos de negocio en entornos Microsoft 365 para identificar mejoras de procesos, el desarrollo de bases de datos internacionales para investigación social sobre trabajo infantil, y proyectos de análisis electoral y de sentimiento orientados a comprender tendencias y comportamientos.
+      This portfolio brings together five projects where data is the main tool for answering real-world questions. It includes business data analysis in Microsoft 365 environments to identify process improvements, the development of international databases for social research on child labour, and electoral and sentiment analysis projects aimed at understanding trends and behaviours.
     </p>
 
+    <!-- MOD 6A: languages moved here, below the description -->
     <div class="hero-languages">
       <div class="hero-lang-card">
-        <span class="hero-lang-name">Español</span>
-        <span class="hero-lang-level">Nativo</span>
+        <span class="hero-lang-name">Spanish</span>
+        <span class="hero-lang-level">Native</span>
       </div>
       <div class="hero-lang-card">
-        <span class="hero-lang-name">Italiano</span>
+        <span class="hero-lang-name">Italian</span>
         <span class="hero-lang-level">C1</span>
       </div>
       <div class="hero-lang-card">
-        <span class="hero-lang-name">Inglés</span>
+        <span class="hero-lang-name">English</span>
         <span class="hero-lang-level">B2</span>
       </div>
       <div class="hero-lang-card">
-        <span class="hero-lang-name">Alemán</span>
+        <span class="hero-lang-name">German</span>
         <span class="hero-lang-level">A2</span>
       </div>
     </div>
 
+    <!-- MOD 6B: stats without languages block -->
     <div class="hero-stats">
       <div class="stat">
         <span class="stat-num">5</span>
-        <span class="stat-label">proyectos</span>
+        <span class="stat-label">projects</span>
       </div>
       <div class="stat">
         <span class="stat-num">2+</span>
-        <span class="stat-label">años en roles de datos</span>
+        <span class="stat-label">years in data roles</span>
       </div>
     </div>
   </section>
@@ -681,91 +687,103 @@
   <section class="section" id="projects">
     <div class="section-header">
       <span class="section-num">§01</span>
-      <h2 class="section-title">Proyectos</h2>
+      <h2 class="section-title">Projects</h2>
       <div class="section-line"></div>
     </div>
 
     <!-- 01 CICLOS -->
     <div class="project-card featured" id="project-ciclos">
       <div class="project-meta">
-        <div class="project-badge featured-badge"><span class="badge-dot"></span>Destacado · Analítica CRM</div>
-        <h3 class="project-title">Análisis del Ciclo de Ventas — Embudo Comercial Completo</h3>
-        <p class="project-desc">Análisis integral del pipeline comercial de una empresa tecnológica utilizando datos del CRM de Microsoft 365. Abarca el recorrido completo desde el origen del lead hasta el resultado final, con foco en la eficiencia del embudo, las tasas de conversión y la estabilidad de los ciclos de venta por unidad de negocio y tipo de oportunidad.</p>
+        <div class="project-badge featured-badge"><span class="badge-dot"></span>Featured · CRM Analytics</div>
+        <h3 class="project-title">Sales Cycle Analysis — Full Commercial Funnel</h3>
+        <!-- MOD 2A: removed "Data range: Jan 2025 – Apr 2026." -->
+        <p class="project-desc">End-to-end analysis of a tech company's sales pipeline using Microsoft 365 CRM data. Covers the complete journey from lead origin to final outcome, with focus on funnel efficiency, conversion rates, and cycle time stability across business units and opportunity types.</p>
+        <!-- MOD 1: tools only here, not in embed-label -->
         <div class="project-tools">
           <span class="tool-tag">Python</span>
           <span class="tool-tag">Plotly</span>
           <span class="tool-tag">MS365 CRM</span>
-          <span class="tool-tag">Análisis de Embudo</span>
+          <span class="tool-tag">Funnel Analysis</span>
           <span class="tool-tag">Boxplot</span>
-          <span class="tool-tag">Diagrama Sankey</span>
-          <span class="tool-tag">Estadística Descriptiva</span>
+          <span class="tool-tag">Sankey Diagram</span>
+          <span class="tool-tag">Descriptive Stats</span>
         </div>
       </div>
       <div class="project-insight">
-        <div class="insight-label">Análisis clave</div>
-        <div class="insight-text">Se identificaron patrones de fuga en el embudo de ventas en todas las etapas, se compararon las distribuciones de ciclos (potencial vs. oportunidad vs. total) mediante boxplots, y se realizó una segmentación por unidad de negocio y tipo de oportunidad (desde una perspectiva general hasta una más específica).</div>
+        <div class="insight-label">Key analysis</div>
+        <div class="insight-text">Leakage patterns were identified in the sales funnel across all stages, the cycle distributions (potential vs. opportunity vs. total) were compared using box plots, and segmentation was performed by business unit and opportunity type (from a more general perspective to a more specific one).</div>
       </div>
       <div class="project-embed-container">
-        <div class="embed-label">Dashboard Interactivo — Análisis del Ciclo de Ventas</div>
-        <iframe src="dashboard_ciclos.html" title="Análisis del Ciclo de Ventas"></iframe>
+        <!-- MOD 1: no tools listed here -->
+        <div class="embed-label">Interactive Dashboard — Sales Cycle Analysis</div>
+        <iframe src="dashboard_ciclos.html" title="Sales Cycle Analysis"></iframe>
       </div>
     </div>
 
     <!-- 02 CLOUD -->
     <div class="project-card" id="project-cloud">
       <div class="project-meta">
-        <div class="project-badge"><span class="badge-dot"></span>Análisis de Unidad de Negocio · Estadística</div>
-        <h3 class="project-title">Unidad de Negocio Cloud — Tiempo de Ciclo y Eficiencia</h3>
-        <p class="project-desc">Este análisis se centra en el ciclo de ventas de la unidad de negocio Cloud, comparando los tiempos de cierre entre oportunidades ganadas y perdidas. Se identifican y excluyen valores extremos para obtener promedios que reflejen mejor el comportamiento real de los datos. Además, se explora la relación entre la duración del ciclo de venta y el valor económico de la operación. El estudio está segmentado tanto por canal de adquisición como por las distintas categorías dentro de la unidad Cloud, con el objetivo de comprender mejor las dinámicas específicas de cada segmento.</p>
+        <div class="project-badge"><span class="badge-dot"></span>Business Unit Deep-Dive · Statistical Analysis</div>
+        <h3 class="project-title">Cloud Business Unit — Cycle Time & Efficiency</h3>
+        <!-- MOD 2B: new text -->
+        <p class="project-desc">This analysis focuses on the sales cycle of the Cloud business unit, comparing closing times between won and lost opportunities. Extreme values are identified and excluded in order to obtain averages that better reflect the actual behavior of the data. In addition, the relationship between sales cycle duration and deal value is explored. The study is segmented both by acquisition channel and by different categories within the Cloud unit itself, in order to better understand the specific dynamics of each segment.</p>
+        <!-- MOD 1: tools only here -->
         <div class="project-tools">
           <span class="tool-tag">Python</span>
           <span class="tool-tag">Plotly</span>
-          <span class="tool-tag">Eliminación de Outliers</span>
+          <span class="tool-tag">Outlier Removal</span>
           <span class="tool-tag">Scatterplot</span>
           <span class="tool-tag">Heatmap</span>
-          <span class="tool-tag">Atribución de Canal</span>
+          <span class="tool-tag">Channel Attribution</span>
         </div>
       </div>
       <div class="project-insight">
-        <div class="insight-label">Hallazgo clave</div>
-        <div class="insight-text">Las oportunidades de venta ganadas muestran ciclos de venta significativamente más cortos que las perdidas. Esto sugiere que, más allá de cierto umbral de tiempo, la probabilidad de cerrar una operación disminuye notablemente. Esta hipótesis fue explorada con mayor profundidad en otros análisis.<br><br>Adicionalmente, se identificó una ineficiencia significativa: existen ciclos de venta muy largos que consumen una cantidad considerable de recursos pero que finalmente resultan en operaciones de bajo valor económico.</div>
+        <div class="insight-label">Key finding</div>
+        <!-- MOD 2C: new text -->
+        <div class="insight-text">Won sales opportunities show significantly shorter sales cycles than lost ones. This suggests that, beyond a certain time threshold, the likelihood of closing a deal decreases notably. This hypothesis was further explored in other analyses.<br><br>Additionally, a significant inefficiency was identified: there are very long sales cycles that consume a considerable amount of resources but ultimately result in low-value deals.</div>
       </div>
       <div class="project-embed-container">
-        <div class="embed-label">Dashboard Interactivo — Unidad de Negocio Cloud</div>
-        <iframe src="dashboard_cloud.html" title="Unidad de Negocio Cloud"></iframe>
+        <!-- MOD 1: no tools listed here -->
+        <div class="embed-label">Interactive Dashboard — Cloud Business Unit</div>
+        <iframe src="dashboard_cloud.html" title="Cloud Business Unit"></iframe>
       </div>
     </div>
 
-    <!-- 03 OPORTUNIDADES -->
+    <!-- 03 OPORTUNIDADES — MOD 3A: new title -->
     <div class="project-card" id="project-oportunidades">
       <div class="project-meta">
-        <div class="project-badge"><span class="badge-dot"></span>Analítica de Pipeline · Series Temporales</div>
-        <h3 class="project-title">Análisis exploratorio inicial del CRM de ventas</h3>
-        <p class="project-desc">Se examina la evolución temporal de la creación de oportunidades de venta, así como la distribución de los ciclos de venta en las oportunidades abiertas. También se identifican los tipos de oportunidad más frecuentes, segmentados por unidad de negocio, y se analiza cómo varía esta frecuencia según si están orientadas al sector público, privado o ambos.<br><br>Finalmente, se exploran las tasas de éxito y fracaso en las oportunidades de venta de cada unidad de negocio, junto con la distribución de los ciclos de venta para las operaciones ganadas.</p>
+        <div class="project-badge"><span class="badge-dot"></span>Pipeline Analytics · Time Series</div>
+        <h3 class="project-title">Initial exploratory analysis of the sales CRM</h3>
+        <!-- MOD 2D: new text -->
+        <p class="project-desc">It examines the evolution of sales opportunity creation over time, as well as the distribution of sales cycles in open opportunities. It also identifies the most frequent opportunity types, segmented by business unit, and analyzes how this frequency varies depending on whether they are targeted at the public sector, the private sector, or both.<br><br>Finally, it explores success and failure rates across sales opportunities for each business unit, along with the distribution of sales cycles for won deals.</p>
+        <!-- MOD 1: tools only here -->
         <div class="project-tools">
           <span class="tool-tag">Python</span>
           <span class="tool-tag">Plotly</span>
-          <span class="tool-tag">Series Temporales</span>
+          <span class="tool-tag">Time Series</span>
           <span class="tool-tag">MS365 CRM</span>
-          <span class="tool-tag">KPIs de Pipeline</span>
+          <span class="tool-tag">Pipeline KPIs</span>
         </div>
       </div>
+      <!-- MOD 3B: added Key finding block -->
       <div class="project-insight">
-        <div class="insight-label">Hallazgo clave</div>
-        <div class="insight-text">A través del análisis temporal se identificó un caso de éxito destacado en una campaña de marketing que tuvo un impacto significativo en una unidad de negocio específica. Este hallazgo fue especialmente relevante, ya que no había sido considerado previamente. Además, ese éxito se concentró precisamente en la unidad que también muestra la mayor tasa de fracaso, lo que la convierte en un área clave para prestar mayor atención y refuerzo.<br><br>Asimismo, se identificaron oportunidades de venta que permanecen abiertas durante períodos excesivamente largos y consumen una cantidad considerable de recursos. Estos casos fueron señalados y segmentados en una base de datos específica para su análisis posterior con los responsables comerciales.<br><br>Por otro lado, uno de los objetivos estratégicos de la empresa para ese año era incrementar las ventas en el sector público. Sin embargo, se observó que los productos están orientados principalmente al sector privado o a ambos mercados, sin servicios diseñados específicamente para el sector público. Este hallazgo fue compartido con los equipos de marketing y dirección para apoyar el desarrollo de estrategias mejor alineadas con los objetivos anuales.<br><br>Finalmente, se observó una diferencia significativa en la distribución de los ciclos de venta, tanto en las oportunidades abiertas como en las cerradas (ganadas y perdidas), lo que pone de manifiesto la necesidad de un análisis más segmentado y diferenciado.</div>
+        <div class="insight-label">Key finding</div>
+        <div class="insight-text">Through the temporal analysis, a standout success case was identified in a marketing campaign that had a significant impact on a specific business unit. This finding was particularly relevant, as it had not been previously considered. Moreover, this success was concentrated in the very unit that also shows the highest failure rate, making it a key area for further attention and reinforcement.<br><br>Additionally, sales opportunities were identified that remain open for excessively long periods and consume a considerable amount of resources. These cases were flagged and segmented into a dedicated database for further analysis with the relevant sales stakeholders.<br><br>On the other hand, one of the company's strategic objectives for that year was to increase sales in the public sector. However, it was observed that the products are primarily oriented toward the private sector or both markets, with no services specifically designed for the public sector alone. This insight was shared with the marketing and management teams to support the development of strategies better aligned with the yearly goals.<br><br>Finally, a significant difference was observed in the distribution of sales cycles, both across open opportunities and closed ones (won and lost), highlighting the need for a more segmented and differentiated analysis.</div>
       </div>
       <div class="project-embed-container">
-        <div class="embed-label">Dashboard Interactivo — Pipeline de Oportunidades</div>
-        <iframe src="dashboard_oportunidades.html" title="Pipeline de Oportunidades" class="short"></iframe>
+        <!-- MOD 1: no tools listed here -->
+        <div class="embed-label">Interactive Dashboard — Opportunity Pipeline</div>
+        <iframe src="dashboard_oportunidades.html" title="Opportunity Pipeline" class="short"></iframe>
       </div>
     </div>
 
     <!-- 04 CHILD LABOUR -->
     <div class="project-card" id="project-childlabour">
       <div class="project-meta">
-        <div class="project-badge"><span class="badge-dot"></span>Investigación Internacional · Power BI</div>
-        <h3 class="project-title">Trabajo Infantil y Flujos de Comercio Internacional</h3>
-        <p class="project-desc">Proyecto de investigación para Development International (Alemania). Se consolidaron datasets del U.S. Census Bureau, el U.S. Department of Labor y la OMC usando Python y Excel Power Query en un repositorio unificado. Se diseñaron ratios personalizados y se visualizaron patrones globales en los flujos de comercio vinculados al trabajo infantil, por sector y región.</p>
+        <div class="project-badge"><span class="badge-dot"></span>International Research · Power BI</div>
+        <h3 class="project-title">Child Labour & International Trade Flows</h3>
+        <p class="project-desc">Research project for Development International (Germany). Consolidated datasets from the U.S. Census Bureau, U.S. Department of Labor, and WTO using Python and Excel Power Query into a unified repository. Designed custom ratios and visualized global patterns in child labour-linked trade flows across sectors and regions.</p>
+        <!-- MOD 3C: updated tags -->
         <div class="project-tools">
           <span class="tool-tag">Power BI</span>
           <span class="tool-tag">DAX</span>
@@ -775,59 +793,63 @@
         </div>
       </div>
       <div class="project-insight">
-        <div class="insight-label">Alcance</div>
-        <div class="insight-text">Se cruzaron fuentes internacionales para identificar patrones de importación asociados al trabajo infantil. Se diseñaron ratios personalizados para medir la exposición por categoría de producto, con desgloses temporales y regionales.</div>
+        <div class="insight-label">Scope</div>
+        <div class="insight-text">Cross-referenced international sources to identify import patterns associated with child labour. Designed custom ratios to measure exposure by product category, with temporal and regional breakdowns.</div>
       </div>
       <div class="project-embed-container">
-        <div class="embed-label">Reporte Power BI — Trabajo Infantil y Comercio</div>
-        <iframe src="https://app.powerbi.com/view?r=eyJrIjoiMzcyMThjM2ItOGJhOS00YmM1LTk2OTktMTk0YTRmOTA1MjZmIiwidCI6Ijg3YmNjZDBkLTdiMjUtNGUzZC04OWZiLWMyYWI5M2E2OGVjOCIsImMiOjh9" allowFullScreen="true" title="Reporte Trabajo Infantil"></iframe>
+        <!-- MOD 1: no tools listed here -->
+        <div class="embed-label">Power BI Report — Child Labour & Trade</div>
+        <iframe src="https://app.powerbi.com/view?r=eyJrIjoiMzcyMThjM2ItOGJhOS00YmM1LTk2OTktMTk0YTRmOTA1MjZmIiwidCI6Ijg3YmNjZDBkLTdiMjUtNGUzZC04OWZiLWMyYWI5M2E2OGVjOCIsImMiOjh9" allowFullScreen="true" title="Child Labour Report"></iframe>
       </div>
     </div>
 
     <!-- 05 SENTIMENT -->
     <div class="project-card" id="project-sentiment">
       <div class="project-meta">
-        <div class="project-badge"><span class="badge-dot"></span>NLP · Datos Sociales · Power BI</div>
-        <h3 class="project-title">Análisis de Sentimiento Político — Elecciones EE.UU. 2016</h3>
-        <p class="project-desc">Análisis de sentimiento de comentarios de YouTube recopilados mediante la YouTube Data API, enfocado en el discurso político en torno a las elecciones presidenciales de EE.UU. de 2016. Se aplicaron técnicas de NLP para clasificar el sentimiento de los comentarios y se visualizaron los patrones de distribución y la evolución temporal en Power BI.</p>
+        <div class="project-badge"><span class="badge-dot"></span>NLP · Social Data · Power BI</div>
+        <h3 class="project-title">Political Sentiment Analysis — 2016 U.S. Election</h3>
+        <p class="project-desc">Sentiment analysis of YouTube comments collected via the YouTube Data API, focused on political discourse around the 2016 U.S. presidential election. Applied NLP techniques to classify comment sentiment and visualized distribution patterns and temporal evolution in Power BI.</p>
+        <!-- MOD 4B: added Machine Learning tag -->
         <div class="project-tools">
           <span class="tool-tag">Power BI</span>
           <span class="tool-tag">YouTube API</span>
           <span class="tool-tag">NLP</span>
-          <span class="tool-tag">Análisis de Sentimiento</span>
-          <span class="tool-tag">Datos Sociales</span>
+          <span class="tool-tag">Sentiment Analysis</span>
+          <span class="tool-tag">Social Data</span>
           <span class="tool-tag">DAX</span>
           <span class="tool-tag">Machine Learning</span>
         </div>
       </div>
+      <!-- MOD 4A: methodology block removed entirely -->
       <div class="project-embed-container">
-        <div class="embed-label">Reporte Power BI — Análisis de Sentimiento Político</div>
-        <iframe src="https://app.powerbi.com/view?r=eyJrIjoiMWMyZTlmNDItZjk0OS00NTAxLThiMmUtNjY4OTIxNzMxYjc3IiwidCI6Ijg3YmNjZDBkLTdiMjUtNGUzZC04OWZiLWMyYWI5M2E2OGVjOCIsImMiOjh9" allowFullScreen="true" title="Análisis de Sentimiento Político"></iframe>
+        <!-- MOD 1: no tools listed here -->
+        <div class="embed-label">Power BI Report — Political Sentiment Analysis</div>
+        <iframe src="https://app.powerbi.com/view?r=eyJrIjoiMWMyZTlmNDItZjk0OS00NTAxLThiMmUtNjY4OTIxNzMxYjc3IiwidCI6Ijg3YmNjZDBkLTdiMjUtNGUzZC04OWZiLWMyYWI5M2E2OGVjOCIsImMiOjh9" allowFullScreen="true" title="Political Sentiment"></iframe>
       </div>
     </div>
 
-    <!-- 06 GESTIÓN DE PROYECTOS -->
+    <!-- 06 PROJECT MANAGEMENT -->
     <div class="project-card" id="project-gestion">
       <div class="project-meta">
-        <div class="project-badge"><span class="badge-dot"></span>Caso de Estudio · Sector Público</div>
-        <h3 class="project-title">Gestión de Proyectos — Transformación Institucional</h3>
-        <p class="project-desc">Proyecto de transformación ágil de dos años en una municipalidad de Córdoba, Argentina. Orientado al rediseño de flujos de trabajo institucionales, gestión de actores, toma de decisiones basada en evidencia y seguimiento de KPIs. Se entregaron cuatro productos estratégicos bajo restricciones del sector público.</p>
+        <div class="project-badge"><span class="badge-dot"></span>Case Study · Public Sector</div>
+        <h3 class="project-title">Project Management — Institutional Transformation</h3>
+        <p class="project-desc">Two-year agile transformation project in a municipality in Córdoba, Argentina. Focused on redesigning institutional workflows, stakeholder management, evidence-based decision-making, and KPI monitoring. Delivered four strategic outputs under public sector constraints.</p>
         <div class="project-tools">
           <span class="tool-tag">PM4R</span>
-          <span class="tool-tag">Ágil</span>
-          <span class="tool-tag">Marco Lógico</span>
+          <span class="tool-tag">Agile</span>
+          <span class="tool-tag">Logical Framework</span>
           <span class="tool-tag">Gantt</span>
-          <span class="tool-tag">Matriz de Riesgos</span>
-          <span class="tool-tag">Seguimiento de KPIs</span>
-          <span class="tool-tag">Mapeo de Actores</span>
+          <span class="tool-tag">Risk Matrix</span>
+          <span class="tool-tag">KPI Tracking</span>
+          <span class="tool-tag">Stakeholder Mapping</span>
         </div>
       </div>
       <div class="project-insight">
-        <div class="insight-label">Resultado clave</div>
-        <div class="insight-text">+10 circuitos operativos rediseñados, +15 KPIs implementados, +20 actores clave identificados y articulados en el ecosistema institucional y territorial.</div>
+        <div class="insight-label">Key result</div>
+        <div class="insight-text">+10 operational circuits redesigned, +15 KPIs implemented, +20 stakeholders mapped and engaged across the institutional ecosystem.</div>
       </div>
       <div class="project-embed-container">
-        <div class="embed-label" style="cursor:pointer;" onclick="window.open('proyecto_gestion_es.html','_self')">▶ Ver caso completo → Portfolio de Gestión de Proyectos</div>
+        <div class="embed-label" style="cursor:pointer;" onclick="window.open('proyecto_gestion_en.html','_self')">▶ Open full case study → Project Management Portfolio</div>
       </div>
     </div>
 
@@ -837,34 +859,35 @@
   <section class="section" id="about" style="background:var(--white); border-top:1px solid var(--border);">
     <div class="section-header">
       <span class="section-num">§02</span>
-      <h2 class="section-title">Formación y Habilidades</h2>
+      <h2 class="section-title">Background & Skills</h2>
       <div class="section-line"></div>
     </div>
 
     <div class="about-grid">
       <div class="about-card">
-        <div class="about-card-title">Ciencia de Datos y Analítica</div>
-        <div class="about-card-text">Máster en Ciencia de Datos aplicada a Ciencias Sociales (Universidad de Granada, 2026). Especialización en el ciclo de vida completo del dato — desde la recolección y limpieza hasta el modelado, la visualización y la comunicación con stakeholders.</div>
+        <div class="about-card-title">Data Science & Analytics</div>
+        <div class="about-card-text">Master's in Data Science applied to Social Sciences (Universidad de Granada, 2026). Specialized in the full data lifecycle — from collection and cleaning to modeling, visualization, and stakeholder communication.</div>
       </div>
       <div class="about-card">
-        <div class="about-card-title">Gestión Ágil de Proyectos</div>
-        <div class="about-card-text">Más de 5 años gestionando proyectos interdisciplinares en el sector público, consultoría y tecnología. Certificada en PMI y PM4R. Experiencia conectando equipos técnicos con la toma de decisiones estratégica.</div>
+        <div class="about-card-title">Agile Project Management</div>
+        <div class="about-card-text">5+ years managing cross-functional projects in public sector, consulting, and tech. PMI and PM4R certified. Comfortable bridging the gap between technical teams and business decision-makers.</div>
       </div>
       <div class="about-card">
-        <div class="about-card-title">Investigación Internacional</div>
-        <div class="about-card-text">Experiencia trabajando con datasets internacionales (ONU, OIT, OMC, U.S. Census Bureau) en Alemania, Argentina y España. La formación en Ciencia Política aporta una perspectiva de investigación social al trabajo con datos.</div>
+        <div class="about-card-title">International Research</div>
+        <div class="about-card-text">Experience working with international datasets (UN, ILO, WTO, U.S. Census Bureau) across Germany, Argentina, and Spain. Background in political science adds a social research perspective to data work.</div>
       </div>
       <div class="about-card">
-        <div class="about-card-title">Stack Técnico</div>
-        <div class="about-card-text">Python (pandas, scikit-learn, Plotly), SQL, R, Microsoft Power BI, DAX, Excel Power Query, MongoDB. Experiencia con sistemas CRM y ecosistemas Microsoft 365.</div>
+        <div class="about-card-title">Technical Stack</div>
+        <div class="about-card-text">Python (pandas, scikit-learn, Plotly), SQL, R, Microsoft Power BI, DAX, Excel Power Query, MongoDB. Experienced with CRM systems and Microsoft 365 ecosystems.</div>
       </div>
     </div>
 
     <div class="section-header" style="margin-top:8px; margin-bottom:18px;">
-      <span class="section-num" style="font-size:0.62rem;">HERRAMIENTAS</span>
+      <span class="section-num" style="font-size:0.62rem;">TOOLS</span>
       <div class="section-line"></div>
     </div>
 
+    <!-- MOD 5: all same background, removed MongoDB/Random Forest/Gradient Boosting/NLP -->
     <div class="skills-grid">
       <span class="skill-pill">Python</span>
       <span class="skill-pill">Power BI</span>
@@ -876,19 +899,22 @@
       <span class="skill-pill">Excel Power Query</span>
       <span class="skill-pill">scikit-learn</span>
       <span class="skill-pill">Agile / PM4R</span>
-      <span class="skill-pill">Gestión de Stakeholders</span>
-      <span class="skill-pill">Storytelling de Datos</span>
+      <span class="skill-pill">Stakeholder Management</span>
+      <span class="skill-pill">Data Storytelling</span>
     </div>
+
+    <!-- MOD 6A: languages section removed from here -->
 
   </section>
 
   <!-- CONTACT -->
+  <!-- MOD 6C: removed subtitle text; MOD 6E: removed duplicate contact links -->
   <section class="contact-section" id="contact">
     <div class="contact-inner">
     
     <div class="section-header" style="margin-bottom:20px;">
       <span class="section-num" style="color:rgba(227,214,200,0.3);">§03</span>
-      <h2 class="section-title" style="color:var(--sand); font-size:1.3rem; margin-bottom:0;">Trabajemos juntos</h2>
+      <h2 class="section-title" style="color:var(--sand); font-size:1.3rem; margin-bottom:0;">Let's work together</h2>
       <div class="section-line" style="background:rgba(227,214,200,0.1);"></div>
     </div>
   </div>
