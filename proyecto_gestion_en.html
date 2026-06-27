@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Project Management — Bianca Carmela Roman</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --sand:#E3D6C8;--sage:#8D957E;--slate:#788990;--forest:#2E3628;--cream:#F7F4F0;--white:#FFFFFF;--text-1:#1E2418;--text-2:#4A5240;--text-3:#7A8570;--border:#D6C9B8;--sidebar-w:280px;
+    --red-soft:#f9f0ee;--red-border:#d4a89a;--red-text:#6b2a1a;--green-soft:#eef4ee;--green-border:#8aad8a;--green-text:#1f4a1f;--blue-soft:#eef1f6;--blue-border:#8da4c0;--blue-text:#1e3558;--amber-soft:#f6f2e8;--amber-border:#c4a96a;--amber-text:#5a3e10;
+  }
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{font-family:'Inter',sans-serif;background:var(--cream);color:var(--text-1);display:flex;min-height:100vh;}
+  .sidebar{position:fixed;top:0;left:0;width:var(--sidebar-w);height:100vh;background:var(--forest);color:var(--white);display:flex;flex-direction:column;padding:36px 28px;overflow-y:auto;z-index:100;}
+  .sidebar-name{font-size:1.05rem;font-weight:800;letter-spacing:-0.01em;line-height:1.2;margin-bottom:6px;color:var(--sand);}
+  .sidebar-title{font-family:'JetBrains Mono',monospace;font-size:0.63rem;color:var(--sage);text-transform:uppercase;letter-spacing:0.09em;margin-bottom:16px;}
+  .sidebar-divider{width:28px;height:2px;background:var(--sage);margin:22px 0;border-radius:2px;}
+  .nav-label{font-family:'JetBrains Mono',monospace;font-size:0.58rem;text-transform:uppercase;letter-spacing:0.14em;color:rgba(227,214,200,0.3);margin-bottom:12px;}
+  .nav-item{display:flex;align-items:flex-start;gap:10px;padding:9px 0;cursor:pointer;text-decoration:none;border-bottom:1px solid rgba(227,214,200,0.07);transition:all 0.2s;}
+  .nav-item:hover .nav-item-title{color:var(--sage);} .nav-item:hover .nav-num{color:var(--sage);}
+  .nav-num{font-family:'JetBrains Mono',monospace;font-size:0.6rem;color:rgba(227,214,200,0.2);margin-top:2px;flex-shrink:0;transition:color 0.2s;}
+  .nav-item-title{font-size:0.77rem;font-weight:500;color:rgba(227,214,200,0.7);line-height:1.3;transition:color 0.2s;}
+  .nav-item-tag{font-size:0.61rem;color:rgba(227,214,200,0.3);margin-top:2px;}
+  .sidebar-footer{margin-top:auto;padding-top:24px;}
+  .back-link{display:flex;align-items:center;gap:8px;font-size:0.75rem;color:rgba(227,214,200,0.5);text-decoration:none;transition:color 0.2s;}
+  .back-link:hover{color:var(--sage);}
+  .contact-link{display:block;background:rgba(227,214,200,0.08);border:1px solid rgba(227,214,200,0.15);color:var(--sand);text-decoration:none;padding:7px 12px;border-radius:8px;font-size:0.72rem;font-weight:500;transition:all 0.2s;margin-bottom:6px;}
+  .contact-link:hover{background:var(--sage);border-color:var(--sage);color:var(--forest);}
+  .main{margin-left:var(--sidebar-w);flex:1;}
+  .hero{background:var(--forest);color:var(--white);padding:76px 64px 60px;position:relative;overflow:hidden;}
+  .hero::after{content:'';position:absolute;bottom:-40px;right:40px;width:260px;height:260px;border-radius:50%;border:1px solid rgba(141,149,126,0.12);pointer-events:none;}
+  .hero-eyebrow{font-family:'JetBrains Mono',monospace;font-size:0.68rem;color:var(--sage);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:18px;}
+  .hero-headline{font-size:clamp(1.9rem,3.8vw,3rem);font-weight:800;letter-spacing:-0.03em;line-height:1.05;margin-bottom:18px;max-width:640px;color:var(--sand);}
+  .hero-headline em{font-style:normal;color:var(--sage);}
+  .hero-sub{font-size:0.95rem;color:rgba(227,214,200,0.55);max-width:540px;line-height:1.75;margin-bottom:28px;}
+  .hero-stats{display:flex;gap:0;flex-wrap:wrap;border:1px solid rgba(141,149,126,0.2);border-radius:12px;overflow:hidden;width:fit-content;}
+  .stat{display:flex;flex-direction:column;padding:16px 28px;border-right:1px solid rgba(141,149,126,0.15);}
+  .stat:last-child{border-right:none;}
+  .stat-num{font-family:'JetBrains Mono',monospace;font-size:1.6rem;font-weight:500;color:var(--sand);line-height:1;}
+  .stat-label{font-size:0.68rem;color:rgba(227,214,200,0.4);margin-top:5px;letter-spacing:0.03em;}
+  .section{padding:60px 64px;}
+  .section-header{display:flex;align-items:baseline;gap:14px;margin-bottom:36px;}
+  .section-num{font-family:'JetBrains Mono',monospace;font-size:0.68rem;color:var(--text-3);letter-spacing:0.06em;}
+  .section-title{font-size:1.3rem;font-weight:700;letter-spacing:-0.02em;color:var(--text-1);}
+  .section-line{flex:1;height:1px;background:var(--border);}
+  .section-intro{font-size:0.87rem;color:var(--text-2);max-width:620px;line-height:1.75;margin-bottom:32px;margin-top:-16px;}
+  .context-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid var(--border);border-radius:12px;overflow:hidden;margin-bottom:28px;background:var(--border);}
+  .context-cell{background:var(--white);padding:18px 20px;}
+  .context-label{font-family:'JetBrains Mono',monospace;font-size:0.58rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-3);margin-bottom:5px;}
+  .context-value{font-size:0.84rem;font-weight:600;color:var(--text-1);}
+  .methods-row{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:8px;}
+  .tool-tag{background:var(--sand);color:var(--forest);font-size:0.67rem;font-weight:600;padding:3px 10px;border-radius:20px;font-family:'JetBrains Mono',monospace;}
+  .stakeholder-axis-x{font-family:'JetBrains Mono',monospace;font-size:0.6rem;color:var(--text-3);letter-spacing:0.06em;text-align:center;margin-bottom:8px;}
+  .stakeholder-wrap{display:flex;gap:10px;align-items:stretch;}
+  .stakeholder-axis-y{writing-mode:vertical-rl;transform:rotate(180deg);font-family:'JetBrains Mono',monospace;font-size:0.6rem;color:var(--text-3);letter-spacing:0.06em;display:flex;align-items:center;padding:0 4px;}
+  .stakeholder-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;flex:1;}
+  .sq{border:1px solid var(--border);border-radius:10px;overflow:hidden;background:var(--white);}
+  .sq-head{padding:8px 14px;font-family:'JetBrains Mono',monospace;font-size:0.6rem;font-weight:600;letter-spacing:0.07em;text-transform:uppercase;}
+  .sq-head.a{background:var(--forest);color:var(--sand);} .sq-head.b{background:#e8f0e8;color:var(--forest);} .sq-head.c{background:#f5f0e8;color:var(--text-2);} .sq-head.d{background:#eaf0f0;color:var(--slate);}
+  .sq-body{padding:10px 14px;}
+  .s-tag{display:inline-block;background:var(--cream);border:1px solid var(--border);border-radius:20px;font-size:0.7rem;padding:3px 9px;margin:2px;color:var(--text-2);}
+  .sq-note{font-size:0.67rem;color:var(--text-3);margin-top:7px;font-style:italic;}
+  .stakeholder-footnote{font-size:0.72rem;color:var(--text-3);font-style:italic;margin-top:14px;border-top:1px solid var(--border);padding-top:10px;}
+  .tree-block{margin-bottom:40px;}
+  .tree-label{font-family:'JetBrains Mono',monospace;font-size:0.6rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-3);text-align:center;margin-bottom:10px;}
+  .tree-level-label{font-size:0.68rem;color:var(--text-3);text-align:center;margin-bottom:6px;}
+  .tree-nodes-row{display:flex;justify-content:center;gap:10px;}
+  .tree-branch{display:flex;flex-direction:column;align-items:center;flex:1;max-width:200px;}
+  .tree-vline{width:1px;height:22px;background:var(--border);}
+  .tree-hline{width:calc(100% - 80px);height:1px;background:var(--border);margin:0 auto;}
+  .tree-root-box{max-width:520px;margin:0 auto;border-radius:10px;padding:14px 20px;text-align:center;font-size:0.88rem;font-weight:700;letter-spacing:-0.01em;line-height:1.35;}
+  .tree-root-box.prob{background:#f9f0ee;border:2px solid var(--red-border);color:var(--red-text);}
+  .tree-root-box.sol{background:var(--green-soft);border:2px solid var(--green-border);color:var(--green-text);}
+  .tree-node-box{width:100%;border-radius:7px;padding:9px 11px;font-size:0.72rem;text-align:center;line-height:1.4;border:1px solid;}
+  .tree-node-box.effect{background:#fef8f8;border-color:var(--red-border);color:var(--red-text);}
+  .tree-node-box.cause{background:var(--amber-soft);border-color:var(--amber-border);color:var(--amber-text);}
+  .tree-node-box.outcome{background:var(--green-soft);border-color:var(--green-border);color:var(--green-text);}
+  .tree-node-box.action{background:var(--blue-soft);border-color:var(--blue-border);color:var(--blue-text);}
+  .tree-sub{font-size:0.65rem;color:inherit;opacity:0.8;margin-top:5px;text-align:left;line-height:1.4;}
+  .connector-center{width:1px;height:24px;background:var(--border);margin:0 auto;}
+  .deliverables-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:8px;}
+  .del-card{background:var(--white);border:1px solid var(--border);border-radius:12px;overflow:hidden;}
+  .del-head{display:flex;align-items:center;gap:12px;padding:16px 18px 10px;}
+  .del-num{width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-size:0.72rem;font-weight:700;flex-shrink:0;}
+  .del-num.n1{background:var(--forest);color:var(--sand);} .del-num.n2{background:var(--sage);color:var(--forest);} .del-num.n3{background:var(--slate);color:var(--white);} .del-num.n4{background:var(--sand);color:var(--forest);}
+  .del-title{font-size:0.86rem;font-weight:700;color:var(--text-1);}
+  .del-body{padding:0 18px 16px;}
+  .del-desc{font-size:0.79rem;color:var(--text-2);line-height:1.65;margin-bottom:10px;}
+  .del-badge{font-family:'JetBrains Mono',monospace;font-size:0.58rem;letter-spacing:0.07em;text-transform:uppercase;padding:3px 9px;border-radius:20px;background:var(--cream);color:var(--text-2);border:1px solid var(--border);}
+  .results-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:8px;}
+  .res-card{background:var(--white);border:1px solid var(--border);border-radius:12px;padding:18px 20px;}
+  .res-num{font-family:'JetBrains Mono',monospace;font-size:0.6rem;color:var(--sage);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:6px;}
+  .res-title{font-size:0.86rem;font-weight:700;color:var(--text-1);margin-bottom:8px;}
+  .res-desc{font-size:0.78rem;color:var(--text-2);line-height:1.65;}
+  .res-desc li{margin-left:14px;margin-bottom:3px;}
+  .imp-list{list-style:none;}
+  .imp-item{display:flex;gap:16px;padding:20px 0;border-bottom:1px solid var(--border);}
+  .imp-item:last-child{border-bottom:none;}
+  .imp-title{font-size:0.88rem;font-weight:700;color:var(--text-1);margin-bottom:5px;}
+  .imp-desc{font-size:0.8rem;color:var(--text-2);line-height:1.7;}
+  .insight-box{background:#F2EDE5;border-left:3px solid var(--sage);padding:13px 20px;margin-bottom:32px;border-radius:0 8px 8px 0;}
+  .insight-label{font-family:'JetBrains Mono',monospace;font-size:0.58rem;color:var(--sage);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:4px;}
+  .insight-text{font-size:0.82rem;color:var(--text-1);font-weight:500;line-height:1.6;}
+  @media(max-width:900px){:root{--sidebar-w:0px;}.sidebar{display:none;}.main{margin-left:0;}.hero,.section{padding:40px 24px;}.context-grid{grid-template-columns:1fr 1fr;}.stakeholder-grid{grid-template-columns:1fr;}.deliverables-grid{grid-template-columns:1fr;}.results-grid{grid-template-columns:1fr;}.tree-nodes-row{flex-wrap:wrap;}.tree-branch{max-width:100%;}}
+
+  .author-img {
+    display: block;
+    margin: 40px auto 0;
+    width: 420px;
+    max-width: 90%;
+    object-fit: contain;
+    object-position: bottom center;
+    opacity: 0.55;
+    position: relative;
+    z-index: 1;
+  }
+
+
+  .author-section {
+    background: var(--forest);
+    padding: 60px 64px 0;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 40px;
+    overflow: hidden;
+  }
+  .author-text { flex: 1; padding-bottom: 60px; }
+  .author-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.6rem;
+    color: var(--sage);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 10px;
+  }
+  .author-name {
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: var(--sand);
+    letter-spacing: -0.02em;
+    margin-bottom: 4px;
+  }
+  .author-role { font-size: 0.82rem; color: rgba(227,214,200,0.5); }
+  .author-img {
+    width: 340px;
+    max-width: 40%;
+    object-fit: contain;
+    object-position: bottom;
+    display: block;
+    flex-shrink: 0;
+    opacity: 0.85;
+  }
+  @media (max-width: 900px) {
+    .author-section { flex-direction: column; align-items: center; padding: 40px 24px 0; }
+    .author-img { max-width: 280px; width: 100%; }
+    .author-text { padding-bottom: 0; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<aside class="sidebar">
+  <div style="margin-bottom:36px;">
+    <div class="sidebar-name">Bianca Carmela Roman</div>
+    <div class="sidebar-title">Project Management · Public Sector</div>
+    <div style="margin-top:10px;">
+      <a class="contact-link" href="mailto:carmelaroman94@gmail.com">✉ carmelaroman94@gmail.com</a>
+      <a class="contact-link" href="https://linkedin.com/in/carmelaroman" target="_blank">in linkedin.com/in/carmelaroman</a>
+    </div>
+  </div>
+  <div class="sidebar-divider"></div>
+  <div class="nav-label">Sections</div>
+  <a class="nav-item" href="#context"><span class="nav-num">01</span><div><div class="nav-item-title">Context</div><div class="nav-item-tag">Scope & methodology</div></div></a>
+  <a class="nav-item" href="#stakeholders"><span class="nav-num">02</span><div><div class="nav-item-title">Stakeholder map</div><div class="nav-item-tag">Influence-interest matrix</div></div></a>
+  <a class="nav-item" href="#trees"><span class="nav-num">03</span><div><div class="nav-item-title">Problem & solution trees</div><div class="nav-item-tag">Root cause analysis</div></div></a>
+  <a class="nav-item" href="#deliverables"><span class="nav-num">04</span><div><div class="nav-item-title">Deliverables</div><div class="nav-item-tag">4 key outputs</div></div></a>
+  <a class="nav-item" href="#results"><span class="nav-num">05</span><div><div class="nav-item-title">Results achieved</div><div class="nav-item-tag">Project impact</div></div></a>
+  <a class="nav-item" href="#lessons"><span class="nav-num">06</span><div><div class="nav-item-title">Lessons learned</div><div class="nav-item-tag">What I would do differently</div></div></a>
+  <div class="sidebar-footer">
+    <a class="back-link" href="index.html">← Back to portfolio</a>
+  </div>
+</aside>
+
+<main class="main">
+
+  <section class="hero">
+    <div class="hero-eyebrow">Project Management Portfolio · Case Study</div>
+    <h1 class="hero-headline">Institutional efficiency through <em>agile transformation</em></h1>
+    <p class="hero-sub">Public sector transformation project focused on redesigning institutional workflows, stakeholder management, and evidence-based decision-making in a municipality in Córdoba, Argentina.</p>
+    <div class="hero-stats">
+      <div class="stat"><span class="stat-num">2</span><span class="stat-label">years</span></div>
+      <div class="stat"><span class="stat-num">4</span><span class="stat-label">deliverables</span></div>
+      <div class="stat"><span class="stat-num">12+</span><span class="stat-label">stakeholders</span></div>
+      <div class="stat"><span class="stat-num">PM4R</span><span class="stat-label">methodology</span></div>
+    </div>
+  </section>
+
+  <section class="section" id="context">
+    <div class="section-header"><span class="section-num">§01</span><h2 class="section-title">Context</h2><div class="section-line"></div></div>
+    <p class="section-intro">A municipality in Córdoba, Argentina faced systemic inefficiencies: fragmented workflows, limited cross-departmental coordination, and a limited capacity to translate institutional data into actionable strategy. Decision-making was inefficient and there was no clear record of social policy beneficiaries.</p>
+    <div class="context-grid">
+      <div class="context-cell"><div class="context-label">Organisation</div><div class="context-value">Centro de Iniciativa Urbana</div></div>
+      <div class="context-cell"><div class="context-label">Duration</div><div class="context-value">2 years</div></div>
+      <div class="context-cell"><div class="context-label">Role</div><div class="context-value">Project Manager</div></div>
+      <div class="context-cell"><div class="context-label">Team</div><div class="context-value">8–12 people, interdisciplinary</div></div>
+    </div>
+    <div class="insight-box">
+      <div class="insight-label">Challenge</div>
+      <div class="insight-text">The project required simultaneously managing institutional actors with competing priorities, designing field data collection instruments, and delivering four concrete outputs under public sector constraints — while building internal capacity for post-project sustainability.</div>
+    </div>
+    <div class="methods-row">
+      <span class="tool-tag">PM4R</span><span class="tool-tag">Agile</span><span class="tool-tag">Logical Framework</span><span class="tool-tag">Gantt</span><span class="tool-tag">Risk Matrix</span><span class="tool-tag">KPI Tracking</span><span class="tool-tag">Stakeholder Mapping</span><span class="tool-tag">Field Data Collection</span><span class="tool-tag">Feasibility Analysis</span>
+    </div>
+  </section>
+
+  <section class="section" id="stakeholders" style="background:var(--white);border-top:1px solid var(--border);">
+    <div class="section-header"><span class="section-num">§02</span><h2 class="section-title">Stakeholder map</h2><div class="section-line"></div></div>
+    <p class="section-intro">Stakeholders were mapped according to their influence over decisions and their interest in outcomes. Engagement strategies were differentiated by quadrant to ensure political viability and operational sustainability.</p>
+    <div class="stakeholder-axis-x">← Low influence &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; High influence →</div>
+    <div class="stakeholder-wrap">
+      <div class="stakeholder-axis-y">↑ High interest &nbsp;&nbsp;&nbsp;&nbsp; Low interest ↓</div>
+      <div class="stakeholder-grid">
+        <div class="sq">
+          <div class="sq-head a">Manage closely</div>
+          <div class="sq-body">
+            <span class="s-tag">Administrative staff from municipal technical areas</span>
+            <span class="s-tag">Front desk / citizen service employees</span>
+            <p class="sq-note">→ Regular reporting, co-decision spaces, risk alignment</p>
+          </div>
+        </div>
+        <div class="sq">
+          <div class="sq-head b">Consult & engage</div>
+          <div class="sq-body">
+            <span class="s-tag">Communication actors (local media, especially radio)</span>
+            <span class="s-tag">Territorial actors (key community leaders, church)</span>
+            <span class="s-tag">Institutional actors (technical staff)</span>
+            <p class="sq-note">→ Field interviews, workshops, feedback sessions</p>
+          </div>
+        </div>
+        <div class="sq">
+          <div class="sq-head c">Keep informed</div>
+          <div class="sq-body">
+            <span class="s-tag">Social organisations</span>
+            <span class="s-tag">Neighbourhood centres</span>
+            <span class="s-tag">Community canteen</span>
+            <span class="s-tag">Health centres</span>
+            <p class="sq-note">→ Progress reports, data feedback, transparency, participatory spaces</p>
+          </div>
+        </div>
+        <div class="sq">
+          <div class="sq-head d">Monitor</div>
+          <div class="sq-body">
+            <span class="s-tag">City council</span>
+            <span class="s-tag">Other municipal departments</span>
+            <span class="s-tag">Opposition political parties</span>
+            <p class="sq-note">→ Periodic updates, political risk management</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p class="stakeholder-footnote">* Stakeholders have been identified in specific terms but are not included in this portfolio in order to preserve confidentiality.</p>
+  </section>
+
+  <section class="section" id="trees">
+    <div class="section-header"><span class="section-num">§03</span><h2 class="section-title">Problem tree & solution tree</h2><div class="section-line"></div></div>
+    <p class="section-intro">The problem tree maps root causes and effects of institutional inefficiency. The solution tree reformulates each element as a concrete intervention logic, following the Logical Framework Approach.</p>
+
+    <div class="tree-block">
+      <div class="tree-label">🌳 Problem tree</div>
+      <div class="tree-level-label">— Effects —</div>
+      <div class="tree-nodes-row" style="margin-bottom:0;">
+        <div class="tree-branch"><div class="tree-node-box effect">Reduced institutional responsiveness<div class="tree-sub">· Delays in programme implementation<br>· Difficulty prioritising territorial interventions</div></div><div class="tree-vline"></div></div>
+        <div class="tree-branch"><div class="tree-node-box effect">Weak governance & limited accountability<div class="tree-sub">· Lack of traceability of decisions<br>· Difficulty measuring impact</div></div><div class="tree-vline"></div></div>
+        <div class="tree-branch"><div class="tree-node-box effect">Loss of institutional trust & legitimacy<div class="tree-sub">· Citizen perception of low state efficiency<br>· Reduced articulation with territorial actors</div></div><div class="tree-vline"></div></div>
+      </div>
+      <div class="tree-hline"></div><div class="connector-center"></div>
+      <div class="tree-root-box prob">Low institutional capacity to manage public policies in a coordinated, efficient, and evidence-based manner</div>
+      <div class="connector-center"></div><div class="tree-hline"></div>
+      <div class="tree-level-label">— Root causes —</div>
+      <div class="tree-nodes-row">
+        <div class="tree-branch"><div class="tree-vline"></div><div class="tree-node-box cause">Fragmented processes & low interdepartmental coordination<div class="tree-sub">· Disjointed workflows<br>· No shared planning mechanisms<br>· Informal circuits</div></div></div>
+        <div class="tree-branch"><div class="tree-vline"></div><div class="tree-node-box cause">Limited data-driven management<div class="tree-sub">· No integrated information systems<br>· Lack of KPIs<br>· Data not translated into decisions</div></div></div>
+        <div class="tree-branch"><div class="tree-vline"></div><div class="tree-node-box cause">Weak articulation with strategic actors<div class="tree-sub">· No structured dialogue mechanisms<br>· Low systematisation of community knowledge</div></div></div>
+        <div class="tree-branch"><div class="tree-vline"></div><div class="tree-node-box cause">Insufficient planning & risk management tools<div class="tree-sub">· Limited scenario anticipation<br>· Lack of agile methodologies</div></div></div>
+      </div>
+    </div>
+
+    <div class="tree-block">
+      <div class="tree-label">🌱 Solution tree</div>
+      <div class="tree-level-label">— Expected outcomes —</div>
+      <div class="tree-nodes-row" style="margin-bottom:0;">
+        <div class="tree-branch"><div class="tree-node-box outcome">Improved governance & public transparency<div class="tree-sub">· Clearer, traceable processes<br>· Greater accountability<br>· Better results tracking</div></div><div class="tree-vline"></div></div>
+        <div class="tree-branch"><div class="tree-node-box outcome">Greater efficiency in planning & public services<div class="tree-sub">· Reduced processing times<br>· Better resource allocation<br>· Evidence-based prioritisation</div></div><div class="tree-vline"></div></div>
+        <div class="tree-branch"><div class="tree-node-box outcome">Strengthened information-based decision-making<div class="tree-sub">· Monitoring systems with KPIs<br>· Greater availability of strategic information</div></div><div class="tree-vline"></div></div>
+        <div class="tree-branch"><div class="tree-node-box outcome">Greater articulation with territorial actors<div class="tree-sub">· Permanent communication channels<br>· External perspectives in policy design</div></div><div class="tree-vline"></div></div>
+      </div>
+      <div class="tree-hline"></div><div class="connector-center"></div>
+      <div class="tree-root-box sol">Strengthen institutional capacity through agile transformation focused on data, coordination, and continuous improvement</div>
+      <div class="connector-center"></div><div class="tree-hline"></div>
+      <div class="tree-level-label">— Strategic action lines —</div>
+      <div class="tree-nodes-row">
+        <div class="tree-branch"><div class="tree-vline"></div><div class="tree-node-box action">Redesign of internal processes & workflows<div class="tree-sub">· Critical process mapping<br>· Agile methodologies<br>· Defined responsibilities</div></div></div>
+        <div class="tree-branch"><div class="tree-vline"></div><div class="tree-node-box action">Data-driven monitoring systems<div class="tree-sub">· Institutional indicators<br>· Periodic follow-up<br>· Information consolidation</div></div></div>
+        <div class="tree-branch"><div class="tree-vline"></div><div class="tree-node-box action">Stakeholder articulation mechanisms<div class="tree-sub">· Stakeholder analysis<br>· Structured exchange spaces<br>· Differentiated strategies</div></div></div>
+        <div class="tree-branch"><div class="tree-vline"></div><div class="tree-node-box action">Planning & risk management tools<div class="tree-sub">· Timelines<br>· Risk matrices<br>· Milestone tracking</div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="deliverables" style="background:var(--white);border-top:1px solid var(--border);">
+    <div class="section-header"><span class="section-num">§04</span><h2 class="section-title">Deliverables</h2><div class="section-line"></div></div>
+    <p class="section-intro">Four core outputs anchored the strategic logic of the project, from diagnosis to institutional change and knowledge transfer.</p>
+    <div class="deliverables-grid">
+      <div class="del-card"><div class="del-head"><div class="del-num n1">01</div><div class="del-title">Institutional diagnostic report</div></div><div class="del-body"><p class="del-desc">Comprehensive analysis of existing workflows, coordination gaps, and capacity constraints across departments. Included a stakeholder map and root cause matrix aligned with the logical framework.</p><span class="del-badge">Analysis & research</span></div></div>
+      <div class="del-card"><div class="del-head"><div class="del-num n2">02</div><div class="del-title">Agile process redesign plan</div></div><div class="del-body"><p class="del-desc">Full process redesign using PM4R and agile principles. Defined sprint cycles, responsibility assignments, coordination protocols and escalation routes. Included a Gantt chart for the 24-month project.</p><span class="del-badge">Planning & methodology</span></div></div>
+      <div class="del-card"><div class="del-head"><div class="del-num n3">03</div><div class="del-title">KPI monitoring framework</div></div><div class="del-body"><p class="del-desc">Design and implementation of operational and strategic KPIs for institutional performance and impact tracking. Included a risk matrix with mitigation strategies and a quarterly review system for adaptive management.</p><span class="del-badge">Monitoring & evaluation</span></div></div>
+      <div class="del-card"><div class="del-head"><div class="del-num n4">04</div><div class="del-title">Closure report & stakeholder management</div></div><div class="del-body"><p class="del-desc">Final report documenting the full engagement process: dialogue roundtables, workshop outcomes, community feedback, and institutional agreements. Basis for sustainability and replicability recommendations.</p><span class="del-badge">Reporting & communication</span></div></div>
+    </div>
+  </section>
+
+  <section class="section" id="results">
+    <div class="section-header"><span class="section-num">§05</span><h2 class="section-title">Results achieved</h2><div class="section-line"></div></div>
+    <p class="section-intro">Concrete impact generated over the two years of project implementation.</p>
+    <div class="results-grid">
+      <div class="res-card"><div class="res-num">01 · Internal processes</div><div class="res-title">Optimisation of internal management processes</div><ul class="res-desc"><li>+10 critical operational circuits mapped and redesigned across municipal departments.</li><li>Task duplication reduced; accountabilities, timelines, and follow-up mechanisms defined for each process.</li></ul></div>
+      <div class="res-card"><div class="res-num">02 · Data</div><div class="res-title">Strengthening of data-driven management</div><ul class="res-desc"><li>Monitoring framework designed with +15 key indicators (KPIs) to track progress, results, and programme impact.</li><li>Common criteria consolidated for recording, updating, and analysing institutional information.</li></ul></div>
+      <div class="res-card"><div class="res-num">03 · Traceability</div><div class="res-title">Improved traceability of beneficiaries & public policies</div><ul class="res-desc"><li>A registration model was structured to organise information on beneficiaries, programmes, and territory.</li><li>Greater visibility achieved over the scope, coverage, and evolution of municipal interventions.</li></ul></div>
+      <div class="res-card"><div class="res-num">04 · Coordination</div><div class="res-title">Improved institutional coordination</div><ul class="res-desc"><li>+20 key actors identified and engaged across the institutional and territorial ecosystem.</li><li>Communication and follow-up mechanisms established to strengthen coordination between internal areas and external actors.</li></ul></div>
+      <div class="res-card" style="grid-column:1/-1;"><div class="res-num">05 · Planning</div><div class="res-title">Integration of planning & risk management tools</div><ul class="res-desc"><li>Planning tools implemented (timelines, risk matrices, milestone tracking) for +5 strategic lines of work.</li><li>Improved capacity for anticipation and monitoring of deviations during initiative implementation.</li></ul></div>
+    </div>
+  </section>
+
+  <section class="section" id="lessons" style="background:var(--white);border-top:1px solid var(--border);">
+    <div class="section-header"><span class="section-num">§06</span><h2 class="section-title">Lessons learned</h2><div class="section-line"></div></div>
+    
+    <ul class="imp-list">
+      <li class="imp-item">
+        <div>
+          <p class="imp-title">Shorter feedback cycles with community actors</p>
+          <p class="imp-desc">Engagement with neighbourhood associations was structured on a quarterly basis, which proved too infrequent to capture shifting needs. Lighter monthly touchpoints — even informal ones — would have improved responsiveness and the quality of field data.</p>
+        </div>
+      </li>
+    </ul>
+  </section>
+
+  <section class="section" style="background:var(--forest);padding:40px 64px;">
+    <div class="section-header" style="margin-bottom:0;">
+      <span class="section-num" style="color:rgba(227,214,200,0.3);">§07</span>
+      <h2 class="section-title" style="color:var(--sand);font-size:1.1rem;">Back to portfolio</h2>
+      <div class="section-line" style="background:rgba(227,214,200,0.1);"></div>
+    </div>
+    <div style="margin-top:20px;">
+      <a href="index.html" style="display:inline-flex;align-items:center;gap:8px;background:rgba(227,214,200,0.08);border:1px solid rgba(227,214,200,0.15);color:var(--sand);text-decoration:none;padding:10px 18px;border-radius:8px;font-size:0.81rem;font-weight:500;">← Data Science Portfolio</a>
+    </div>
+  </section>
+
+  
+</body>
+</html>
