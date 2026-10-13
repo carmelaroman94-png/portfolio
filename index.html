@@ -1,187 +1,41 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Bianca Carmela Roman — Portfolio</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bianca Carmela Roman · Project Manager | especialista en datos</title>
+  <meta name="description" content="Portfolio de Bianca Carmela Roman, Project Manager especialista en datos: casos de gestión de proyectos en empresa tecnológica, ONG internacional y sector público.">
+  <meta property="og:title" content="Bianca Carmela Roman · Project Manager | especialista en datos">
+  <meta property="og:description" content="Casos de gestión de proyectos y datos, del más reciente al más antiguo.">
+  <meta property="og:image" content="assets/img/carmela.png">
+  <meta name="theme-color" content="#26352F">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --sand:   #E3D6C8;
-      --sage:   #8D957E;
-      --forest: #2E3628;
-      --cream:  #F7F4F0;
-      --border: #D6C9B8;
-      --text-2: #4A5240;
-      --text-3: #7A8570;
-    }
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html, body {
-      height: 100%;
-      font-family: 'Inter', sans-serif;
-      background: var(--forest);
-      color: var(--sand);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 100vh;
-    }
-
-    .wrapper {
-      text-align: center;
-      padding: 48px 32px;
-      max-width: 520px;
-      width: 100%;
-    }
-
-    .eyebrow {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.65rem;
-      color: var(--sage);
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      margin-bottom: 20px;
-    }
-
-    .name {
-      font-size: clamp(1.6rem, 4vw, 2.4rem);
-      font-weight: 800;
-      letter-spacing: -0.03em;
-      color: var(--sand);
-      line-height: 1.1;
-      margin-bottom: 8px;
-    }
-
-    .tagline {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.7rem;
-      color: var(--sage);
-      letter-spacing: 0.06em;
-      margin-bottom: 48px;
-    }
-
-    .divider {
-      width: 32px;
-      height: 2px;
-      background: var(--sage);
-      margin: 0 auto 48px;
-      border-radius: 2px;
-    }
-
-    .lang-label {
-      font-size: 0.78rem;
-      color: rgba(227,214,200,0.45);
-      margin-bottom: 20px;
-      letter-spacing: 0.02em;
-    }
-
-    .lang-buttons {
-      display: flex;
-      gap: 14px;
-      justify-content: center;
-      margin-bottom: 20px;
-      flex-wrap: wrap;
-    }
-
-    .lang-btn {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 6px;
-      text-decoration: none;
-      background: rgba(227,214,200,0.06);
-      border: 1px solid rgba(141,149,126,0.3);
-      border-radius: 14px;
-      padding: 24px 36px;
-      transition: all 0.25s;
-      min-width: 160px;
-    }
-
-    .lang-btn:hover {
-      background: var(--sage);
-      border-color: var(--sage);
-    }
-
-    .lang-btn:hover .btn-title { color: var(--forest); }
-    .lang-btn:hover .btn-sub { color: var(--forest); opacity: 0.7; }
-
-    .btn-flag {
-      font-size: 1.8rem;
-      line-height: 1;
-    }
-
-    .btn-title {
-      font-size: 1rem;
-      font-weight: 700;
-      color: var(--sand);
-      letter-spacing: -0.01em;
-      transition: color 0.25s;
-    }
-
-    .btn-sub {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.6rem;
-      color: rgba(227,214,200,0.4);
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      transition: color 0.25s;
-    }
-
-    .disclaimer {
-      font-size: 0.72rem;
-      color: rgba(227,214,200,0.3);
-      font-style: italic;
-      margin-top: 8px;
-      line-height: 1.6;
-    }
-
-    .footer-links {
-      margin-top: 48px;
-      display: flex;
-      gap: 14px;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-
-    .footer-link {
-      font-size: 0.73rem;
-      color: rgba(227,214,200,0.35);
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-    .footer-link:hover { color: var(--sage); }
-  </style>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,700;12..96,800&display=swap">
+  <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
-  <div class="wrapper">
-    <div class="eyebrow">Portfolio</div>
-    <h1 class="name">Bianca Carmela Roman</h1>
-    <div class="tagline">Data Science · BI · Analytics · Project Management</div>
-    <div class="divider"></div>
-
-    <div class="lang-label">Seleccioná tu idioma / Select your language</div>
-
-    <div class="lang-buttons">
-      <a class="lang-btn" href="index_es.html">
-        <span class="btn-flag">🇦🇷</span>
-        <span class="btn-title">Español</span>
-        <span class="btn-sub">Versión completa</span>
-      </a>
-      <a class="lang-btn" href="index_en.html">
-        <span class="btn-flag">🇬🇧</span>
-        <span class="btn-title">English</span>
-        <span class="btn-sub">Full version</span>
-      </a>
+  <main class="cover" id="main">
+    <div class="cover-inner">
+      <div class="cover-portrait">
+        <picture>
+          <source srcset="assets/img/carmela.webp" type="image/webp">
+          <img src="assets/img/carmela.png" alt="Retrato de Carmela Roman" width="335" height="186">
+        </picture>
+      </div>
+      <h1>Bianca Carmela Roman</h1>
+      <p class="cover-role">Project Manager | especialista en datos<br><span lang="en">Project Manager | data specialist</span></p>
+      <nav class="cover-lang" aria-label="Idioma · Language">
+        <a class="btn btn--solid" href="home.html?lang=es" hreflang="es">Entrar en español</a>
+        <a class="btn btn--quiet" href="home.html?lang=en" hreflang="en" lang="en">Enter in English</a>
+      </nav>
+      <p class="cover-note">Los dashboards se muestran en su idioma original. <span lang="en">Dashboards are shown in their original language.</span></p>
+      <p class="cover-contact">
+        <a href="mailto:carmelaroman94@gmail.com">carmelaroman94@gmail.com</a>
+        <a href="https://www.linkedin.com/in/carmelaroman/" rel="noopener">LinkedIn</a>
+      </p>
     </div>
-
-    <p class="disclaimer">Los dashboards se muestran en su idioma original.<br>Dashboards are displayed in their original language.</p>
-
-    <div class="footer-links">
-      <a class="footer-link" href="mailto:carmelaroman94@gmail.com">✉ carmelaroman94@gmail.com</a>
-      <a class="footer-link" href="https://linkedin.com/in/carmelaroman" target="_blank">in linkedin.com/in/carmelaroman</a>
-    </div>
-  </div>
+  </main>
 </body>
 </html>
