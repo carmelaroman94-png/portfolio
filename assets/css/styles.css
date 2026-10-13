@@ -263,6 +263,13 @@ img { max-width: 100%; display: block; }
 .case-figures li { margin: 0; font-size: var(--fs-s); color: var(--sand); }
 .case-figures b { font-family: var(--font-display); color: var(--cream); font-size: var(--fs-m); margin-right: 0.3em; }
 .case-side { display: flex; flex-direction: column; align-items: flex-end; gap: var(--space-3); }
+.case-approach { font-size: var(--fs-s); color: var(--sand); margin-bottom: var(--space-3); }
+.case-points-title { font-size: var(--fs-s); font-weight: 700; margin: 0 0 var(--space-1); }
+.case-points { list-style: none; padding: 0; margin: 0; display: grid; gap: var(--space-1); }
+.case-points:empty { display: none; }
+.case-points li { position: relative; margin: 0; padding-left: 1.1rem; font-size: var(--fs-s); color: var(--sand); }
+.case-points li::before { content: ""; position: absolute; left: 0.2rem; top: 0.6em; width: 6px; height: 6px; border-radius: 50%; background: var(--rose); }
+.case-points b { color: var(--cream); font-family: var(--font-display); }
 
 .method-chip {
   display: inline-block;

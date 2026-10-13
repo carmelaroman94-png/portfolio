@@ -46,6 +46,13 @@ window.PF = window.PF || {};
     { es: "Modelo de probabilidad de venta con recomendaciones.", en: "Sales probability model with recommendations." }
   ],
 
+  card: {
+    points: [
+      { es: "<b>4</b> sprints de 2 semanas", en: "<b>4</b> two-week sprints" },
+      { es: "Trabajo interdepartamental para conectar necesidades y propuestas técnicas", en: "Cross-department work to connect needs with technical proposals" },
+      { es: "<b>Entregables:</b> informe con recomendaciones de mejora, dashboards interactivos para mejorar la toma de decisiones", en: "<b>Deliverables:</b> report with improvement recommendations, interactive dashboards to support decision-making" }
+    ]
+  },
   highlight: {
     title: { es: "Del hallazgo a la decisión", en: "From finding to decision" },
     blocks: [

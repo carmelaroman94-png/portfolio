@@ -295,22 +295,6 @@ window.PF.site = {
     work_title: { es: "Proyectos laborales", en: "Work projects" },
     work_intro: { es: "Tres contextos distintos (empresa tecnológica, ONG internacional y sector público) y tres marcos de trabajo elegidos según el problema.",
                   en: "Three different contexts (a tech company, an international NGO and the public sector) and three frameworks, each chosen to fit the problem." },
-    methods_title: { es: "Cómo elijo la metodología", en: "How I choose the methodology" },
-    methods_intro: { es: "No aplico un marco por costumbre: el tipo de problema decide.", en: "I don't apply a framework out of habit: the type of problem decides." },
-    methods: [
-      { name: { es: "Scrum ligero", en: "Lightweight Scrum" },
-        when: { es: "Alcance abierto y una responsable de negocio disponible para validar cada dos semanas.", en: "Open scope and a business owner available to validate every two weeks." },
-        why: { es: "El diagnóstico iba a cambiar las prioridades: los ciclos cortos con revisión permitían ajustar el rumbo con Marketing.", en: "The diagnosis was going to change priorities: short cycles with a review made it possible to adjust course with Marketing." },
-        case: "grupo-tecnologico-x", caseLabel: { es: "Grupo tecnológico X", en: "Grupo tecnológico X" } },
-      { name: "CRISP-DM + Kanban",
-        when: { es: "Producto de datos exploratorio, equipo pequeño y asimétrico, sin Product Owner activo.", en: "Exploratory data product, small and uneven team, no active Product Owner." },
-        why: { es: "CRISP-DM ordena las fases del trabajo con datos y admite volver atrás; Kanban organiza el flujo de tareas sin sprints cerrados.", en: "CRISP-DM structures the phases of data work and allows going back a step; Kanban organises the flow of tasks without fixed sprints." },
-        case: "development-international", caseLabel: "Development International" },
-      { name: { es: "PM4R + Marco Lógico", en: "PM4R + Logical Framework" },
-        when: { es: "Intervención social con beneficiarias y una cadena de resultados.", en: "Social intervention with beneficiaries and a results chain." },
-        why: { es: "Permite pasar del árbol de problemas a componentes, indicadores y supuestos verificables.", en: "It turns a problem tree into components, indicators and verifiable assumptions." },
-        case: "inclusion-laboral-cordoba", caseLabel: { es: "Ministerio de Justicia y DDHH de Córdoba", en: "Ministry of Justice and Human Rights of Córdoba" } }
-    ],
     academic_title: { es: "Proyectos académicos", en: "Academic projects" },
     academic_note: { es: "Proyectos realizados en contexto académico. Los proyectos de gestión de la sección anterior se realizaron en contexto laboral.",
                      en: "Projects carried out in an academic context. The management projects in the previous section were carried out in a work context." }

@@ -32,6 +32,11 @@ window.PF = window.PF || {};
     { value: "+26", label: { es: "puntos de R² frente a la regresión lineal", en: "R² points above linear regression" }, ev: "real" }
   ],
 
+  card: {
+    problem: { es: "¿Qué hace que un tema domine la conversación digital?", en: "What makes a topic dominate the digital conversation?" },
+    text: { es: "Abordaje basado en grandes modelos de lenguaje, árboles de decisión, algoritmo SHAP y agentes", en: "An approach based on large language models, decision trees, the SHAP algorithm and agents" },
+    points: []
+  },
   highlight: {
     title: { es: "Cuatro hipótesis con la misma seguridad, cuatro veredictos distintos", en: "Four equally confident hypotheses, four different verdicts" },
     blocks: [

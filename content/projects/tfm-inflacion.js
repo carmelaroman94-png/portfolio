@@ -31,6 +31,16 @@ window.PF = window.PF || {};
     { value: "4", label: { es: "perfiles monetario-fiscales de países", en: "monetary-fiscal country profiles" }, ev: "real" }
   ],
 
+  card: {
+    problem: null,
+    pointsTitle: { es: "Herramientas:", en: "Tools:" },
+    points: [
+      { es: "Modelos de lenguaje", en: "Language models" },
+      "Clustering",
+      { es: "Reducción de dimensionalidad", en: "Dimensionality reduction" },
+      { es: "Regresiones", en: "Regression models" }
+    ]
+  },
   highlight: {
     title: { es: "Tres hipótesis, tres veredictos", en: "Three hypotheses, three verdicts" },
     blocks: [

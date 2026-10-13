@@ -280,16 +280,27 @@
 
   /* ---------- Componentes compartidos ---------- */
   function caseRow(p) {
-    var figs = (p.metrics || []).slice(0, 3).map(function (m) {
-      return "<li><b>" + t(m.value) + "</b>" + t(m.label) + "</li>";
-    }).join("");
+    // p.card (opcional): texto propio de la tarjeta en Proyectos. Si no existe, se usan p.problem y p.metrics.
+    var c = p.card || {};
+    var problem = c.problem !== undefined ? c.problem : p.problem;
+    var list = "";
+    if (c.points) {
+      list = (c.pointsTitle ? '<p class="case-points-title">' + t(c.pointsTitle) + "</p>" : "") +
+        '<ul class="case-points">' + c.points.map(function (x) { return "<li>" + t(x) + "</li>"; }).join("") + "</ul>";
+    } else {
+      var figs = (p.metrics || []).slice(0, 3).map(function (m) {
+        return "<li><b>" + t(m.value) + "</b>" + t(m.label) + "</li>";
+      }).join("");
+      list = figs ? '<ul class="case-figures">' + figs + "</ul>" : "";
+    }
     return '<li class="case-row" data-type="' + p.type + '">' +
       '<div class="case-year">' + esc(p.year) + "</div>" +
       "<div>" +
       '<h3 class="case-title"><a href="' + caseUrl(p.id) + '">' + t(p.title) + "</a></h3>" +
       '<p class="case-org">' + t(p.org) + "</p>" +
-      '<p class="case-problem">' + t(p.problem) + "</p>" +
-      (figs ? '<ul class="case-figures">' + figs + "</ul>" : "") +
+      (problem ? '<p class="case-problem">' + t(problem) + "</p>" : "") +
+      (c.text ? '<p class="case-approach">' + t(c.text) + "</p>" : "") +
+      list +
       "</div>" +
       '<div class="case-side"><span class="method-chip">' + t(p.method.name) + "</span>" +
       '<span class="context-chip">' + esc(ui(p.type === "work" ? "ctx_work" : "ctx_academic")) + "</span>" +
@@ -355,11 +366,6 @@
     var work = all.filter(function (p) { return p.type === "work"; });
     var acad = all.filter(function (p) { return p.type === "academic"; });
 
-    var methods = '<div class="method-grid">' + pr.methods.map(function (m) {
-      return '<div class="method-card"><h3>' + t(m.name) + '</h3><p class="when">' + t(m.when) + "</p><p>" + t(m.why) + "</p>" +
-        '<p class="small"><a href="' + caseUrl(m.case) + '">' + t(m.caseLabel) + "</a></p></div>";
-    }).join("") + "</div>";
-
     var gallery = SITE.gallery;
     var tiles = '<div class="gallery">' + gallery.items.map(function (g) {
       return '<div class="tile"><h3>' + t(g.name) + "</h3><p>" + t(g.text) + "</p>" +
@@ -369,7 +375,6 @@
     return '<section class="page-head"><div class="wrap"><h1>' + esc(ui("nav_projects")) + "</h1><p>" + t(pr.intro) + "</p></div></section>" +
       '<section class="section" id="laborales"><div class="wrap"><h2>' + t(pr.work_title) + '</h2><p class="section-intro">' + t(pr.work_intro) + "</p>" +
       '<ul class="case-list">' + work.map(caseRow).join("") + "</ul></div></section>" +
-      '<section class="section"><div class="wrap"><h2>' + t(pr.methods_title) + '</h2><p class="section-intro">' + t(pr.methods_intro) + "</p>" + methods + "</div></section>" +
       '<section class="section" id="academicos"><div class="wrap"><h2>' + t(pr.academic_title) + "</h2>" +
       '<div class="callout" style="margin-bottom:1.5rem"><p>' + t(pr.academic_note) + "</p></div>" +
       '<ul class="case-list">' + acad.map(caseRow).join("") + "</ul></div></section>" +

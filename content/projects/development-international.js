@@ -38,6 +38,13 @@ window.PF = window.PF || {};
     { es: "Base unificada 2019–2023 y tres indicadores de riesgo reutilizables para futuros estudios de DI.", en: "Unified 2019–2023 database and three risk indicators reusable in future DI studies." }
   ],
 
+  card: {
+    points: [
+      { es: "Se propuso una metodología de trabajo", en: "A working methodology was proposed" },
+      { es: "Construcción de métricas", en: "Metric design" },
+      { es: "<b>Entregables:</b> Power BI interactivo + informe técnico", en: "<b>Deliverables:</b> interactive Power BI + technical report" }
+    ]
+  },
   highlight: {
     title: { es: "Del pedido abierto al producto de datos", en: "From an open request to a data product" },
     blocks: [

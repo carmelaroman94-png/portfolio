@@ -38,6 +38,13 @@ window.PF = window.PF || {};
     { es: "Informe de resultados y lecciones aprendidas.", en: "Results and lessons-learned report." }
   ],
 
+  card: {
+    points: [
+      { es: "Administración de recursos escasos", en: "Managing scarce resources" },
+      { es: "Gestión estratégica de stakeholders", en: "Strategic stakeholder management" },
+      { es: "<b>Resultado:</b> el 52 % de las participantes accedió a un empleo formal (13 de 25)", en: "<b>Result:</b> 52% of participants obtained formal employment (13 of 25)" }
+    ]
+  },
   highlight: {
     title: { es: "Embudo de resultados", en: "Results funnel" },
     blocks: [
