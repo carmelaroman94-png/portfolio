@@ -24,7 +24,6 @@ window.PF.site = {
     nav_about: { es: "Acerca de mí", en: "About me" },
     nav_projects: { es: "Proyectos", en: "Projects" },
     dash_lang_note: { es: "Los dashboards se muestran en su idioma original.", en: "Dashboards are shown in their original language." },
-    evidence_title: { es: "Cómo leer las cifras", en: "How to read the figures" },
     see_data: { es: "Ver los datos en tabla", en: "View the data as a table" },
     of_previous: { es: "de la etapa anterior", en: "of the previous stage" },
     output: { es: "Resultado", en: "Output" },
@@ -62,13 +61,6 @@ window.PF.site = {
     close_all: { es: "Cerrar todas las secciones", en: "Collapse all sections" }
   },
 
-  /* ---------- Etiquetas de evidencia ---------- */
-  evidence: {
-    real: { es: "dato del proyecto, tal como se registró.", en: "project data, as recorded." },
-    rec: { es: "coherente con lo real, rehecho después con la documentación disponible.", en: "consistent with what happened, rebuilt afterwards from the available documentation." },
-    ilu: { es: "ejemplo de cómo lo gestionaría hoy; no es un resultado.", en: "an example of how I would manage it today; not a result." }
-  },
-
   raci: {
     R: { es: "Responsable (lo ejecuta)", en: "Responsible (does the work)" },
     A: { es: "Aprueba", en: "Accountable (approves)" },
@@ -103,9 +95,7 @@ window.PF.site = {
     title: { es: "¡Bienvenidas y bienvenidos! Soy Carmela.", en: "Welcome! I'm Carmela." },
     lead: { es: "Te invito a explorar mi perfil y algunos de mis proyectos más relevantes.", en: "I invite you to explore my profile and some of my most relevant projects." },
     about_text: { es: "Mi recorrido, de la gestión de proyectos sociales a la gestión con datos.", en: "My path, from managing social projects to managing with data." },
-    projects_text: { es: "Tres casos laborales, dos proyectos académicos y un laboratorio de visualización.", en: "Three work case studies, two academic projects and a visualization lab." },
-    cases_title: { es: "Casos laborales", en: "Work case studies" },
-    cases_intro: { es: "Del más reciente al más antiguo. En cada uno explico qué metodología elegí y por qué.", en: "Most recent first. In each one I explain which methodology I chose and why." }
+    projects_text: { es: "Casos laborales y académicos", en: "Work and academic case studies" }
   },
 
   /* ---------- Acerca de mí ---------- */
@@ -165,11 +155,11 @@ window.PF.site = {
         list: [
           { es: "Aprendo a diseñar y hacer seguimiento de proyectos con Marco Lógico, orientado a la cooperación internacional, y la importancia de la negociación, la caracterización de stakeholders y el análisis de factibilidad.",
             en: "I learn to design and monitor projects with the Logical Framework approach used in international cooperation, and the importance of negotiation, stakeholder analysis and feasibility analysis." },
-          { es: "Tengo mi primer acercamiento a las metodologías ágiles.", en: "I have my first contact with agile methodologies." },
+          { es: "Tengo mi primer acercamiento a las metodologías ágiles.", en: "I have my first contact with agile methodologies." }
+        ],
+        after: [
           { es: "Hago mi primera formación en Big Data: Diploma de Posgrado en Técnicas Estadísticas y Big Data aplicadas al estudio de la Opinión Pública y el Comportamiento Electoral (FLACSO).",
-            en: "I take my first Big Data training: Postgraduate Diploma in Statistical Techniques and Big Data applied to Public Opinion and Electoral Behaviour (FLACSO)." },
-          { es: "Equipo técnico contra la violencia de género (2021–2022): diseño de instrumentos de relevamiento, supervisión del trabajo de campo e informes técnicos con propuestas de intervención.",
-            en: "Technical team against gender-based violence (2021–2022): design of data-collection instruments, fieldwork supervision and technical reports with intervention proposals." }
+            en: "I take my first Big Data training: Postgraduate Diploma in Statistical Techniques and Big Data applied to Public Opinion and Electoral Behaviour (FLACSO)." }
         ]
       },
       {
@@ -194,22 +184,44 @@ window.PF.site = {
         title: { es: "Aprender resiliencia", en: "Learning resilience" },
         paras: [
           { es: "Empiezo a buscar estrategias para volver a mi profesión.", en: "I start looking for ways back into my profession." },
-          { es: "El primer paso de vuelta es un voluntariado en recolección de datos para la UN G20 Global Land Initiative (mayo–julio 2023): investigación documental sobre saberes indígenas y locales vinculados a la restauración de tierras y organización de los datos en formato tabular para su análisis.",
-            en: "The first step back is a data-collection volunteer role with the UN G20 Global Land Initiative (May–July 2023): desk research on indigenous and local knowledge related to land restoration, and structuring the data in tabular form for analysis." }
+          { es: "El primer paso de vuelta es un voluntariado en recolección de datos para la UN G20 Global Land Initiative (mayo–julio 2023). Inicio pequeñas formaciones y me enfoco activamente en prácticas de networking.",
+            en: "The first step back is a data-collection volunteer role with the UN G20 Global Land Initiative (May–July 2023). I start taking short courses and actively focus on networking." }
         ]
       },
       {
         year: "2024",
         title: { es: "Aprender a integrar gestión y datos", en: "Learning to bring management and data together" },
         paras: [
-          { es: "Decido volver a mi profesión. Trabajo por primera vez en otro idioma y en un proyecto internacional: en Development International (Alemania) gestiono de punta a punta un estudio sobre la huella de trabajo infantil en las importaciones de EE. UU.",
-            en: "I decide to return to my profession. For the first time I work in another language and on an international project: at Development International (Germany) I manage, end to end, a study of the child labour footprint of US imports." },
+          { es: "Trabajo por primera vez en otro idioma y en un proyecto internacional: en Development International (Alemania) gestiono de punta a punta un estudio sobre la huella de trabajo infantil en las importaciones de EE. UU.",
+            en: "For the first time I work in another language and on an international project: at Development International (Germany) I manage, end to end, a study of the child labour footprint of US imports." },
           { es: "En paralelo, en la Consultora Comparactiva (enero–mayo 2024), analizo datos del mercado laboral del Censo 2022 de Argentina y elaboro un informe técnico.",
             en: "In parallel, at Consultora Comparactiva (January–May 2024), I analyse labour market data from Argentina's 2022 Census and write a technical report." },
           { es: "Pongo en práctica de forma más sólida todo lo que había aprendido de análisis de datos. La gestión de proyectos y los datos empiezan a encontrarse.",
             en: "I apply everything I had learned about data analysis more solidly. Project management and data start to meet." }
         ],
         links: [{ id: "development-international", label: { es: "Ver el caso de Development International", en: "See the Development International case" } }]
+      },
+      {
+        year: "2025",
+        title: { es: "Aprender ciencia de datos", en: "Learning data science" },
+        paras: [
+          { es: "Inicio mi máster en Ciencia de Datos. Aprendí:", en: "I start my Master's in Data Science. I learned:" }
+        ],
+        list: [
+          { es: "Estadística avanzada", en: "Advanced statistics" },
+          "SQL",
+          { es: "Técnicas de almacenamiento y extracción de datos", en: "Data storage and extraction techniques" },
+          "Web Scraping",
+          { es: "Buenas prácticas de visualización y reporting", en: "Good practices in visualization and reporting" },
+          { es: "Refuerzo Microsoft Power BI", en: "Strengthening Microsoft Power BI" },
+          { es: "Aprendo herramientas de visualización más controladas, como Streamlit", en: "More controlled visualization tools, such as Streamlit" },
+          { es: "Técnicas de Machine Learning", en: "Machine learning techniques" },
+          { es: "Métricas de calidad", en: "Quality metrics" },
+          { es: "Algoritmos de explicabilidad y transparencia", en: "Explainability and transparency algorithms" },
+          { es: "Modelado basado en agentes", en: "Agent-based modelling" },
+          { es: "Modelos de Lenguaje", en: "Language models" },
+          { es: "Aplicación avanzada de Inteligencia Artificial", en: "Advanced applications of artificial intelligence" }
+        ]
       },
       {
         year: "2026",
@@ -233,31 +245,13 @@ window.PF.site = {
     ],
 
     principles_title: { es: "Cómo trabajo", en: "How I work" },
+    // icon: method, increments, target, listen, team (los dibujos están en assets/js/app.js)
     principles: [
-      {
-        title: { es: "Elijo la metodología según el problema", en: "I choose the methodology to fit the problem" },
-        text: { es: "PM4R y Marco Lógico para una intervención con beneficiarias; CRISP-DM y Kanban para un producto de datos exploratorio; Scrum ligero cuando el alcance cambia y hay una responsable de negocio disponible para validar.",
-                en: "PM4R and the Logical Framework for an intervention with beneficiaries; CRISP-DM and Kanban for an exploratory data product; lightweight Scrum when scope is changing and a business owner is available to validate." },
-        link: "development-international"
-      },
-      {
-        title: { es: "Cada cifra, trazable", en: "Every figure is traceable" },
-        text: { es: "Fuentes oficiales, pasos documentados y límites declarados. En este portfolio cada cifra lleva su etiqueta: real, reconstruida o ilustrativa.",
-                en: "Official sources, documented steps and stated limitations. In this portfolio every figure carries a label: actual, reconstructed or illustrative." },
-        link: "development-international"
-      },
-      {
-        title: { es: "Empiezo pequeño y amplío", en: "I start small, then scale" },
-        text: { es: "Un piloto con las empresas que ya estaban en contacto con la Secretaría permitió validar el modelo en un año y dejar a los grandes empleadores para una etapa de escala.",
-                en: "A pilot with the companies already in contact with the Secretariat made it possible to validate the model within a year and leave large employers for a scale-up stage." },
-        link: "inclusion-laboral-cordoba"
-      },
-      {
-        title: { es: "Diagnostico con las personas afectadas", en: "I diagnose with the people affected" },
-        text: { es: "Antes de proponer, escucho: micro-reuniones con cada área en Grupo tecnológico X; diagnóstico participativo en espacios separados para empresas y participantes en Córdoba.",
-                en: "Before proposing, I listen: short meetings with each area at Grupo tecnológico X; a participatory diagnosis in separate spaces for companies and participants in Córdoba." },
-        link: "grupo-tecnologico-x"
-      }
+      { icon: "method", title: { es: "Elijo la metodología según el problema", en: "I choose the methodology to fit the problem" } },
+      { icon: "increments", title: { es: "Prefiero validar entregas incrementales", en: "I prefer to validate incremental deliveries" } },
+      { icon: "target", title: { es: "Elijo objetivos SMART (específicos, medibles, alcanzables, relevantes, delimitados temporalmente)", en: "I set SMART objectives (specific, measurable, achievable, relevant, time-bound)" } },
+      { icon: "listen", title: { es: "Con escucha activa, implicando a los actores afectados", en: "With active listening, involving the people affected" } },
+      { icon: "team", title: { es: "Con trabajo colaborativo", en: "Through collaborative work" } }
     ],
 
     skills_title: { es: "Habilidades", en: "Skills" },

@@ -576,9 +576,18 @@ dialog.viewer::backdrop { background: rgba(20, 28, 25, 0.8); }
 .journey details > summary:hover { color: var(--rose); }
 .journey-body { padding-bottom: var(--space-5); }
 
-.principle-list { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 380px), 1fr)); gap: var(--space-5); max-width: none; }
-.principle-list li { margin: 0; }
-.principle-list h3 { font-size: var(--fs-l); margin-bottom: var(--space-2); }
+.principle-list { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 170px), 1fr)); gap: var(--space-6) var(--space-5); max-width: none; }
+.principle-list li { margin: 0; display: flex; flex-direction: column; align-items: flex-start; gap: var(--space-3); }
+.principle-list h3 { font-size: var(--fs-m); line-height: 1.35; margin: 0; }
+.p-icon {
+  flex: none; width: 56px; height: 56px; border-radius: 50%;
+  display: grid; place-items: center;
+  background: var(--rose-soft); color: var(--rose);
+}
+.p-icon svg { width: 30px; height: 30px; }
+@media (max-width: 760px) { .p-icon svg { width: 26px; height: 26px; } }
+.journey-body ul.cols { columns: 2; column-gap: var(--space-6); }
+.journey-body ul.cols li { break-inside: avoid; }
 .principle-list p { color: var(--sand); }
 
 .skills { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 215px), 1fr)); gap: var(--space-5); }
@@ -602,6 +611,9 @@ dialog.viewer::backdrop { background: rgba(20, 28, 25, 0.8); }
   .matrix-cell { padding: var(--space-1); }
   .actor { font-size: 0.72rem; padding: 0.2rem 0.45rem; }
   .brand span { display: none; }
+  .principle-list li { flex-direction: row; align-items: center; }
+  .p-icon { width: 48px; height: 48px; }
+  .journey-body ul.cols { columns: 1; }
   .site-header .wrap { min-height: 52px; gap: var(--space-2) var(--space-4); padding-top: var(--space-2); padding-bottom: var(--space-2); }
   .nav { gap: var(--space-3); font-size: var(--fs-s); }
 }

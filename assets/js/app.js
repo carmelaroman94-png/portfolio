@@ -58,13 +58,24 @@
     if (!kind || !EV[kind]) return "";
     return '<span class="ev ev--' + kind + '">' + esc(t(EV[kind])) + "</span>";
   }
-  function evLegend() {
-    var d = SITE.evidence || {};
-    return '<div class="ev-legend" role="note"><span>' + esc(ui("evidence_title")) + "</span>" +
-      ["real", "rec", "ilu"].map(function (k) {
-        return '<span>' + ev(k) + ' <span class="muted">' + esc(t(d[k])) + "</span></span>";
-      }).join("") + "</div>";
+
+  /* ---------- Iconos de «Cómo trabajo» (SVG de trazo) ---------- */
+  function svg(paths) {
+    return '<svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" focusable="false">' + paths + "</svg>";
   }
+  var ICONS = {
+    // un camino que se abre en dos: elegir el marco según el problema
+    method: svg('<path d="M12 22v-8"/><path d="M12 14 4 4"/><path d="M12 14l8-10"/><path d="M4 9.5V4h5.5"/><path d="M14.5 4H20v5.5"/>'),
+    // entregas que crecen paso a paso, con validación
+    increments: svg('<path d="M2 21.5h20"/><rect x="3.5" y="15.5" width="4.5" height="6" rx="1"/><rect x="9.75" y="10.5" width="4.5" height="11" rx="1"/><rect x="16" y="5.5" width="4.5" height="16" rx="1"/><path d="m3 6.5 2.2 2.2L9.5 4.4"/>'),
+    // diana: objetivos concretos y medibles
+    target: svg('<circle cx="11" cy="13" r="9"/><circle cx="11" cy="13" r="5.2"/><circle cx="11" cy="13" r="1.4"/><path d="M11 13 21 3"/><path d="M17 3h4v4"/>'),
+    // oreja: escucha activa
+    listen: svg('<path d="M5 9a7 7 0 1 1 14 0c0 6.5-6.5 6.8-6.5 10.5a3.5 3.5 0 0 1-7 0"/><path d="M15.5 9a3 3 0 0 0-6 0v1.2a2.3 2.3 0 1 1 0 4.6"/>'),
+    // tres personas: trabajo colaborativo
+    team: svg('<circle cx="12" cy="7" r="3.5"/><path d="M5.5 21a6.5 6.5 0 0 1 13 0"/><circle cx="4.5" cy="10" r="2.5"/><path d="M1 19.5a4 4 0 0 1 5-3.9"/><circle cx="19.5" cy="10" r="2.5"/><path d="M23 19.5a4 4 0 0 0-5-3.9"/>')
+  };
+
 
   /* ---------- Cabecera y pie ---------- */
   function header(active) {
@@ -291,26 +302,21 @@
   /* ---------- Páginas ---------- */
   function pageHome() {
     var h = SITE.home;
-    var work = PF.projects.filter(function (p) { return p.type === "work"; }).sort(bySort);
     return '<section class="welcome"><div class="wrap">' +
       "<h1>" + t(h.title) + "</h1>" +
       '<p class="welcome-lead">' + t(h.lead) + "</p>" +
       '<div class="doors">' +
       '<a class="door" href="' + url("about.html") + '"><span class="door-title">' + esc(ui("nav_about")) + '</span><span class="door-text">' + t(h.about_text) + "</span></a>" +
       '<a class="door" href="' + url("projects.html") + '"><span class="door-title">' + esc(ui("nav_projects")) + '</span><span class="door-text">' + t(h.projects_text) + "</span></a>" +
-      "</div></div></section>" +
-      '<section class="section"><div class="wrap">' +
-      "<h2>" + t(h.cases_title) + "</h2>" +
-      '<p class="section-intro">' + t(h.cases_intro) + "</p>" +
-      '<ul class="case-list">' + work.map(caseRow).join("") + "</ul>" +
-      "</div></section>";
+      "</div></div></section>";
   }
 
   function pageAbout() {
     var a = SITE.about;
     var journey = '<ol class="journey">' + a.timeline.map(function (y, i) {
       var body = (y.paras || []).map(function (p) { return "<p>" + t(p) + "</p>"; }).join("") +
-        (y.list ? "<ul>" + y.list.map(function (l) { return "<li>" + t(l) + "</li>"; }).join("") + "</ul>" : "") +
+        (y.list ? "<ul" + (y.list.length > 6 ? ' class="cols"' : "") + ">" + y.list.map(function (l) { return "<li>" + t(l) + "</li>"; }).join("") + "</ul>" : "") +
+        (y.after || []).map(function (p) { return "<p>" + t(p) + "</p>"; }).join("") +
         (y.callout ? '<div class="callout"><h4>' + t(y.callout.heading) + "</h4><p>" + t(y.callout.text) + "</p></div>" : "") +
         (y.links ? '<p class="small">' + y.links.map(function (l) { return '<a href="' + caseUrl(l.id) + '">' + t(l.label) + "</a>"; }).join(" &nbsp; ") + "</p>" : "");
       return '<li><div class="journey-year">' + esc(y.year) + "</div>" +
@@ -319,7 +325,8 @@
     }).join("") + "</ol>";
 
     var principles = '<ul class="principle-list">' + a.principles.map(function (p) {
-      return "<li><h3>" + t(p.title) + "</h3><p>" + t(p.text) + (p.link ? ' <a href="' + caseUrl(p.link) + '">' + esc(ui("see_case")) + "</a>" : "") + "</p></li>";
+      return "<li>" + (ICONS[p.icon] ? '<span class="p-icon" aria-hidden="true">' + ICONS[p.icon] + "</span>" : "") +
+        "<h3>" + t(p.title) + "</h3>" + (p.text ? "<p>" + t(p.text) + "</p>" : "") + "</li>";
     }).join("") + "</ul>";
 
     var skills = '<div class="skills">' + a.skills.map(function (s) {
@@ -359,7 +366,7 @@
         '<button type="button" class="btn btn--quiet" data-view="' + esc(g.src) + '" data-title="' + esc(t(g.name)) + '">' + esc(ui("open_dashboard")) + "</button></div>";
     }).join("") + "</div>";
 
-    return '<section class="page-head"><div class="wrap"><h1>' + esc(ui("nav_projects")) + "</h1><p>" + t(pr.intro) + "</p>" + evLegend() + "</div></section>" +
+    return '<section class="page-head"><div class="wrap"><h1>' + esc(ui("nav_projects")) + "</h1><p>" + t(pr.intro) + "</p></div></section>" +
       '<section class="section" id="laborales"><div class="wrap"><h2>' + t(pr.work_title) + '</h2><p class="section-intro">' + t(pr.work_intro) + "</p>" +
       '<ul class="case-list">' + work.map(caseRow).join("") + "</ul></div></section>" +
       '<section class="section"><div class="wrap"><h2>' + t(pr.methods_title) + '</h2><p class="section-intro">' + t(pr.methods_intro) + "</p>" + methods + "</div></section>" +
@@ -419,7 +426,7 @@
       "</div></header>" +
       '<div class="wrap">' + highlight + deliverables +
       '<div class="sections-bar"><h2 style="margin:0">' + esc(ui("case_detail")) + '</h2><div><button type="button" class="btn btn--quiet" data-toggle-all>' + esc(ui("open_all")) + "</button></div></div>" +
-      evLegend() + secs + pager + "</div></article>";
+      secs + pager + "</div></article>";
   }
 
   /* ---------- Interacciones ---------- */
