@@ -16,8 +16,8 @@ window.PF = window.PF || {};
     en: "DI wanted to size the child labour embedded in US imports, but there was no defined scope, sources, methodology or deliverable format, and the phenomenon does not appear in trade statistics."
   },
   role: {
-    es: "Data Project Manager freelance, responsable de punta a punta: alcance, método, plan, coordinación de dos personas voluntarias, análisis y entrega.",
-    en: "Freelance Data Project Manager, accountable end to end: scope, method, plan, coordination of two volunteers, analysis and delivery."
+    es: "Data Project Manager freelance, responsable de punta a punta: alcance, método, plan, análisis y entrega.",
+    en: "Freelance Data Project Manager, accountable end to end: scope, method, plan, analysis and delivery."
   },
   period: { es: "Marzo 2024 – noviembre 2025, en remoto y a tiempo parcial", en: "March 2024 – November 2025, remote and part-time" },
   method: {
@@ -55,7 +55,7 @@ window.PF = window.PF || {};
           { title: { es: "Tres indicadores", en: "Three indicators" }, text: { es: "Riesgo por volumen, riesgo relativo y Net CL.", en: "Volume risk, relative risk and Net CL." } },
           { title: { es: "Entrega", en: "Delivery" }, text: { es: "Dashboard público en Power BI e informe de hallazgos.", en: "Public Power BI dashboard and findings report." } }
         ] },
-      { type: "embed", name: { es: "Dashboard publicado (Power BI)", en: "Published dashboard (Power BI)" },
+      { type: "embed", autoload: true, name: { es: "Dashboard publicado (Power BI)", en: "Published dashboard (Power BI)" },
         text: { es: "8 páginas con filtros por año, región, país y producto.", en: "8 pages with filters by year, region, country and product." },
         src: "https://app.powerbi.com/view?r=eyJrIjoiMzcyMThjM2ItOGJhOS00YmM1LTk2OTktMTk0YTRmOTA1MjZmIiwidCI6Ijg3YmNjZDBkLTdiMjUtNGUzZC04OWZiLWMyYWI5M2E2OGVjOCIsImMiOjh9&embedImagePlaceholder=true&pageName=ReportSection" }
     ]
@@ -95,7 +95,7 @@ window.PF = window.PF || {};
     { key: "role", blocks: [
       { type: "p", text: { es: "<b>Director:</b> fijó el encargo y validó el resultado final.", en: "<b>Director:</b> set the brief and validated the final result." } },
       { type: "list", title: { es: "Mi rol:", en: "My role:" }, items: [
-        { es: "<b>Planificar:</b> definir alcance, planificación, riesgos, coordinación de las dos personas voluntarias y comunicación con los usuarios interesados.", en: "<b>Plan:</b> define scope, planning, risks, coordination of the two volunteers and communication with interested users." },
+        { es: "<b>Planificar:</b> definir alcance, planificación, riesgos y comunicación con los usuarios interesados.", en: "<b>Plan:</b> define scope, planning, risks and communication with interested users." },
         { es: "<b>Comunicar:</b> decidir qué preguntas debía responder el dashboard y para quién.", en: "<b>Communicate:</b> decide which questions the dashboard had to answer and for whom." },
         { es: "<b>Analizar:</b> limpieza en Python, modelo en Power Query, medidas DAX, visualización e informe.", en: "<b>Analyse:</b> cleaning in Python, modelling in Power Query, DAX measures, visualisation and the report." }
       ] }
@@ -121,18 +121,12 @@ window.PF = window.PF || {};
                            en: "<b>Kanban for the flow.</b> Work was split into small packages on a Trello board (to do, in progress, in review, done). Example cards: “code ILAB countries to ISO-2”, “map ILAB goods to HS6”, “DAX measure 2019 base index”, “Concentration analysis page”." } }
     ] },
 
-    { key: "stakeholders", blocks: [
-      { type: "table",
-        head: [{ es: "Actor", en: "Stakeholder" }, { es: "Rol", en: "Role" }],
-        rows: [
-          [{ es: "Director de DI", en: "DI director" }, { es: "Sponsor: propuso el proyecto y validó el resultado final.", en: "Sponsor: proposed the project and validated the final result." }],
-          [{ es: "Supervisor asignado", en: "Assigned supervisor" }, { es: "Asignado por la organización.", en: "Assigned by the organisation." }],
-          [{ es: "Dos personas voluntarias", en: "Two volunteers" }, { es: "Equipo de apoyo que coordiné.", en: "Support team I coordinated." }],
-          [{ es: "Investigadores", en: "Researchers" }, { es: "Usuarios del dashboard y del informe.", en: "Users of the dashboard and report." }],
-          [{ es: "Dos empresas textiles de California", en: "Two textile companies in California" }, { es: "Usuarias interesadas en su cadena de suministro. No se nombran por confidencialidad.", en: "Users interested in their supply chain. Not named for confidentiality." }]
-        ] },
-      { type: "p", text: { es: "Más que negociar intereses, el trabajo con estos actores fue de diseño para usuarios: el dashboard incluye glosario y fuentes para quien necesita trazabilidad, y filtros por país y producto para quien necesita revisar su propia cadena.",
-                           en: "Rather than negotiating interests, working with these stakeholders was about designing for users: the dashboard includes a glossary and sources for those who need traceability, and filters by country and product for those who need to check their own supply chain." } }
+    { key: "stakeholders", title: { es: "Interesados", en: "Interested parties" }, blocks: [
+      { type: "list", items: [
+        "Development International",
+        { es: "Investigadores", en: "Researchers" },
+        { es: "Empresas con intereses en su cadena de suministro", en: "Companies with an interest in their supply chain" }
+      ] }
     ] },
 
     { key: "planning", blocks: [
@@ -143,14 +137,14 @@ window.PF = window.PF || {};
           { when: { es: "Ene–may 2025", en: "Jan–May 2025" }, title: { es: "Análisis y dashboard", en: "Analysis and dashboard" }, text: { es: "Medidas DAX, 8 páginas con filtros, publicación en la web de DI.", en: "DAX measures, 8 pages with filters, published on DI's website." }, out: { es: "Dashboard publicado", en: "Dashboard published" } },
           { when: { es: "May–nov 2025", en: "May–Nov 2025" }, title: { es: "Informe y cierre", en: "Report and close" }, text: { es: "Informe de 32 páginas, presentaciones y validación del sponsor.", en: "32-page report, presentations and sponsor validation." }, out: { es: "Entrega final", en: "Final delivery" } }
         ],
-        caption: { es: "Unos 20 meses en remoto y a tiempo parcial; fechas aproximadas. No se avanzaba a la fase siguiente sin cerrar el entregable de la anterior.", en: "About 20 months, remote and part-time; dates are approximate. No phase started until the previous phase's deliverable was closed." } }
+        caption: { es: "Unos 20 meses en remoto y a tiempo parcial. No se avanzaba a la fase siguiente sin cerrar el entregable de la anterior.", en: "About 20 months, remote and part-time. No phase started until the previous phase's deliverable was closed." } }
     ] },
 
     { key: "data", blocks: [
       { type: "list", title: { es: "Tres indicadores para tres preguntas", en: "Three indicators for three questions" }, items: [
         { es: "<b>Riesgo por volumen</b> de un país = USD importados de bienes ILAB de ese país. Responde: ¿de dónde viene más cantidad?", en: "<b>Volume risk</b> of a country = USD imported in ILAB goods from that country. Answers: where does the most come from?" },
         { es: "<b>Riesgo relativo</b> de un país = USD con riesgo ÷ USD totales importados de ese país. Responde: ¿qué tan probable es que un producto de ese país esté afectado?", en: "<b>Relative risk</b> of a country = at-risk USD ÷ total USD imported from that country. Answers: how likely is a product from that country to be affected?" },
-        { es: "<b>Net CL</b> de una región = USD con riesgo × variación regional (Alsamawi et al.). Estima qué parte del riesgo corresponde realmente a trabajo infantil.", en: "<b>Net CL</b> of a region = at-risk USD × regional variation (Alsamawi et al.). Estimates how much of the risk actually corresponds to child labour." }
+        { es: "<b>Net CL</b> de un país y un producto = USD importados con riesgo × coeficiente de variación regional de Alsamawi et al. (2019). Estima qué parte del riesgo de trabajo infantil de ese país y ese producto se traslada a las exportaciones.", en: "<b>Net CL</b> of a country and product = at-risk USD imported × the regional variation coefficient from Alsamawi et al. (2019). Estimates how much of that country's and product's child labour risk is carried into exports." }
       ] },
       { type: "bars", title: { es: "Por qué ajustar: el efecto de Net CL en 2019", en: "Why adjust: the effect of Net CL in 2019" },
         items: [

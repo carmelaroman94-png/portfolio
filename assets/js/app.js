@@ -84,6 +84,9 @@
     clipboard: svg('<path d="M9 4H7a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-2"/><rect x="9" y="2.5" width="6" height="3.5" rx="1"/><path d="m8.5 13.5 2.3 2.3 4.7-4.7"/>'),
     idea: svg('<path d="M9 18h6"/><path d="M10 21.5h4"/><path d="M12 2.5a6.5 6.5 0 0 0-3.9 11.7c.8.6 1.4 1.5 1.4 2.5V18h5v-1.3c0-1 .6-1.9 1.4-2.5A6.5 6.5 0 0 0 12 2.5z"/>'),
     cycle: svg('<path d="M20.5 12a8.5 8.5 0 1 1-2.5-6"/><path d="M20.5 3.5v4.5H16"/><path d="M12 7.5V12l3 2.5"/>'),
+    company: svg('<path d="M4 21V5a1 1 0 0 1 1-1h8a1 1 0 0 1 1 1v16"/><path d="M14 9h5a1 1 0 0 1 1 1v11"/><path d="M2.5 21h19"/><path d="M7.5 8h3"/><path d="M7.5 12h3"/><path d="M7.5 16h3"/><path d="M17 13h.01"/><path d="M17 17h.01"/>'),
+    training: svg('<path d="M2 9.5 12 4.5l10 5-10 5z"/><path d="M6 11.5v4.5c0 1.6 2.7 3 6 3s6-1.4 6-3v-4.5"/><path d="M22 9.5v5.5"/>'),
+    job: svg('<rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8.5 7V5.5A1.5 1.5 0 0 1 10 4h4a1.5 1.5 0 0 1 1.5 1.5V7"/><path d="M3 12.5h18"/><path d="M11 12.5v2h2v-2"/>'),
     // tres personas: trabajo colaborativo
     team: svg('<circle cx="12" cy="7" r="3.5"/><path d="M5.5 21a6.5 6.5 0 0 1 13 0"/><circle cx="4.5" cy="10" r="2.5"/><path d="M1 19.5a4 4 0 0 1 5-3.9"/><circle cx="19.5" cy="10" r="2.5"/><path d="M23 19.5a4 4 0 0 0-5-3.9"/>')
   };
@@ -287,12 +290,15 @@
   }
 
   function embed(b) {
+    // b.autoload: el dashboard se muestra al abrir la página, sin pulsar «Cargar aquí»
     var external = /^https?:/.test(b.src);
     return '<div class="embed"><h4>' + t(b.name) + "</h4>" + (b.text ? '<p class="small muted">' + t(b.text) + "</p>" : "") +
       '<div class="embed-actions">' +
-      '<button type="button" class="btn btn--quiet" data-embed="' + esc(b.src) + '" data-title="' + esc(t(b.name)) + '">' + esc(ui("load_here")) + "</button>" +
+      '<button type="button" class="btn btn--quiet" data-embed="' + esc(b.src) + '" data-title="' + esc(t(b.name)) + '">' + esc(ui(b.autoload ? "hide" : "load_here")) + "</button>" +
       '<a class="btn btn--quiet" href="' + esc(b.src) + '" target="_blank" rel="noopener">' + esc(ui(external ? "open_new" : "open_full")) + "</a>" +
-      "</div></div>";
+      "</div>" +
+      (b.autoload ? '<iframe class="embed-frame" src="' + esc(b.src) + '" title="' + esc(t(b.name)) + '" loading="lazy" allowfullscreen></iframe>' : "") +
+      "</div>";
   }
 
   /* ---------- Componentes compartidos ---------- */
@@ -442,7 +448,7 @@
       p.highlight.blocks.map(block).join("") + "</section>" : "";
 
     var secs = (p.sections || []).map(function (s, i) {
-      var label = t(SITE.sections[s.key]) || t(s.title);
+      var label = t(s.title) || t(SITE.sections[s.key]);
       return '<details class="sec"' + (i === 0 ? " open" : "") + ' id="' + esc(s.key) + '"><summary><span class="sec-n">' + String(i + 1).padStart(2, "0") + "</span>" + esc(label) + "</summary>" +
         '<div class="sec-body">' + s.blocks.map(block).join("") + "</div></details>";
     }).join("");

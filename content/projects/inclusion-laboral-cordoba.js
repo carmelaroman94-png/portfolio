@@ -14,7 +14,7 @@ window.PF = window.PF || {};
   org: { es: "Ministerio de Justicia y Derechos Humanos de la Provincia de Córdoba (Argentina) · Secretaría de Lucha contra la Discriminación", en: "Ministry of Justice and Human Rights of the Province of Córdoba (Argentina) · Anti-Discrimination Secretariat" },
   orgNote: { es: "Por respeto a las participantes, el caso no incluye nombres, fotos ni empresas identificables.", en: "Out of respect for the participants, the case includes no names, photos or identifiable companies." },
   problem: {
-    es: "Escasa inserción y permanencia de personas trans en el empleo formal en la ciudad de Córdoba, sin presupuesto propio y con un cupo laboral estatal que no era una vía disponible a corto plazo.",
+    es: "Escasa inserción y permanencia de personas trans en el empleo formal en la ciudad de Córdoba, sin presupuesto específico y con un cupo laboral estatal que no era una vía disponible a corto plazo.",
     en: "Low access to and retention in formal employment for trans people in the city of Córdoba, with no dedicated budget and a public-sector employment quota that was not an option in the short term."
   },
   role: { es: "Gestora del proyecto (Project Manager).", en: "Project manager." },
@@ -29,13 +29,13 @@ window.PF = window.PF || {};
   metrics: [
     { value: "13 / 25", label: { es: "personas registradas consiguieron un contrato formal", en: "registered participants got a formal contract" } },
     { value: "20 / 30", label: { es: "empresas completaron el proceso", en: "companies completed the process" } },
-    { value: "4", label: { es: "actores aportaron recursos, sin presupuesto propio", en: "partners contributed resources, with no dedicated budget" } }
+    { value: "4", label: { es: "actores aportaron recursos, sin presupuesto específico", en: "partners contributed resources, with no dedicated budget" } }
   ],
   deliverables: [
-    { es: "Red de 20 empresas de gastronomía y ocio nocturno sensibilizadas y comprometidas.", en: "A network of 20 hospitality and nightlife companies, trained and committed." },
-    { es: "20 personas formadas en oficios (barista, camarera, informática básica).", en: "20 people trained in trades (barista, waiting staff, basic IT)." },
-    { es: "20 incorporaciones a empresas mediante los programas provinciales Primer Paso y XMí, con acompañamiento psicosocial.", en: "20 job placements through the provincial programmes Primer Paso and XMí, with psychosocial support." },
-    { es: "Informe de resultados y lecciones aprendidas.", en: "Results and lessons-learned report." }
+    { icon: "company", es: "20 empresas capacitadas en perspectiva de género.", en: "20 companies trained in a gender perspective." },
+    { icon: "training", es: "20 personas formadas en oficios (barista, camarera, informática básica).", en: "20 people trained in trades (barista, waiting staff, basic IT)." },
+    { icon: "job", es: "20 incorporaciones a empresas mediante los programas provinciales Primer Paso y XMí, con acompañamiento psicosocial.", en: "20 job placements through the provincial programmes Primer Paso and XMí, with psychosocial support." },
+    { icon: "report", es: "Informe de resultados y lecciones aprendidas.", en: "Results and lessons-learned report." }
   ],
 
   card: {
@@ -57,8 +57,7 @@ window.PF = window.PF || {};
           { label: { es: "Contratadas formalmente", en: "Formally hired" }, value: 13, loss: { es: "Pérdida: decisión de las empresas.", en: "Loss: company decisions." } }
         ],
         caption: { es: "Conversión total: el 52 % de las personas registradas consiguió un empleo formal. Del lado de las empresas, 20 de 30 (67 %) completaron el proceso.", en: "Overall conversion: 52% of registered participants got formal employment. On the employer side, 20 of 30 companies (67%) completed the process." } },
-      { type: "p", text: { es: "El proyecto se ejecutó sin presupuesto propio: movilizó recursos de cuatro actores (la Secretaría, el gobierno provincial, una escuela de oficios y las empresas), con un gasto directo de la Secretaría estimado en el 3,5 % del total.",
-                           en: "The project ran with no dedicated budget: it mobilised resources from four partners (the Secretariat, the provincial government, a trade school and the companies), with the Secretariat's direct spending estimated at 3.5% of the total." } }
+      { type: "p", text: { es: "El proyecto se ejecutó sin presupuesto específico.", en: "The project ran with no dedicated budget." } }
     ]
   },
 
@@ -135,12 +134,12 @@ window.PF = window.PF || {};
           { total: true, cells: [{ es: "A4. Piloto con pymes de gastronomía y ocio nocturno, programas provinciales y escuela de oficios", en: "A4. Pilot with hospitality and nightlife SMEs, provincial programmes and a trade school" }, 4, 4, 5, 5, 3, 3, "24/30"] }
         ] },
       { type: "note", heading: { es: "Decisión: A4", en: "Decision: A4" },
-        text: { es: "El cupo público dependía de una ley y de un Estado en ajuste. Con los grandes empleadores había que negociar con áreas de RR. HH. formales, con plazos largos y requisitos educativos que la mayoría de las participantes no cumplía. Las cooperativas no resolvían el acceso al empleo formal ni la discriminación en el lugar de trabajo. El piloto permitía validar el modelo en un año, sin presupuesto propio, y dejaba a A2 como etapa de escala. Su límite: un sector con alta rotación y un impacto de menor escala.",
+        text: { es: "El cupo público dependía de una ley y de un Estado en ajuste. Con los grandes empleadores había que negociar con áreas de RR. HH. formales, con plazos largos y requisitos educativos que la mayoría de las participantes no cumplía. Las cooperativas no resolvían el acceso al empleo formal ni la discriminación en el lugar de trabajo. El piloto permitía validar el modelo en un año, sin presupuesto específico, y dejaba a A2 como etapa de escala. Su límite: un sector con alta rotación y un impacto de menor escala.",
                 en: "The public quota depended on a law and on a state cutting costs. Large employers meant negotiating with formal HR departments, with long timelines and education requirements most participants did not meet. Cooperatives addressed neither access to formal jobs nor workplace discrimination. The pilot made it possible to validate the model in a year, with no dedicated budget, leaving A2 as a scale-up stage. Its limitation: a high-turnover sector and smaller-scale impact." } },
       { type: "table", title: { es: "Registro de decisiones", en: "Decision log" },
         head: [{ es: "Decisión", en: "Decision" }, { es: "Alternativa descartada", en: "Rejected alternative" }, { es: "Motivo", en: "Reason" }],
         rows: [
-          [{ es: "Usar Primer Paso y XMí para la incorporación", en: "Use Primer Paso and XMí for placements" }, { es: "Pedir presupuesto propio para subsidios", en: "Request a dedicated budget for subsidies" }, { es: "Recursos ya disponibles y calendario compatible", en: "Resources already available and a compatible calendar" }],
+          [{ es: "Usar Primer Paso y XMí para la incorporación", en: "Use Primer Paso and XMí for placements" }, { es: "Pedir un presupuesto específico para subsidios", en: "Request a dedicated budget for subsidies" }, { es: "Recursos ya disponibles y calendario compatible", en: "Resources already available and a compatible calendar" }],
           [{ es: "Formación según la demanda de la red (barista, camarera)", en: "Training based on the network's demand (barista, waiting staff)" }, { es: "Formación general en empleabilidad", en: "General employability training" }, { es: "Coincidir con los puestos reales de las empresas", en: "Match the companies' real jobs" }],
           [{ es: "Participantes en los talleres a empresas", en: "Participants in the company workshops" }, { es: "Sensibilización solo a cargo del equipo", en: "Awareness sessions run by the team only" }, { es: "Generar vínculo personal antes del matching", en: "Build personal connection before matching" }],
           [{ es: "Diagnóstico en espacios separados", en: "Diagnosis in separate spaces" }, { es: "Un taller conjunto", en: "A joint workshop" }, { es: "Evitar asimetrías y que cada grupo hablara con libertad", en: "Avoid power imbalances and let each group speak freely" }],
@@ -158,8 +157,7 @@ window.PF = window.PF || {};
           { name: { es: "Empresas de gastronomía y ocio nocturno (30)", en: "Hospitality and nightlife companies (30)" }, role: { es: "empleadoras; interés bajo al inicio, medio después", en: "employers; low interest at first, medium later" }, interest: "mid", influence: "high", strategy: { es: "Mantener satisfechas: sensibilización, participación en el diagnóstico, vínculo directo con las participantes y perfiles a medida.", en: "Keep satisfied: awareness sessions, part of the diagnosis, direct contact with participants and tailored profiles." } },
           { name: { es: "Secretaría de Equidad y Promoción del Empleo", en: "Equity and Employment Secretariat" }, role: { es: "administra Primer Paso y XMí", en: "runs Primer Paso and XMí" }, interest: "mid", influence: "high", strategy: { es: "Gestionar de cerca: articulación formal para dar de alta a las participantes en los programas.", en: "Manage closely: formal coordination to enrol participants in the programmes." } },
           { name: { es: "Escuela de oficios", en: "Trade school" }, role: { es: "formación sin costo", en: "free training" }, interest: "mid", influence: "mid", strategy: { es: "Mantener satisfecha: gestión de cupos y ajuste de cursos a la demanda de la red.", en: "Keep satisfied: managing places and adapting courses to the network's demand." } },
-          { name: { es: "Cámaras y grandes empleadores", en: "Business chambers and large employers" }, role: { es: "escala futura", en: "future scale-up" }, interest: "low", influence: "high", strategy: { es: "Monitorear: no se incluyeron en el piloto; se reservaron para una etapa de escala.", en: "Monitor: not included in the pilot; kept for a scale-up stage." } },
-          { name: { es: "Personal y clientela de las empresas", en: "Company staff and customers" }, role: { es: "entorno laboral", en: "work environment" }, interest: "low", influence: "mid", strategy: { es: "Monitorear: talleres de sensibilización al personal y promoción de la diversidad entre los clientes.", en: "Monitor: awareness workshops for staff and promoting diversity among customers." } }
+          { name: { es: "Personal de las empresas", en: "Company staff" }, role: { es: "entorno laboral", en: "work environment" }, interest: "low", influence: "mid", strategy: { es: "Monitorear: talleres de sensibilización al personal.", en: "Monitor: awareness workshops for staff." } }
         ] },
       { type: "table", title: { es: "Plan de comunicaciones", en: "Communication plan" },
         head: [{ es: "Audiencia", en: "Audience" }, { es: "Qué", en: "What" }, { es: "Canal", en: "Channel" }, { es: "Frecuencia", en: "Frequency" }, { es: "Responsable", en: "Owner" }],
@@ -250,7 +248,7 @@ window.PF = window.PF || {};
         { es: "<b>La contactabilidad es un riesgo de diseño, no un imprevisto.</b> Con una población en situación de calle, los canales de contacto tienen que planificarse desde el inicio.", en: "<b>Reachability is a design risk, not an accident.</b> With people experiencing homelessness, contact channels have to be planned from day one." },
         { es: "<b>Los primeros meses de práctica concentran la deserción.</b> El acompañamiento tiene que ser más intenso al comienzo.", en: "<b>Drop-out concentrates in the first months of the placement.</b> Support has to be most intense at the start." },
         { es: "<b>La brecha digital es más profunda que un curso de 3 meses.</b> La informática básica resultó la formación más difícil.", en: "<b>The digital divide runs deeper than a 3-month course.</b> Basic IT proved the hardest training." },
-        { es: "<b>Articular recursos existentes permite ejecutar sin presupuesto propio</b>, pero deja al proyecto dependiendo de calendarios y decisiones de terceros.", en: "<b>Pooling existing resources makes it possible to deliver with no dedicated budget</b>, but leaves the project dependent on other people's calendars and decisions." }
+        { es: "<b>Articular recursos existentes permite ejecutar sin presupuesto específico</b>, pero deja al proyecto dependiendo de calendarios y decisiones de terceros.", en: "<b>Pooling existing resources makes it possible to deliver with no dedicated budget</b>, but leaves the project dependent on other people's calendars and decisions." }
       ] }
     ] },
 
@@ -267,7 +265,7 @@ window.PF = window.PF || {};
     { key: "takeaways", blocks: [
       { type: "list", items: [
         { es: "Elegir una alternativa con criterios explícitos: factibilidad de 24/30 frente a 13–18 de las otras opciones.", en: "Choosing an alternative with explicit criteria: a feasibility score of 24/30 against 13–18 for the other options." },
-        { es: "Ejecutar sin presupuesto propio, articulando los recursos de cuatro actores.", en: "Delivering with no dedicated budget by pooling resources from four partners." },
+        { es: "Ejecutar sin presupuesto específico, articulando los recursos de cuatro actores.", en: "Delivering with no dedicated budget by pooling resources from four partners." },
         { es: "Gestionar riesgos en una población muy vulnerable y ajustar el rumbo en cada punto de control.", en: "Managing risk with a highly vulnerable population and adjusting course at each checkpoint." },
         { es: "Medir resultados con un embudo, no con actividades.", en: "Measuring results with a funnel, not with activities." }
       ] }
