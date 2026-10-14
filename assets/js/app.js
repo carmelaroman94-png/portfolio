@@ -78,6 +78,11 @@
     dashboard: svg('<rect x="2.5" y="4" width="19" height="16" rx="2"/><path d="M2.5 8h19"/><path d="m6 16.5 3.5-4 3 2.5 5-5"/>'),
     chart: svg('<path d="M3.5 20.5h17"/><rect x="5" y="11" width="3.2" height="9.5" rx="0.8"/><rect x="10.4" y="6" width="3.2" height="14.5" rx="0.8"/><rect x="15.8" y="14" width="3.2" height="6.5" rx="0.8"/>'),
     model: svg('<circle cx="5" cy="12" r="2.2"/><circle cx="12" cy="5" r="2.2"/><circle cx="12" cy="19" r="2.2"/><circle cx="19" cy="12" r="2.2"/><path d="m6.6 10.4 3.8-3.8"/><path d="m6.6 13.6 3.8 3.8"/><path d="m13.6 6.6 3.8 3.8"/><path d="m13.6 17.4 3.8-3.8"/>'),
+    // resultados
+    fill: svg('<rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 12h18"/><path d="M12 3v18"/><path d="m14.5 16.6 1.8 1.8 3-3.4"/>'),
+    clipboard: svg('<path d="M9 4H7a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-2"/><rect x="9" y="2.5" width="6" height="3.5" rx="1"/><path d="m8.5 13.5 2.3 2.3 4.7-4.7"/>'),
+    idea: svg('<path d="M9 18h6"/><path d="M10 21.5h4"/><path d="M12 2.5a6.5 6.5 0 0 0-3.9 11.7c.8.6 1.4 1.5 1.4 2.5V18h5v-1.3c0-1 .6-1.9 1.4-2.5A6.5 6.5 0 0 0 12 2.5z"/>'),
+    cycle: svg('<path d="M20.5 12a8.5 8.5 0 1 1-2.5-6"/><path d="M20.5 3.5v4.5H16"/><path d="M12 7.5V12l3 2.5"/>'),
     // tres personas: trabajo colaborativo
     team: svg('<circle cx="12" cy="7" r="3.5"/><path d="M5.5 21a6.5 6.5 0 0 1 13 0"/><circle cx="4.5" cy="10" r="2.5"/><path d="M1 19.5a4 4 0 0 1 5-3.9"/><circle cx="19.5" cy="10" r="2.5"/><path d="M23 19.5a4 4 0 0 0-5-3.9"/>')
   };
@@ -137,6 +142,11 @@
       case "matrix": inner = matrix(b); break;
       case "verdicts": inner = verdicts(b.items); break;
       case "embed": inner = embed(b); break;
+      case "iconlist":
+        inner = '<ul class="deliverables with-icons icon-list">' + b.items.map(function (i) {
+          return '<li><span class="d-icon" aria-hidden="true">' + (ICONS[i.icon] || "") + "</span><span>" + t(i.text) + "</span></li>";
+        }).join("") + "</ul>";
+        break;
       default: inner = "";
     }
     return '<div class="block">' + title + inner + cap + "</div>";
