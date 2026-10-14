@@ -27,9 +27,9 @@ window.PF = window.PF || {};
   tools: { es: "Árboles de problemas y soluciones, mapa de stakeholders, análisis de factibilidad, matriz de Marco Lógico, matriz de riesgos y plan de comunicaciones.",
            en: "Problem and solution trees, stakeholder map, feasibility analysis, Logical Framework matrix, risk matrix and communication plan." },
   metrics: [
-    { value: "13 / 25", label: { es: "personas registradas consiguieron un contrato formal", en: "registered participants got a formal contract" }, ev: "real" },
-    { value: "20 / 30", label: { es: "empresas completaron el proceso", en: "companies completed the process" }, ev: "real" },
-    { value: "4", label: { es: "actores aportaron recursos, sin presupuesto propio", en: "partners contributed resources, with no dedicated budget" }, ev: "real" }
+    { value: "13 / 25", label: { es: "personas registradas consiguieron un contrato formal", en: "registered participants got a formal contract" } },
+    { value: "20 / 30", label: { es: "empresas completaron el proceso", en: "companies completed the process" } },
+    { value: "4", label: { es: "actores aportaron recursos, sin presupuesto propio", en: "partners contributed resources, with no dedicated budget" } }
   ],
   deliverables: [
     { es: "Red de 20 empresas de gastronomía y ocio nocturno sensibilizadas y comprometidas.", en: "A network of 20 hospitality and nightlife companies, trained and committed." },
@@ -56,9 +56,9 @@ window.PF = window.PF || {};
           { label: { es: "Completan los 12 meses de práctica", en: "Complete the 12-month placement" }, value: 15, loss: { es: "Pérdida: ausentismo.", en: "Loss: absenteeism." } },
           { label: { es: "Contratadas formalmente", en: "Formally hired" }, value: 13, loss: { es: "Pérdida: decisión de las empresas.", en: "Loss: company decisions." } }
         ],
-        caption: { es: "Conversión total: el 52 % de las personas registradas consiguió un empleo formal. Del lado de las empresas, 20 de 30 (67 %) completaron el proceso.", en: "Overall conversion: 52% of registered participants got formal employment. On the employer side, 20 of 30 companies (67%) completed the process." }, ev: "real" },
+        caption: { es: "Conversión total: el 52 % de las personas registradas consiguió un empleo formal. Del lado de las empresas, 20 de 30 (67 %) completaron el proceso.", en: "Overall conversion: 52% of registered participants got formal employment. On the employer side, 20 of 30 companies (67%) completed the process." } },
       { type: "p", text: { es: "El proyecto se ejecutó sin presupuesto propio: movilizó recursos de cuatro actores (la Secretaría, el gobierno provincial, una escuela de oficios y las empresas), con un gasto directo de la Secretaría estimado en el 3,5 % del total.",
-                           en: "The project ran with no dedicated budget: it mobilised resources from four partners (the Secretariat, the provincial government, a trade school and the companies), with the Secretariat's direct spending estimated at 3.5% of the total." }, ev: "rec" }
+                           en: "The project ran with no dedicated budget: it mobilised resources from four partners (the Secretariat, the provincial government, a trade school and the companies), with the Secretariat's direct spending estimated at 3.5% of the total." } }
     ]
   },
 
@@ -81,7 +81,7 @@ window.PF = window.PF || {};
           [{ es: "Demanda (empresas)", en: "Demand (companies)" }, { es: "Prejuicios y temor a la reacción de clientes y compañeros. Desconocimiento de la Ley 26.743 en lo cotidiano: nombre, trato, vestuarios, documentación. Riesgo percibido de que la incorporación no funcione.", en: "Prejudice and fear of how customers and co-workers would react. Lack of knowledge of Law 26,743 in everyday matters: names, treatment, changing rooms, paperwork. Perceived risk that the hire would not work out." }, { es: "Planteles sin diversidad. Discriminación reproducida en los procesos de selección.", en: "Workforces without diversity. Discrimination reproduced in hiring." }],
           [{ es: "Oferta (personas trans)", en: "Supply (trans people)" }, { es: "Expulsión temprana del sistema educativo. Poca o ninguna experiencia laboral formal. Desconfianza hacia instituciones y empleadores después de experiencias de violencia.", en: "Early exclusion from school. Little or no formal work experience. Distrust of institutions and employers after experiences of violence." }, { es: "Dependencia del trabajo sexual. Ingresos precarios e inestables.", en: "Dependence on sex work. Precarious, unstable income." }],
           [{ es: "Vinculación", en: "Matching" }, { es: "No existía un puente entre empresas y candidatas. Bajo uso de los programas provinciales de empleo. Falta de acompañamiento para sostener el empleo.", en: "No bridge between companies and candidates. Low use of provincial employment programmes. No support to help people keep their jobs." }, { es: "Mayor exposición a la violencia. Exclusión que se reproduce entre generaciones.", en: "Greater exposure to violence. Exclusion passed down through generations." }]
-        ], ev: "real" },
+        ] },
       { type: "table", title: { es: "Árbol de soluciones: tres componentes", en: "Solution tree: three components" },
         head: [{ es: "Rama", en: "Branch" }, { es: "Medio", en: "Means" }, { es: "Componente", en: "Component" }],
         rows: [
@@ -99,11 +99,11 @@ window.PF = window.PF || {};
         head: [{ es: "Nivel", en: "Level" }, { es: "Resumen narrativo", en: "Narrative summary" }, { es: "Indicador", en: "Indicator" }, { es: "Resultado (línea de base: 0)", en: "Result (baseline: 0)" }, { es: "Supuestos", en: "Assumptions" }],
         rows: [
           [{ es: "Fin", en: "Goal" }, { es: "Contribuir a reducir la exclusión laboral y la vulnerabilidad socioeconómica de la población trans en Córdoba.", en: "Help reduce labour exclusion and socio-economic vulnerability among trans people in Córdoba." }, { es: "Contribución, sin meta atribuible al proyecto.", en: "Contribution, no target attributable to the project." }, "—", { es: "Continuidad de las políticas de identidad de género.", en: "Gender identity policies continue." }],
-          [{ es: "Propósito", en: "Purpose" }, { es: "Personas trans de la ciudad de Córdoba acceden a un empleo formal y lo sostienen en una red de empresas comprometida con la diversidad.", en: "Trans people in the city of Córdoba access formal jobs and keep them in a network of companies committed to diversity." }, { es: "Personas contratadas formalmente al terminar el programa.", en: "People formally hired at the end of the programme." }, { v: { es: "13 contratadas (52 % de las registradas; 87 % de quienes completaron la práctica)", en: "13 hired (52% of those registered; 87% of those who completed the placement)" }, ev: "real" }, { es: "La recesión de 2018–2019 no lleva a las empresas a cerrar puestos.", en: "The 2018–2019 recession does not lead companies to cut jobs." }],
-          ["C1", { es: "Red de empresas de gastronomía y ocio nocturno sensibilizada y comprometida (incluye un módulo sobre la Ley 26.743).", en: "Network of hospitality and nightlife companies, trained and committed (includes a module on Law 26,743)." }, { es: "Empresas que inician y que completan el proceso.", en: "Companies that start and complete the process." }, { v: { es: "30 iniciaron, 20 completaron", en: "30 started, 20 completed" }, ev: "real" }, { es: "Las empresas mantienen el interés después de los talleres.", en: "Companies stay interested after the workshops." }],
-          ["C2", { es: "Personas trans formadas en oficios mediante cupos sin costo en una escuela de oficios.", en: "Trans people trained in trades through free places at a trade school." }, { es: "Personas que inician y completan la formación.", en: "People who start and complete training." }, { v: { es: "25 registradas, 20 completaron cursos de unos 3 meses", en: "25 registered, 20 completed courses of about 3 months" }, ev: "real" }, { es: "Las participantes cuentan con condiciones mínimas para asistir.", en: "Participants have the minimum conditions needed to attend." }],
-          ["C3", { es: "Intermediación e inserción mediante Primer Paso y XMí, con acompañamiento psicosocial.", en: "Brokering and placement through Primer Paso and XMí, with psychosocial support." }, { es: "Personas incorporadas; personas que completan los 12 meses de práctica.", en: "People placed; people who complete the 12-month placement." }, { v: { es: "20 incorporadas, 15 completaron", en: "20 placed, 15 completed" }, ev: "real" }, { es: "Los programas abren su convocatoria en el calendario previsto.", en: "The programmes open their calls on the planned schedule." }],
-          ["C4", { es: "Gestión, monitoreo y evaluación del proyecto.", en: "Project management, monitoring and evaluation." }, { es: "Puntos de control realizados; informe de cierre.", en: "Checkpoints held; closing report." }, { v: { es: "5 puntos de control", en: "5 checkpoints" }, ev: "rec" }, { es: "Aval institucional sostenido después de las elecciones de 2019.", en: "Institutional backing continues after the 2019 elections." }]
+          [{ es: "Propósito", en: "Purpose" }, { es: "Personas trans de la ciudad de Córdoba acceden a un empleo formal y lo sostienen en una red de empresas comprometida con la diversidad.", en: "Trans people in the city of Córdoba access formal jobs and keep them in a network of companies committed to diversity." }, { es: "Personas contratadas formalmente al terminar el programa.", en: "People formally hired at the end of the programme." }, { v: { es: "13 contratadas (52 % de las registradas; 87 % de quienes completaron la práctica)", en: "13 hired (52% of those registered; 87% of those who completed the placement)" } }, { es: "La recesión de 2018–2019 no lleva a las empresas a cerrar puestos.", en: "The 2018–2019 recession does not lead companies to cut jobs." }],
+          ["C1", { es: "Red de empresas de gastronomía y ocio nocturno sensibilizada y comprometida (incluye un módulo sobre la Ley 26.743).", en: "Network of hospitality and nightlife companies, trained and committed (includes a module on Law 26,743)." }, { es: "Empresas que inician y que completan el proceso.", en: "Companies that start and complete the process." }, { v: { es: "30 iniciaron, 20 completaron", en: "30 started, 20 completed" } }, { es: "Las empresas mantienen el interés después de los talleres.", en: "Companies stay interested after the workshops." }],
+          ["C2", { es: "Personas trans formadas en oficios mediante cupos sin costo en una escuela de oficios.", en: "Trans people trained in trades through free places at a trade school." }, { es: "Personas que inician y completan la formación.", en: "People who start and complete training." }, { v: { es: "25 registradas, 20 completaron cursos de unos 3 meses", en: "25 registered, 20 completed courses of about 3 months" } }, { es: "Las participantes cuentan con condiciones mínimas para asistir.", en: "Participants have the minimum conditions needed to attend." }],
+          ["C3", { es: "Intermediación e inserción mediante Primer Paso y XMí, con acompañamiento psicosocial.", en: "Brokering and placement through Primer Paso and XMí, with psychosocial support." }, { es: "Personas incorporadas; personas que completan los 12 meses de práctica.", en: "People placed; people who complete the 12-month placement." }, { v: { es: "20 incorporadas, 15 completaron", en: "20 placed, 15 completed" } }, { es: "Los programas abren su convocatoria en el calendario previsto.", en: "The programmes open their calls on the planned schedule." }],
+          ["C4", { es: "Gestión, monitoreo y evaluación del proyecto.", en: "Project management, monitoring and evaluation." }, { es: "Puntos de control realizados; informe de cierre.", en: "Checkpoints held; closing report." }, { v: { es: "5 puntos de control", en: "5 checkpoints" } }, { es: "Aval institucional sostenido después de las elecciones de 2019.", en: "Institutional backing continues after the 2019 elections." }]
         ],
         caption: { es: "Las metas numéricas de la formulación original no se conservaron: la matriz muestra la línea de base y el resultado alcanzado.", en: "The numeric targets from the original design were not preserved: the matrix shows the baseline and the result achieved." } }
     ] },
@@ -119,7 +119,7 @@ window.PF = window.PF || {};
           [{ es: "Patrocinio", en: "Sponsor" }, { es: "Dirección de la Secretaría de Derechos Humanos", en: "Leadership of the Human Rights Secretariat" }],
           [{ es: "Restricciones", en: "Constraints" }, { es: "Sin presupuesto específico. Calendario fijo de los programas provinciales (noviembre a octubre).", en: "No dedicated budget. Fixed calendar for the provincial programmes (November to October)." }],
           [{ es: "Hitos", en: "Milestones" }, { es: "Mayo 2018: inicio de talleres. Octubre 2018: fin de la formación. Noviembre 2018: incorporación a empresas. Octubre 2019: fin de la práctica. Noviembre 2019: contrataciones y cierre.", en: "May 2018: workshops start. October 2018: training ends. November 2018: placements begin. October 2019: placements end. November 2019: hiring and close." }]
-        ], ev: "real" }
+        ] }
     ] },
 
     { key: "approach", blocks: [
@@ -133,7 +133,7 @@ window.PF = window.PF || {};
           [{ es: "A2. Acuerdo con cámaras empresariales y grandes empleadores", en: "A2. Agreement with business chambers and large employers" }, 3, 3, 4, 2, 2, 4, "18/30"],
           [{ es: "A3. Cooperativas y emprendimientos con microcrédito", en: "A3. Cooperatives and micro-credit ventures" }, 4, 2, 2, 3, 3, 2, "16/30"],
           { total: true, cells: [{ es: "A4. Piloto con pymes de gastronomía y ocio nocturno, programas provinciales y escuela de oficios", en: "A4. Pilot with hospitality and nightlife SMEs, provincial programmes and a trade school" }, 4, 4, 5, 5, 3, 3, "24/30"] }
-        ], ev: "real" },
+        ] },
       { type: "note", heading: { es: "Decisión: A4", en: "Decision: A4" },
         text: { es: "El cupo público dependía de una ley y de un Estado en ajuste. Con los grandes empleadores había que negociar con áreas de RR. HH. formales, con plazos largos y requisitos educativos que la mayoría de las participantes no cumplía. Las cooperativas no resolvían el acceso al empleo formal ni la discriminación en el lugar de trabajo. El piloto permitía validar el modelo en un año, sin presupuesto propio, y dejaba a A2 como etapa de escala. Su límite: un sector con alta rotación y un impacto de menor escala.",
                 en: "The public quota depended on a law and on a state cutting costs. Large employers meant negotiating with formal HR departments, with long timelines and education requirements most participants did not meet. Cooperatives addressed neither access to formal jobs nor workplace discrimination. The pilot made it possible to validate the model in a year, with no dedicated budget, leaving A2 as a scale-up stage. Its limitation: a high-turnover sector and smaller-scale impact." } },
@@ -145,7 +145,7 @@ window.PF = window.PF || {};
           [{ es: "Participantes en los talleres a empresas", en: "Participants in the company workshops" }, { es: "Sensibilización solo a cargo del equipo", en: "Awareness sessions run by the team only" }, { es: "Generar vínculo personal antes del matching", en: "Build personal connection before matching" }],
           [{ es: "Diagnóstico en espacios separados", en: "Diagnosis in separate spaces" }, { es: "Un taller conjunto", en: "A joint workshop" }, { es: "Evitar asimetrías y que cada grupo hablara con libertad", en: "Avoid power imbalances and let each group speak freely" }],
           [{ es: "Vivienda y salud fuera de alcance, con derivación", en: "Housing and health out of scope, with referrals" }, { es: "Ampliar el proyecto", en: "Expand the project" }, { es: "Proteger el foco y los plazos", en: "Protect focus and timelines" }]
-        ], ev: "real" }
+        ] }
     ] },
 
     { key: "stakeholders", blocks: [
@@ -175,16 +175,16 @@ window.PF = window.PF || {};
     { key: "planning", blocks: [
       { type: "timeline", title: { es: "Fases de ejecución", en: "Delivery phases" },
         items: [
-          { when: { es: "Abr–may 2018", en: "Apr–May 2018" }, title: { es: "Inicio", en: "Initiation" }, text: { es: "Acta, mapa de actores y contacto con empresas de la red de la Secretaría.", en: "Charter, stakeholder map and outreach to companies in the Secretariat's network." }, ev: "rec" },
-          { when: { es: "May–ago 2018", en: "May–Aug 2018" }, title: { es: "Sensibilización", en: "Awareness" }, text: { es: "Talleres sobre diversidad, discriminación y Ley 26.743 con 30 empresas. En varios talleres las participantes contaron su propia historia.", en: "Workshops on diversity, discrimination and Law 26,743 with 30 companies. In several of them, participants told their own stories." }, ev: "real" },
-          { when: { es: "Jul–ago 2018", en: "Jul–Aug 2018" }, title: { es: "Diagnóstico participativo", en: "Participatory diagnosis" }, text: { es: "Árboles de problemas y soluciones construidos por separado con empresas y con personas trans.", en: "Problem and solution trees built separately with companies and with trans participants." }, ev: "real" },
-          { when: { es: "Abr–ago 2018", en: "Apr–Aug 2018" }, title: { es: "Registro", en: "Registration" }, text: { es: "25 personas que ya estaban en contacto con la oficina se inscriben en la base de datos.", en: "25 people already in contact with the office sign up in the database." }, ev: "real" },
-          { when: { es: "Ago–oct 2018", en: "Aug–Oct 2018" }, title: { es: "Formación", en: "Training" }, text: { es: "20 personas cursan barista, camarera e informática básica, durante unos 3 meses.", en: "20 people take barista, waiting staff and basic IT courses over about 3 months." }, ev: "real" },
-          { when: { es: "Sep–oct 2018", en: "Sep–Oct 2018" }, title: { es: "Vinculación y matching", en: "Connecting and matching" }, text: { es: "Actividades de vínculo en los talleres; la psicóloga propone a cada empresa un perfil de las participantes.", en: "Connection activities in the workshops; the psychologist proposes participant profiles to each company." }, ev: "real" },
-          { when: { es: "Nov 2018 – oct 2019", en: "Nov 2018 – Oct 2019" }, title: { es: "Inserción", en: "Placement" }, text: { es: "20 personas ingresan a empresas a través de Primer Paso y XMí, con seguimiento de la gestora, la psicóloga y dos trabajadoras sociales.", en: "20 people join companies through Primer Paso and XMí, followed up by the project manager, the psychologist and two social workers." }, ev: "real" },
-          { when: { es: "Nov 2019", en: "Nov 2019" }, title: { es: "Cierre", en: "Close" }, text: { es: "15 completan la práctica y 13 son contratadas.", en: "15 complete the placement and 13 are hired." }, ev: "real" }
+          { when: { es: "Abr–may 2018", en: "Apr–May 2018" }, title: { es: "Inicio", en: "Initiation" }, text: { es: "Acta, mapa de actores y contacto con empresas de la red de la Secretaría.", en: "Charter, stakeholder map and outreach to companies in the Secretariat's network." } },
+          { when: { es: "May–ago 2018", en: "May–Aug 2018" }, title: { es: "Sensibilización", en: "Awareness" }, text: { es: "Talleres sobre diversidad, discriminación y Ley 26.743 con 30 empresas. En varios talleres las participantes contaron su propia historia.", en: "Workshops on diversity, discrimination and Law 26,743 with 30 companies. In several of them, participants told their own stories." } },
+          { when: { es: "Jul–ago 2018", en: "Jul–Aug 2018" }, title: { es: "Diagnóstico participativo", en: "Participatory diagnosis" }, text: { es: "Árboles de problemas y soluciones construidos por separado con empresas y con personas trans.", en: "Problem and solution trees built separately with companies and with trans participants." } },
+          { when: { es: "Abr–ago 2018", en: "Apr–Aug 2018" }, title: { es: "Registro", en: "Registration" }, text: { es: "25 personas que ya estaban en contacto con la oficina se inscriben en la base de datos.", en: "25 people already in contact with the office sign up in the database." } },
+          { when: { es: "Ago–oct 2018", en: "Aug–Oct 2018" }, title: { es: "Formación", en: "Training" }, text: { es: "20 personas cursan barista, camarera e informática básica, durante unos 3 meses.", en: "20 people take barista, waiting staff and basic IT courses over about 3 months." } },
+          { when: { es: "Sep–oct 2018", en: "Sep–Oct 2018" }, title: { es: "Vinculación y matching", en: "Connecting and matching" }, text: { es: "Actividades de vínculo en los talleres; la psicóloga propone a cada empresa un perfil de las participantes.", en: "Connection activities in the workshops; the psychologist proposes participant profiles to each company." } },
+          { when: { es: "Nov 2018 – oct 2019", en: "Nov 2018 – Oct 2019" }, title: { es: "Inserción", en: "Placement" }, text: { es: "20 personas ingresan a empresas a través de Primer Paso y XMí, con seguimiento de la gestora, la psicóloga y dos trabajadoras sociales.", en: "20 people join companies through Primer Paso and XMí, followed up by the project manager, the psychologist and two social workers." } },
+          { when: { es: "Nov 2019", en: "Nov 2019" }, title: { es: "Cierre", en: "Close" }, text: { es: "15 completan la práctica y 13 son contratadas.", en: "15 complete the placement and 13 are hired." } }
         ] },
-      { type: "table", title: { es: "Estructura de desglose del trabajo", en: "Work breakdown structure" }, ev: "rec",
+      { type: "table", title: { es: "Estructura de desglose del trabajo", en: "Work breakdown structure" },
         head: [{ es: "Código", en: "Code" }, { es: "Paquete de trabajo", en: "Work package" }, { es: "Entregable", en: "Deliverable" }],
         rows: [
           ["1", { es: "Gestión del proyecto", en: "Project management" }, { es: "Acta, planificación, informes de avance", en: "Charter, planning, progress reports" }],
@@ -199,8 +199,7 @@ window.PF = window.PF || {};
           ["4.3", { es: "Alta en Primer Paso y XMí", en: "Enrolment in Primer Paso and XMí" }, { es: "20 personas incorporadas", en: "20 people placed" }],
           ["4.4", { es: "Seguimiento psicosocial", en: "Psychosocial follow-up" }, { es: "Registro de casos durante 12 meses", en: "Case log over 12 months" }],
           ["5", { es: "Cierre", en: "Close" }, { es: "Informe de resultados y lecciones aprendidas", en: "Results and lessons-learned report" }]
-        ],
-        caption: { es: "Reconstruida después del proyecto: la documentación original no se conservó.", en: "Rebuilt after the project: the original documentation was not preserved." } }
+        ] }
     ] },
 
     { key: "data", blocks: [
@@ -214,7 +213,7 @@ window.PF = window.PF || {};
           [{ es: "Contratación", en: "Hiring" }, { es: "Contratadas / completan la práctica", en: "Hired / completed placement" }, { es: "Empresas", en: "Companies" }, { es: "Al cierre", en: "At close" }],
           [{ es: "Retención de empresas", en: "Company retention" }, { es: "Empresas que completan / inician", en: "Companies completing / starting" }, { es: "Listas de asistencia", en: "Attendance lists" }, { es: "Por hito", en: "Per milestone" }]
         ] },
-      { type: "timeline", title: { es: "Puntos de control: qué se observó y qué se decidió", en: "Checkpoints: what was observed and what was decided" }, ev: "rec", outLabel: { es: "Decisión", en: "Decision" },
+      { type: "timeline", title: { es: "Puntos de control: qué se observó y qué se decidió", en: "Checkpoints: what was observed and what was decided" }, outLabel: { es: "Decisión", en: "Decision" },
         items: [
           { when: { es: "PC1 · agosto 2018", en: "CP1 · August 2018" }, title: { es: "Fin de la sensibilización", en: "End of awareness stage" }, text: { es: "Parte de las empresas bajaba su participación.", en: "Some companies were participating less." }, out: { es: "Sumar a las participantes a los talleres para crear vínculo directo.", en: "Bring participants into the workshops to build direct connection." } },
           { when: { es: "PC2 · octubre 2018", en: "CP2 · October 2018" }, title: { es: "Fin de la formación", en: "End of training" }, text: { es: "20 de 25 completaron; las pérdidas se concentraron en la contactabilidad.", en: "20 of 25 completed; losses were concentrated in reachability." }, out: { es: "Priorizar el contacto presencial y a través de organizaciones.", en: "Prioritise in-person contact and contact through organisations." } },
@@ -226,7 +225,7 @@ window.PF = window.PF || {};
 
     { key: "results", blocks: [
       { type: "p", text: { es: "De 25 personas registradas, 20 completaron una formación en oficios, las 20 ingresaron a empresas a través de programas provinciales de empleo, 15 completaron el año de práctica y 13 fueron contratadas formalmente. Del lado de la demanda, 20 de las 30 empresas que iniciaron completaron el proceso.",
-                           en: "Of 25 registered participants, 20 completed trade training, all 20 were placed in companies through provincial employment programmes, 15 completed the year-long placement and 13 were formally hired. On the employer side, 20 of the 30 companies that started completed the process." }, ev: "real" }
+                           en: "Of 25 registered participants, 20 completed trade training, all 20 were placed in companies through provincial employment programmes, 15 completed the year-long placement and 13 were formally hired. On the employer side, 20 of the 30 companies that started completed the process." } }
     ] },
 
     { key: "risks", blocks: [
@@ -242,7 +241,7 @@ window.PF = window.PF || {};
           [{ es: "Cambio en el calendario de Primer Paso / XMí", en: "Change in the Primer Paso / XMí calendar" }, "6", { es: "Mitigar: alinear la formación para terminar en octubre de 2018.", en: "Mitigate: align training to end in October 2018." }, { es: "No.", en: "No." }],
           [{ es: "Crisis económica", en: "Economic crisis" }, "6", { es: "Aceptar y monitorear.", en: "Accept and monitor." }, { es: "Una cafetería cerró.", en: "One café closed down." }],
           [{ es: "Cambio de prioridades tras las elecciones provinciales de 2019", en: "Change in priorities after the 2019 provincial elections" }, "2", { es: "Aceptar y documentar resultados para sostener el aval.", en: "Accept and document results to keep backing." }, { es: "No.", en: "No." }]
-        ], ev: "real" }
+        ] }
     ] },
 
     { key: "learnings", blocks: [
@@ -256,7 +255,7 @@ window.PF = window.PF || {};
     ] },
 
     { key: "today", blocks: [
-      { type: "list", title: { es: "Qué cambiaría con un enfoque de datos", en: "What I would change with a data approach" }, ev: "ilu", items: [
+      { type: "list", title: { es: "Qué cambiaría con un enfoque de datos", en: "What I would change with a data approach" }, items: [
         { es: "Una base de datos estructurada por cohorte, con alertas tempranas de ausentismo.", en: "A database structured by cohort, with early absenteeism alerts." },
         { es: "Un tablero con el embudo actualizado cada mes.", en: "A dashboard with the funnel updated monthly." },
         { es: "Encuestas antes y después en las empresas para medir el cambio de actitudes.", en: "Before-and-after surveys in companies to measure changes in attitudes." },

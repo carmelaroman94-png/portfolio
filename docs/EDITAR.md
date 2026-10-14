@@ -12,7 +12,6 @@ No hace falta tocar `assets/js/app.js` ni el HTML para cambiar contenido.
 1. **Cada texto va en los dos idiomas:** `{ es: "…", en: "…" }`. Si un texto es igual en ambos (un nombre propio, una cifra), puede ir como texto simple: `"Power BI"`.
 2. **Se puede usar HTML sencillo** dentro de los textos: `<b>`, `<i>`, `<a href="…">`. Para el signo «menor que» escribe `&lt;`.
 3. **Cuidado con las comillas y las comas.** Cada elemento de una lista termina en coma, salvo el último. Si la página queda en blanco, casi siempre es una coma o una comilla de más o de menos: abre la consola del navegador (F12) y busca el error.
-4. **Etiqueta las cifras** con `ev: "real"`, `ev: "rec"` (reconstruido) o `ev: "ilu"` (ilustrativo). Nunca presentes como real un dato que no lo es.
 
 ## Añadir un caso nuevo
 
@@ -42,7 +41,7 @@ No hace falta tocar `assets/js/app.js` ni el HTML para cambiar contenido.
   period: { es: "…", en: "…" },
   method: { name: "Scrum", why: { es: "…", en: "…" } },
   tools: { es: "…", en: "…" },
-  metrics: [ { value: "6.452", label: { es: "…", en: "…" }, ev: "real" } ],  // las 3 primeras salen en las listas
+  metrics: [ { value: "6.452", label: { es: "…", en: "…" } } ],  // cifras destacadas del caso (opcional)
   deliverables: [ { es: "…", en: "…" } ],
   highlight: { title: { es: "…", en: "…" }, blocks: [ /* bloques */ ] },     // lo que se ve sin desplegar
   sections: [ { key: "context", blocks: [ /* bloques */ ] } ]                 // secciones desplegables
@@ -53,19 +52,19 @@ Claves de sección disponibles (`key`): `context`, `challenge`, `objectives`, `r
 
 ## Tipos de bloque
 
-Todos los bloques aceptan `title`, `caption` y `ev` opcionales.
+Todos los bloques aceptan `title` y `caption` opcionales.
 
 | Tipo | Para qué | Campos |
 | --- | --- | --- |
 | `p` | Párrafo | `text` |
-| `list` | Lista | `items` (textos, o `{ text, ev }`) |
+| `list` | Lista | `items` (textos) |
 | `note` | Texto destacado | `heading` (opcional), `text` |
-| `table` | Tabla | `head`, `rows` (una fila destacada: `{ total: true, cells: [...] }`), `num` (columnas numéricas), celdas con evidencia: `{ v: "…", ev: "real" }` |
-| `kpis` | Cifras grandes | `items: [{ value, label, ev }]` |
+| `table` | Tabla | `head`, `rows` (una fila destacada: `{ total: true, cells: [...] }`), `num` (columnas numéricas) |
+| `kpis` | Cifras grandes | `items: [{ value, label }]` |
 | `bars` | Barras horizontales | `items: [{ label, value, display, muted }]`, `max`, `dataHead` (añade «ver los datos en tabla») |
 | `pairs` | Grupos de barras para comparar | `groups: [{ title, items }]`, `max`, `dataHead` |
 | `funnel` | Embudo con conversión entre etapas | `steps: [{ label, value, loss }]` |
-| `timeline` | Línea de tiempo | `items: [{ when, title, text, out, ev }]`, `outLabel` (nombre del campo `out`) |
+| `timeline` | Línea de tiempo | `items: [{ when, title, text, out }]`, `outLabel` (nombre del campo `out`) |
 | `flow` | Proceso en pasos | `steps: [{ title, text }]`, `loop` (texto sobre la vuelta atrás) |
 | `raci` | Matriz RACI filtrable | `roles`, `rows: [{ task, cells: ["R","A","C","I",""] }]` |
 | `matrix` | Matriz interés–influencia | `items: [{ name, role, interest, influence, strategy }]` con `low`, `mid` o `high` |

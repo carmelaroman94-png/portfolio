@@ -27,9 +27,9 @@ window.PF = window.PF || {};
   tools: { es: "Python (pandas, scikit-learn, statsmodels, SciPy), LangChain + Groq (Llama 3.3 70B), SHAP y un agente de Microsoft 365 Copilot.",
            en: "Python (pandas, scikit-learn, statsmodels, SciPy), LangChain + Groq (Llama 3.3 70B), SHAP and a Microsoft 365 Copilot agent." },
   metrics: [
-    { value: { es: "1 de 4", en: "1 of 4" }, label: { es: "hipótesis del LLM confirmadas sin reservas", en: "LLM hypotheses confirmed without caveats" }, ev: "real" },
-    { value: "0,69", label: { es: "R² en test del mejor modelo (Gradient Boosting)", en: "test R² of the best model (Gradient Boosting)" }, ev: "real" },
-    { value: "+26", label: { es: "puntos de R² frente a la regresión lineal", en: "R² points above linear regression" }, ev: "real" }
+    { value: { es: "1 de 4", en: "1 of 4" }, label: { es: "hipótesis del LLM confirmadas sin reservas", en: "LLM hypotheses confirmed without caveats" } },
+    { value: "0,69", label: { es: "R² en test del mejor modelo (Gradient Boosting)", en: "test R² of the best model (Gradient Boosting)" } },
+    { value: "+26", label: { es: "puntos de R² frente a la regresión lineal", en: "R² points above linear regression" } }
   ],
 
   card: {
@@ -55,7 +55,7 @@ window.PF = window.PF || {};
         { id: "H4", text: { es: "El idioma de publicación condiciona la difusión.", en: "Publication language shapes reach." },
           verdict: { es: "Rechazada", en: "Rejected" }, result: "no",
           evidence: { es: "Aporte SHAP por debajo de 0,001 y ANOVA no significativo (p = 0,628). El argumento era verosímil y no tenía respaldo en los datos.", en: "SHAP contribution below 0.001 and a non-significant ANOVA (p = 0.628). The argument was plausible and had no support in the data." } }
-      ], ev: "real" }
+      ] }
     ]
   },
 
@@ -91,7 +91,7 @@ window.PF = window.PF || {};
     ] },
 
     { key: "findings", blocks: [
-      { type: "table", title: { es: "Rendimiento de los modelos", en: "Model performance" }, ev: "real",
+      { type: "table", title: { es: "Rendimiento de los modelos", en: "Model performance" },
         head: [{ es: "Modelo", en: "Model" }, { es: "R² (test)", en: "R² (test)" }, { es: "R² CV (5 particiones)", en: "R² CV (5 folds)" }, "RMSE", "MAE"],
         num: [1, 2, 3, 4],
         rows: [
@@ -100,7 +100,7 @@ window.PF = window.PF || {};
           { total: true, cells: ["Gradient Boosting", "0,69", "0,67 ± 0,03", "0,098", "0,078"] }
         ],
         caption: { es: "Test con 500 registros; validación cruzada sobre 2.000. Los 26 puntos de R² frente a la regresión lineal son en sí un hallazgo: la dominancia depende de umbrales e interacciones que un modelo aditivo no capta.", en: "Test on 500 records; cross-validation on 2,000. The 26-point R² gap over linear regression is a finding in itself: dominance depends on thresholds and interactions an additive model can't capture." } },
-      { type: "pairs", title: { es: "La negatividad suma en unos temas y resta en otros", en: "Negativity adds in some topics and subtracts in others" }, ev: "real", max: 1,
+      { type: "pairs", title: { es: "La negatividad suma en unos temas y resta en otros", en: "Negativity adds in some topics and subtracts in others" }, max: 1,
         groups: [
           { title: { es: "Eventos globales", en: "Global events" }, items: [
             { label: { es: "Negativo", en: "Negative" }, value: 0.74, display: "0,74" },
@@ -116,8 +116,8 @@ window.PF = window.PF || {};
         dataHead: [{ es: "Categoría · sentimiento", en: "Category · sentiment" }, { es: "trend_score medio", en: "Mean trend_score" }],
         caption: { es: "Trend_score medio por categoría y sentimiento (n = 2.500). En tecnología y deportes la negatividad apenas cambia el resultado.", en: "Mean trend_score by category and sentiment (n = 2,500). In technology and sports, negativity barely changes the result." } },
       { type: "list", title: { es: "Otros hallazgos", en: "Other findings" }, items: [
-        { text: { es: "<b>El engagement se satura.</b> Su efecto crece rápido hasta unos 6.000 puntos y luego se estabiliza; solo el 15 % de las publicaciones de test supera ese umbral.", en: "<b>Engagement saturates.</b> Its effect grows quickly up to about 6,000 points and then levels off; only 15% of test posts exceed that threshold." }, ev: "real" },
-        { text: { es: "<b>Un efecto que nadie anticipó.</b> La fuente, incluida como control, sí importa: las noticias puntúan más (0,59) que las búsquedas (0,54). Ninguna hipótesis del modelo lo había previsto.", en: "<b>An effect nobody anticipated.</b> Source, included as a control, does matter: news scores higher (0.59) than search (0.54). None of the model's hypotheses predicted it." }, ev: "real" }
+        { text: { es: "<b>El engagement se satura.</b> Su efecto crece rápido hasta unos 6.000 puntos y luego se estabiliza; solo el 15 % de las publicaciones de test supera ese umbral.", en: "<b>Engagement saturates.</b> Its effect grows quickly up to about 6,000 points and then levels off; only 15% of test posts exceed that threshold." } },
+        { text: { es: "<b>Un efecto que nadie anticipó.</b> La fuente, incluida como control, sí importa: las noticias puntúan más (0,59) que las búsquedas (0,54). Ninguna hipótesis del modelo lo había previsto.", en: "<b>An effect nobody anticipated.</b> Source, included as a control, does matter: news scores higher (0.59) than search (0.54). None of the model's hypotheses predicted it." } }
       ] }
     ] },
 

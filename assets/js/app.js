@@ -55,6 +55,7 @@
     ilu: { es: "Ilustrativo", en: "Illustrative" }
   };
   function ev(kind) {
+    return ""; // etiquetas de evidencia desactivadas en todo el sitio
     if (!kind || !EV[kind]) return "";
     return '<span class="ev ev--' + kind + '">' + esc(t(EV[kind])) + "</span>";
   }
@@ -412,7 +413,7 @@
       '<div class="wide"><dt>' + esc(ui("problem")) + "</dt><dd>" + t(p.problem) + "</dd></div>" +
       "<div><dt>" + esc(ui("role")) + "</dt><dd>" + t(p.role) + "</dd></div>" +
       "<div><dt>" + esc(ui("period")) + "</dt><dd>" + t(p.period) + "</dd></div>" +
-      "<div><dt>" + esc(ui("method")) + "</dt><dd><b>" + t(p.method.name) + "</b><br><span class=\"small muted\">" + t(p.method.why) + "</span></dd></div>" +
+      "<div><dt>" + esc(ui("method")) + "</dt><dd><b>" + t(p.method.label || p.method.name) + "</b>" + (p.method.why ? '<br><span class="small muted">' + t(p.method.why) + "</span>" : "") + "</dd></div>" +
       (p.tools ? "<div><dt>" + esc(ui("tools")) + "</dt><dd class=\"small\">" + t(p.tools) + "</dd></div>" : "") +
       "</dl>";
 

@@ -26,9 +26,9 @@ window.PF = window.PF || {};
   tools: { es: "World Development Indicators y concentración de mercado (Banco Mundial), V-Dem (Universidad de Gotemburgo); un modelo de lenguaje de pesos abiertos para clasificar indicadores; PCA, K-means, clustering jerárquico, mezclas gaussianas, Kruskal-Wallis y regresión OLS con bootstrap.",
            en: "World Development Indicators and market concentration (World Bank), V-Dem (University of Gothenburg); an open-weights language model to classify indicators; PCA, K-means, hierarchical clustering, Gaussian mixtures, Kruskal-Wallis and OLS regression with bootstrap." },
   metrics: [
-    { value: "0,86", label: { es: "kappa de Cohen entre la clasificación del LLM y la humana", en: "Cohen's kappa between LLM and human classification" }, ev: "real" },
-    { value: "12", label: { es: "PCA independientes (4 dimensiones × 3 estadísticos)", en: "independent PCAs (4 dimensions × 3 statistics)" }, ev: "real" },
-    { value: "4", label: { es: "perfiles monetario-fiscales de países", en: "monetary-fiscal country profiles" }, ev: "real" }
+    { value: "0,86", label: { es: "kappa de Cohen entre la clasificación del LLM y la humana", en: "Cohen's kappa between LLM and human classification" } },
+    { value: "12", label: { es: "PCA independientes (4 dimensiones × 3 estadísticos)", en: "independent PCAs (4 dimensions × 3 statistics)" } },
+    { value: "4", label: { es: "perfiles monetario-fiscales de países", en: "monetary-fiscal country profiles" } }
   ],
 
   card: {
@@ -54,7 +54,7 @@ window.PF = window.PF || {};
         { id: "H3", text: { es: "Incorporar juntas las variables monetarias, institucionales, estructurales y sociodemográficas caracteriza mejor las trayectorias que la dimensión monetario-fiscal sola.", en: "Combining monetary, institutional, structural and socio-demographic variables characterises inflation paths better than the monetary-fiscal dimension alone." },
           verdict: { es: "Solo en la volatilidad", en: "Only for volatility" }, result: "partial",
           evidence: { es: "Las cuatro dimensiones mejoran la caracterización de la volatilidad de la inflación; el efecto sobrevive a los tres chequeos y no aparece en el nivel medio ni en la tendencia.", en: "The four dimensions improve how inflation volatility is characterised; the effect survives all three checks and does not appear in the mean level or trend." } }
-      ], ev: "real" }
+      ] }
     ]
   },
 
@@ -77,10 +77,10 @@ window.PF = window.PF || {};
       { type: "p", text: { es: "Construí un dataset propio para los países miembros de la ONU entre 2000 y 2020, a partir de tres fuentes: World Development Indicators (Banco Mundial), Varieties of Democracy (Universidad de Gotemburgo) y el índice Herfindahl-Hirschman de concentración de mercado (Banco Mundial).",
                            en: "I built my own dataset for UN member states between 2000 and 2020 from three sources: World Development Indicators (World Bank), Varieties of Democracy (University of Gothenburg) and the Herfindahl-Hirschman market concentration index (World Bank)." } },
       { type: "list", title: { es: "Decisiones de construcción", en: "Construction decisions" }, items: [
-        { text: { es: "<b>Recorte del universo:</b> filtrar por miembros de la ONU eleva del 10 % al 24 % los indicadores con cobertura de entre el 98 % y el 100 %.", en: "<b>Scope:</b> filtering to UN members raises the share of indicators with 98–100% coverage from 10% to 24%." }, ev: "real" },
-        { text: { es: "<b>Clasificación con un LLM, validada:</b> un modelo de lenguaje de pesos abiertos y versionado (reproducible) clasificó los indicadores en las cuatro dimensiones. Se validó contra 100 indicadores etiquetados a mano (kappa de Cohen = 0,86); los casos de baja confianza se marcaron como ambiguos y se revisaron manualmente.", en: "<b>LLM classification, validated:</b> an open-weights, versioned (reproducible) language model classified indicators into the four dimensions. It was validated against 100 hand-labelled indicators (Cohen's kappa = 0.86); low-confidence cases were flagged as ambiguous and reviewed manually." }, ev: "real" },
-        { text: { es: "<b>Tres estadísticos por serie:</b> media, tendencia (pendiente de una regresión lineal sobre el año) y volatilidad (desviación estándar de los residuos).", en: "<b>Three statistics per series:</b> mean, trend (slope of a linear regression on year) and volatility (standard deviation of the residuals)." }, ev: "real" },
-        { text: { es: "<b>Faltantes:</b> exclusión de 9 países con más del 40 % de indicadores faltantes e imputación KNN; se probaron k = 3, 5, 8, 10, 15 y 20 con validación cruzada y k = 5 dio el menor RMSE (0,863).", en: "<b>Missing data:</b> 9 countries with over 40% missing indicators were excluded and the rest imputed with KNN; k = 3, 5, 8, 10, 15 and 20 were cross-validated and k = 5 gave the lowest RMSE (0.863)." }, ev: "real" }
+        { text: { es: "<b>Recorte del universo:</b> filtrar por miembros de la ONU eleva del 10 % al 24 % los indicadores con cobertura de entre el 98 % y el 100 %.", en: "<b>Scope:</b> filtering to UN members raises the share of indicators with 98–100% coverage from 10% to 24%." } },
+        { text: { es: "<b>Clasificación con un LLM, validada:</b> un modelo de lenguaje de pesos abiertos y versionado (reproducible) clasificó los indicadores en las cuatro dimensiones. Se validó contra 100 indicadores etiquetados a mano (kappa de Cohen = 0,86); los casos de baja confianza se marcaron como ambiguos y se revisaron manualmente.", en: "<b>LLM classification, validated:</b> an open-weights, versioned (reproducible) language model classified indicators into the four dimensions. It was validated against 100 hand-labelled indicators (Cohen's kappa = 0.86); low-confidence cases were flagged as ambiguous and reviewed manually." } },
+        { text: { es: "<b>Tres estadísticos por serie:</b> media, tendencia (pendiente de una regresión lineal sobre el año) y volatilidad (desviación estándar de los residuos).", en: "<b>Three statistics per series:</b> mean, trend (slope of a linear regression on year) and volatility (standard deviation of the residuals)." } },
+        { text: { es: "<b>Faltantes:</b> exclusión de 9 países con más del 40 % de indicadores faltantes e imputación KNN; se probaron k = 3, 5, 8, 10, 15 y 20 con validación cruzada y k = 5 dio el menor RMSE (0,863).", en: "<b>Missing data:</b> 9 countries with over 40% missing indicators were excluded and the rest imputed with KNN; k = 3, 5, 8, 10, 15 and 20 were cross-validated and k = 5 gave the lowest RMSE (0.863)." } }
       ] }
     ] },
 
@@ -94,7 +94,7 @@ window.PF = window.PF || {};
     ] },
 
     { key: "findings", blocks: [
-      { type: "bars", title: { es: "Cuatro perfiles monetario-fiscales (GMM, k = 4)", en: "Four monetary-fiscal profiles (GMM, k = 4)" }, ev: "real",
+      { type: "bars", title: { es: "Cuatro perfiles monetario-fiscales (GMM, k = 4)", en: "Four monetary-fiscal profiles (GMM, k = 4)" },
         items: [
           { label: { es: "Amplio / heterogéneo", en: "Broad / heterogeneous" }, value: 105, display: { es: "105 países", en: "105 countries" } },
           { label: { es: "Avanzadas", en: "Advanced" }, value: 40, display: { es: "40 países", en: "40 countries" } },
