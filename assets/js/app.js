@@ -72,6 +72,12 @@
     target: svg('<circle cx="11" cy="13" r="9"/><circle cx="11" cy="13" r="5.2"/><circle cx="11" cy="13" r="1.4"/><path d="M11 13 21 3"/><path d="M17 3h4v4"/>'),
     // oreja: escucha activa
     listen: svg('<path d="M5 9a7 7 0 1 1 14 0c0 6.5-6.5 6.8-6.5 10.5a3.5 3.5 0 0 1-7 0"/><path d="M15.5 9a3 3 0 0 0-6 0v1.2a2.3 2.3 0 1 1 0 4.6"/>'),
+    // entregables
+    report: svg('<path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/><path d="M8.5 13h7"/><path d="M8.5 17h5"/>'),
+    database: svg('<ellipse cx="12" cy="5.5" rx="7.5" ry="2.8"/><path d="M4.5 5.5v13c0 1.5 3.4 2.8 7.5 2.8s7.5-1.3 7.5-2.8v-13"/><path d="M4.5 12c0 1.5 3.4 2.8 7.5 2.8s7.5-1.3 7.5-2.8"/>'),
+    dashboard: svg('<rect x="2.5" y="4" width="19" height="16" rx="2"/><path d="M2.5 8h19"/><path d="m6 16.5 3.5-4 3 2.5 5-5"/>'),
+    chart: svg('<path d="M3.5 20.5h17"/><rect x="5" y="11" width="3.2" height="9.5" rx="0.8"/><rect x="10.4" y="6" width="3.2" height="14.5" rx="0.8"/><rect x="15.8" y="14" width="3.2" height="6.5" rx="0.8"/>'),
+    model: svg('<circle cx="5" cy="12" r="2.2"/><circle cx="12" cy="5" r="2.2"/><circle cx="12" cy="19" r="2.2"/><circle cx="19" cy="12" r="2.2"/><path d="m6.6 10.4 3.8-3.8"/><path d="m6.6 13.6 3.8 3.8"/><path d="m13.6 6.6 3.8 3.8"/><path d="m13.6 17.4 3.8-3.8"/>'),
     // tres personas: trabajo colaborativo
     team: svg('<circle cx="12" cy="7" r="3.5"/><path d="M5.5 21a6.5 6.5 0 0 1 13 0"/><circle cx="4.5" cy="10" r="2.5"/><path d="M1 19.5a4 4 0 0 1 5-3.9"/><circle cx="19.5" cy="10" r="2.5"/><path d="M23 19.5a4 4 0 0 0-5-3.9"/>')
   };
@@ -303,7 +309,6 @@
       list +
       "</div>" +
       '<div class="case-side"><span class="method-chip">' + t(p.method.name) + "</span>" +
-      '<span class="context-chip">' + esc(ui(p.type === "work" ? "ctx_work" : "ctx_academic")) + "</span>" +
       '<a class="btn btn--quiet" href="' + caseUrl(p.id) + '">' + esc(ui("read_case")) + "</a></div>" +
       "</li>";
   }
@@ -376,7 +381,6 @@
       '<section class="section" id="laborales"><div class="wrap"><h2>' + t(pr.work_title) + '</h2><p class="section-intro">' + t(pr.work_intro) + "</p>" +
       '<ul class="case-list">' + work.map(caseRow).join("") + "</ul></div></section>" +
       '<section class="section" id="academicos"><div class="wrap"><h2>' + t(pr.academic_title) + "</h2>" +
-      '<div class="callout" style="margin-bottom:1.5rem"><p>' + t(pr.academic_note) + "</p></div>" +
       '<ul class="case-list">' + acad.map(caseRow).join("") + "</ul></div></section>" +
       '<section class="section" id="visualizacion"><div class="wrap"><h2>' + t(gallery.title) + '</h2><p class="section-intro">' + t(gallery.intro) + "</p>" +
       '<ol class="principles">' + gallery.principles.map(function (p) { return "<li><b>" + t(p.name) + "</b><span>" + t(p.text) + "</span></li>"; }).join("") + "</ol>" +
@@ -402,8 +406,25 @@
       (p.tools ? "<div><dt>" + esc(ui("tools")) + "</dt><dd class=\"small\">" + t(p.tools) + "</dd></div>" : "") +
       "</dl>";
 
-    var deliverables = p.deliverables ? "<h2>" + esc(ui("deliverables")) + '</h2><ul class="deliverables">' +
-      p.deliverables.map(function (d) { return "<li>" + t(d) + "</li>"; }).join("") + "</ul>" : "";
+    var withIcons = (p.deliverables || []).some(function (d) { return d.icon; });
+    var deliverables = p.deliverables ? "<h2>" + esc(ui("deliverables")) + '</h2><ul class="deliverables' + (withIcons ? " with-icons" : "") + '">' +
+      p.deliverables.map(function (d) {
+        return withIcons
+          ? '<li><span class="d-icon" aria-hidden="true">' + (ICONS[d.icon] || "") + "</span><span>" + t(d) + "</span></li>"
+          : "<li>" + t(d) + "</li>";
+      }).join("") + "</ul>" : "";
+
+    // Dashboards visibles: pestañas y un visor
+    var dashboards = p.dashboards ? '<section class="dash" aria-labelledby="dash-title"><h2 id="dash-title">' + esc(ui("dashboards")) + "</h2>" +
+      '<div class="dash-tabs" role="tablist">' + p.dashboards.map(function (d, i) {
+        return '<button type="button" role="tab" id="dash-tab-' + i + '" aria-controls="dash-panel" aria-selected="' + (i === 0) + '"' +
+          ' data-src="' + esc(d.src) + '" data-text="' + esc(t(d.text)) + '" data-title="' + esc(t(d.name)) + '">' + t(d.name) + "</button>";
+      }).join("") + "</div>" +
+      '<div class="dash-panel" id="dash-panel" role="tabpanel" aria-labelledby="dash-tab-0">' +
+      '<div class="dash-bar"><p class="small muted" data-dash-text>' + t(p.dashboards[0].text) + "</p>" +
+      '<a class="btn btn--quiet" data-dash-open href="' + esc(p.dashboards[0].src) + '" target="_blank" rel="noopener">' + esc(ui("open_full")) + "</a></div>" +
+      '<iframe class="embed-frame dash-frame" src="' + esc(p.dashboards[0].src) + '" title="' + esc(t(p.dashboards[0].name)) + '" loading="lazy"></iframe>' +
+      "</div></section>" : "";
 
     var highlight = p.highlight ? '<section class="highlight" aria-label="' + esc(t(p.highlight.title)) + '"><h2>' + t(p.highlight.title) + "</h2>" +
       p.highlight.blocks.map(block).join("") + "</section>" : "";
@@ -429,7 +450,7 @@
       summary +
       (p.metrics ? figures(p.metrics) : "") +
       "</div></header>" +
-      '<div class="wrap">' + highlight + deliverables +
+      '<div class="wrap">' + highlight + deliverables + dashboards +
       '<div class="sections-bar"><h2 style="margin:0">' + esc(ui("case_detail")) + '</h2><div><button type="button" class="btn btn--quiet" data-toggle-all>' + esc(ui("open_all")) + "</button></div></div>" +
       secs + pager + "</div></article>";
   }
@@ -491,6 +512,20 @@
         var v = btn.getAttribute("data-filter");
         root.querySelectorAll("[data-filter]").forEach(function (x) { x.setAttribute("aria-pressed", String(x === btn)); });
         root.querySelectorAll(".case-row").forEach(function (row) { row.hidden = v !== "all" && row.getAttribute("data-type") !== v; });
+      });
+    });
+
+    // Dashboards del caso: cambiar de pestaña
+    root.querySelectorAll(".dash").forEach(function (box) {
+      var frame = box.querySelector(".dash-frame"), panel = box.querySelector(".dash-panel");
+      box.querySelectorAll('[role="tab"]').forEach(function (tab) {
+        tab.addEventListener("click", function () {
+          box.querySelectorAll('[role="tab"]').forEach(function (x) { x.setAttribute("aria-selected", String(x === tab)); });
+          frame.src = tab.getAttribute("data-src"); frame.title = tab.getAttribute("data-title");
+          box.querySelector("[data-dash-text]").textContent = tab.getAttribute("data-text");
+          box.querySelector("[data-dash-open]").href = tab.getAttribute("data-src");
+          panel.setAttribute("aria-labelledby", tab.id);
+        });
       });
     });
 

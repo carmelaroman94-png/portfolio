@@ -53,6 +53,7 @@ window.PF.site = {
     method: { es: "Metodología", en: "Methodology" },
     tools: { es: "Herramientas", en: "Tools" },
     deliverables: { es: "Entregables", en: "Deliverables" },
+    dashboards: { es: "Dashboards", en: "Dashboards" },
     more_cases: { es: "Más casos", en: "More cases" },
     prev: { es: "Anterior", en: "Previous" },
     next: { es: "Siguiente", en: "Next" },
@@ -295,9 +296,7 @@ window.PF.site = {
     work_title: { es: "Proyectos laborales", en: "Work projects" },
     work_intro: { es: "Tres contextos distintos (empresa tecnológica, ONG internacional y sector público) y tres marcos de trabajo elegidos según el problema.",
                   en: "Three different contexts (a tech company, an international NGO and the public sector) and three frameworks, each chosen to fit the problem." },
-    academic_title: { es: "Proyectos académicos", en: "Academic projects" },
-    academic_note: { es: "Proyectos realizados en contexto académico. Los proyectos de gestión de la sección anterior se realizaron en contexto laboral.",
-                     en: "Projects carried out in an academic context. The management projects in the previous section were carried out in a work context." }
+    academic_title: { es: "Proyectos académicos", en: "Academic projects" }
   },
 
   /* ---------- Laboratorio de visualización (Power BI) ---------- */

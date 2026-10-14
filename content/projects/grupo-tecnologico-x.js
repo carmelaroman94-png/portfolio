@@ -1,7 +1,7 @@
 /* =========================================================
    Caso laboral · Grupo tecnológico X (pseudónimo)
    Fuente: documento de trabajo del caso (borrador v2, Scrum).
-   Cifras reales del CRM, publicadas sin nombrar a la empresa.
+   Cifras del CRM, publicadas sin nombrar a la empresa.
    ========================================================= */
 window.PF = window.PF || {};
 (window.PF.projects = window.PF.projects || []).push({
@@ -13,8 +13,8 @@ window.PF = window.PF || {};
   shortTitle: "Grupo tecnológico X",
   org: { es: "Grupo tecnológico X · empresa de software española", en: "Grupo tecnológico X · Spanish software company" },
   orgNote: {
-    es: "«Grupo tecnológico X» es un pseudónimo que preserva la identidad de la empresa; el contexto es real: una empresa de software española. Las cifras son reales y se publican sin nombrar a la empresa. En los dashboards, los nombres comerciales de los productos se sustituyeron por letras.",
-    en: "“Grupo tecnológico X” is a pseudonym that protects the company's identity; the context is real: a Spanish software company. The figures are real and are published without naming the company. In the dashboards, product brand names were replaced by letters."
+    es: "«Grupo tecnológico X» es un pseudónimo que preserva la identidad de la empresa; el contexto es una empresa de software española. En los dashboards, los nombres comerciales de los productos se sustituyeron por letras.",
+    en: "“Grupo tecnológico X” is a pseudonym that protects the company's identity; the context is a Spanish software company. In the dashboards, product brand names were replaced by letters."
   },
   problem: {
     es: "Marketing y Comercial no podían evaluar sus acciones ni priorizar oportunidades: el dato del CRM se recogía sin criterios comunes y no existía ninguna herramienta analítica.",
@@ -30,20 +30,26 @@ window.PF = window.PF || {};
     why: { es: "El alcance no estaba cerrado: el diagnóstico iba a cambiar las prioridades, y los ciclos cortos con revisión permitían ajustar el rumbo con Marketing.",
            en: "Scope was not fixed: the diagnosis was going to change priorities, and short cycles with a review made it possible to adjust course with Marketing." }
   },
-  tools: { es: "CRM Microsoft Dynamics 365, Python (pandas, Plotly, scikit-learn) en Google Colab y VS Code, Power BI, Excel y Google Calendar.",
-           en: "Microsoft Dynamics 365 CRM, Python (pandas, Plotly, scikit-learn) in Google Colab and VS Code, Power BI, Excel and Google Calendar." },
-  metrics: [
-    { value: "3", label: { es: "áreas coordinadas", en: "teams coordinated" }, ev: "real" },
-    { value: "4", label: { es: "sprints de 2 semanas", en: "two-week sprints" }, ev: "real" },
-    { value: "6.452", label: { es: "oportunidades diagnosticadas", en: "opportunities diagnosed" }, ev: "real" },
-    { value: "96 %", label: { es: "sin «fase de canalización» registrada", en: "with no pipeline stage recorded" }, ev: "real" }
-  ],
+  tools: { es: "CRM Microsoft Dynamics 365, Python (pandas, Plotly, scikit-learn) en Google Colab y VS Code, Power BI y Excel.",
+           en: "Microsoft Dynamics 365 CRM, Python (pandas, Plotly, scikit-learn) in Google Colab and VS Code, Power BI and Excel." },
   deliverables: [
-    { es: "Dos informes de hallazgos para Marketing (base de oportunidades; customer journey y Cloud), con recomendaciones de mejora y análisis de factibilidad.", en: "Two findings reports for Marketing (opportunity base; customer journey and Cloud), with improvement recommendations and feasibility analysis." },
-    { es: "Bases de potenciales y oportunidades integradas y sistematizadas.", en: "Lead and opportunity databases, integrated and systematised." },
-    { es: "Tres dashboards interactivos en HTML: pipeline de oportunidades, ciclo de ventas completo y unidad Cloud.", en: "Three interactive HTML dashboards: opportunity pipeline, full sales cycle and the Cloud unit." },
-    { es: "Panel en Power BI centrado en ciclos de venta, segmentado por unidad de negocio y producto.", en: "Power BI panel focused on sales cycles, segmented by business unit and product." },
-    { es: "Modelo de probabilidad de venta con recomendaciones.", en: "Sales probability model with recommendations." }
+    { icon: "report", es: "Dos informes de hallazgos para Marketing (base de oportunidades; customer journey y Cloud), con recomendaciones de mejora y análisis de factibilidad.", en: "Two findings reports for Marketing (opportunity base; customer journey and Cloud), with improvement recommendations and feasibility analysis." },
+    { icon: "database", es: "Bases de potenciales y oportunidades integradas y sistematizadas.", en: "Lead and opportunity databases, integrated and systematised." },
+    { icon: "dashboard", es: "Tres dashboards interactivos en HTML: pipeline de oportunidades, ciclo de ventas completo y unidad Cloud.", en: "Three interactive HTML dashboards: opportunity pipeline, full sales cycle and the Cloud unit." },
+    { icon: "chart", es: "Panel en Power BI centrado en ciclos de venta, segmentado por unidad de negocio y producto.", en: "Power BI panel focused on sales cycles, segmented by business unit and product." },
+    { icon: "model", es: "Modelo de probabilidad de venta con recomendaciones.", en: "Sales probability model with recommendations." }
+  ],
+
+  dashboards: [
+    { name: { es: "Pipeline de oportunidades", en: "Opportunity pipeline" },
+      text: { es: "Evolución de la creación de oportunidades, ciclos de las abiertas y tasas de éxito por unidad.", en: "Opportunity creation over time, cycles of open opportunities and win rates by unit." },
+      src: "dashboards/oportunidades.html" },
+    { name: { es: "Ciclo de ventas y customer journey", en: "Sales cycle and customer journey" },
+      text: { es: "Recorrido completo de potencial a cierre, fuga del embudo por etapa y segmentación por unidad y tipo.", en: "Full journey from lead to close, funnel leakage by stage and segmentation by unit and type." },
+      src: "dashboards/ciclos.html" },
+    { name: { es: "Unidad Cloud", en: "Cloud unit" },
+      text: { es: "Ciclos de ganadas frente a perdidas, relación entre duración e importe y atribución por canal.", en: "Won vs lost cycles, relationship between length and amount, and channel attribution." },
+      src: "dashboards/cloud.html" }
   ],
 
   card: {
@@ -82,8 +88,7 @@ window.PF = window.PF || {};
            { es: "Segmenté esas oportunidades por tipo para identificar su origen.", en: "I segmented those opportunities by type to identify their origin." },
            { es: "Hallazgo compartido.", en: "Finding shared." }]
         ],
-        caption: { es: "Hallazgos y decisiones con datos reales del proyecto. La columna «Estado» indica solo lo que consta.", en: "Findings and decisions use real project data. The “Status” column states only what is documented." },
-        ev: "real" }
+        caption: { es: "La columna «Estado» indica solo lo que consta.", en: "The “Status” column states only what is documented." } }
     ]
   },
 
@@ -100,7 +105,7 @@ window.PF = window.PF || {};
     { key: "challenge", blocks: [
       { type: "p", text: { es: "Marketing no tenía ninguna herramienta visual para evaluar con indicadores sus acciones (campañas, eventos, fidelización). El diagnóstico mostró por qué: los campos que permitían medir estaban vacíos.",
                            en: "Marketing had no visual tool to evaluate its actions (campaigns, events, loyalty) with indicators. The diagnosis showed why: the fields needed for measurement were empty." } },
-      { type: "bars", title: { es: "Campos sin dato en las 6.452 oportunidades", en: "Empty fields across the 6,452 opportunities" }, ev: "real", max: 100,
+      { type: "bars", title: { es: "Campos sin dato en las 6.452 oportunidades", en: "Empty fields across the 6,452 opportunities" }, max: 100,
         items: [
           { label: { es: "Fase de canalización", en: "Pipeline stage" }, value: 96, display: "96 %" },
           { label: { es: "Necesidad del cliente", en: "Customer need" }, value: 92, display: "92 %" },
@@ -181,7 +186,7 @@ window.PF = window.PF || {};
     ] },
 
     { key: "planning", blocks: [
-      { type: "timeline", title: { es: "Sprints: objetivo e incremento", en: "Sprints: goal and increment" }, ev: "real", outLabel: { es: "Incremento", en: "Increment" },
+      { type: "timeline", title: { es: "Sprints: objetivo e incremento", en: "Sprints: goal and increment" }, outLabel: { es: "Incremento", en: "Increment" },
         items: [
           { when: { es: "Sprint 1 · semanas 1 y 2", en: "Sprint 1 · weeks 1–2" }, title: { es: "Entender el estado de la cuestión y presentar propuestas de mejora", en: "Understand the current state and present improvement proposals" }, out: { es: "Dashboard exploratorio y primer listado de gaps de calidad con sugerencias de mejora.", en: "Exploratory dashboard and a first list of quality gaps with suggested improvements." } },
           { when: { es: "Sprint 2 · semanas 3 y 4", en: "Sprint 2 · weeks 3–4" }, title: { es: "Reconstruir el recorrido comercial completo", en: "Rebuild the full sales journey" }, out: { es: "Bases integradas, dashboard de ciclos y customer journey.", en: "Integrated bases, cycle and customer journey dashboard." } },
@@ -196,9 +201,9 @@ window.PF = window.PF || {};
       { type: "p", text: { es: "Fuente: CRM Microsoft Dynamics 365, de enero de 2025 a abril de 2026. Construí tres bases, cada una para una pregunta distinta:",
                            en: "Source: Microsoft Dynamics 365 CRM, January 2025 to April 2026. I built three bases, each for a different question:" } },
       { type: "kpis", items: [
-        { value: "6.452", label: { es: "oportunidades, para el análisis exploratorio", en: "opportunities, for exploratory analysis" }, ev: "real" },
-        { value: "9.625", label: { es: "registros de potenciales y oportunidades unidos, para el customer journey", en: "joined lead and opportunity records, for the customer journey" }, ev: "real" },
-        { value: "4.933", label: { es: "oportunidades cerradas, para el análisis segmentado", en: "closed opportunities, for segmented analysis" }, ev: "real" }
+        { value: "6.452", label: { es: "oportunidades, para el análisis exploratorio", en: "opportunities, for exploratory analysis" } },
+        { value: "9.625", label: { es: "registros de potenciales y oportunidades unidos, para el customer journey", en: "joined lead and opportunity records, for the customer journey" } },
+        { value: "4.933", label: { es: "oportunidades cerradas, para el análisis segmentado", en: "closed opportunities, for segmented analysis" } }
       ] },
       { type: "list", title: { es: "Indicadores calculados", en: "Indicators calculated" }, items: [
         { es: "Ciclo de potencial a oportunidad, de oportunidad a cierre y ciclo total.", en: "Lead-to-opportunity cycle, opportunity-to-close cycle and total cycle." },
@@ -209,7 +214,7 @@ window.PF = window.PF || {};
       { type: "note", heading: { es: "Una decisión de método", en: "A methodological decision" },
         text: { es: "No eliminé los casos extremos (275 ventas ganadas después de 93 días y 92 perdidas después de 232): los traté por separado, porque podían corresponder a clientes del sector público, con ciclos más largos.",
                 en: "I did not remove extreme cases (275 deals won after 93 days and 92 lost after 232): I analysed them separately, because they could correspond to public-sector clients with longer cycles." } },
-      { type: "pairs", title: { es: "Unidad Cloud: las perdidas tardan más y valen más", en: "Cloud unit: lost deals take longer and are worth more" }, ev: "real",
+      { type: "pairs", title: { es: "Unidad Cloud: las perdidas tardan más y valen más", en: "Cloud unit: lost deals take longer and are worth more" },
         groups: [
           { title: { es: "Días hasta el cierre (mediana)", en: "Days to close (median)" }, items: [
             { label: { es: "Ganadas", en: "Won" }, value: 7, display: { es: "7 días", en: "7 days" } },
@@ -222,16 +227,7 @@ window.PF = window.PF || {};
         caption: { es: "De aquí salió la recomendación: reactivar a las 2–3 semanas y acompañar de forma específica las oportunidades grandes.", en: "This led to the recommendation: reactivate at 2–3 weeks and give large opportunities dedicated follow-up." } },
       { type: "note", heading: { es: "Antes de modelar, comprobar la intuición", en: "Before modelling, test the intuition" },
         text: { es: "El 70 % de las fechas estimadas de cierre eran acertadas y la estimación de éxito de los comerciales coincidía mayoritariamente con el resultado. Por eso el modelo de probabilidad de venta (Random Forest y Gradient Boosting) se planteó como apoyo a esa intuición, no como sustituto.",
-                en: "70% of estimated close dates were accurate and the sales reps' success estimates mostly matched the outcome. So the sales probability model (Random Forest and Gradient Boosting) was framed as support for that intuition, not a replacement." } },
-      { type: "embed", name: { es: "Dashboard 1 · Pipeline de oportunidades", en: "Dashboard 1 · Opportunity pipeline" },
-        text: { es: "Evolución de la creación de oportunidades, ciclos de las abiertas y tasas de éxito por unidad.", en: "Opportunity creation over time, cycles of open opportunities and win rates by unit." },
-        src: "dashboards/oportunidades.html" },
-      { type: "embed", name: { es: "Dashboard 2 · Ciclo de ventas y customer journey", en: "Dashboard 2 · Sales cycle and customer journey" },
-        text: { es: "Recorrido completo de potencial a cierre, fuga del embudo por etapa y segmentación por unidad y tipo.", en: "Full journey from lead to close, funnel leakage by stage and segmentation by unit and type." },
-        src: "dashboards/ciclos.html" },
-      { type: "embed", name: { es: "Dashboard 3 · Unidad Cloud", en: "Dashboard 3 · Cloud unit" },
-        text: { es: "Ciclos de ganadas frente a perdidas, relación entre duración e importe y atribución por canal.", en: "Won vs lost cycles, relationship between length and amount, and channel attribution." },
-        src: "dashboards/cloud.html" }
+                en: "70% of estimated close dates were accurate and the sales reps' success estimates mostly matched the outcome. So the sales probability model (Random Forest and Gradient Boosting) was framed as support for that intuition, not a replacement." } }
     ] },
 
     { key: "results", blocks: [
