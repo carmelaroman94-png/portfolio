@@ -196,7 +196,8 @@ window.PF = window.PF || {};
         { icon: "clipboard", text: { es: "Se acompañó la implementación de algunas oportunidades de mejora en la recolección del dato.", en: "Support was given to implementing some of the improvement opportunities in data collection." } },
         { icon: "idea", text: { es: "Marketing y la dirección recibieron recomendaciones concretas (calificación de leads, reactivación temprana en Cloud) y un hallazgo estratégico: no había oferta específica para el sector público.", en: "Marketing and senior management received concrete recommendations (lead qualification, early reactivation in Cloud) and a strategic finding: there was no specific offer for the public sector." } },
         { icon: "dashboard", text: { es: "La empresa pasó de no tener ninguna herramienta analítica a contar con dashboards interactivos, un panel de KPIs y bases integradas.", en: "The company went from having no analytical tool to having interactive dashboards, a KPI panel and integrated databases." } },
-        { icon: "cycle", text: { es: "Se conocieron los ciclos de venta específicos de los productos y las probabilidades de pérdida en función de ellos, y se apoyó el diseño de estrategias específicas para ciclos de venta costosos.", en: "Product-specific sales cycles and the related probability of loss became known, supporting the design of specific strategies for costly sales cycles." } }
+        { icon: "cycle", text: { es: "Se conocieron los ciclos de venta específicos de los productos y las probabilidades de pérdida en función de ellos.", en: "Product-specific sales cycles and the related probability of loss became known." } },
+        { icon: "target", text: { es: "Se apoyó el diseño de estrategias específicas para ciclos de venta costosos.", en: "Support was given to designing specific strategies for costly sales cycles." } }
       ] }
     ] },
 
