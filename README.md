@@ -83,7 +83,7 @@ La guía completa, con los tipos de bloque disponibles (tablas, barras, embudo, 
 
 ## Datos, fuentes y confidencialidad
 
-- **Grupo tecnológico X** es un pseudónimo: el contexto es real (una empresa de software española) y se preserva su identidad. Las cifras son reales y se publican sin nombrar a la empresa. En los dashboards, los nombres comerciales de los productos se sustituyeron por letras (Producto A–I).
+- **Grupo tecnológico X** es un pseudónimo que preserva la identidad de la empresa; el contexto es una empresa de software española.
 - **Development International:** fuentes públicas: USA Trade Online (U.S. Census Bureau), lista de bienes del ILAB (Departamento de Trabajo de EE. UU.) y coeficientes regionales de Alsamawi et al. (2019, OCDE/UNICEF). Las empresas usuarias no se nombran.
 - **Ministerio de Córdoba:** por respeto a las participantes, no hay nombres, fotos ni empresas identificables. La estructura de desglose del trabajo y los puntos de control están marcados como reconstruidos.
 - **La conversación digital global** usa un dataset sintético (Crossplatform Trending Topics 2026, Kaggle), declarado como límite en el propio caso.
@@ -93,4 +93,4 @@ La guía completa, con los tipos de bloque disponibles (tablas, barras, embudo, 
 
 ### English summary
 
-Bilingual (Spanish / English) portfolio of a Project Manager specialised in data. Plain HTML, CSS and JavaScript, no build step, published with GitHub Pages. Content lives in `content/` and is rendered by `assets/js/app.js`. Every figure is labelled as actual, reconstructed or illustrative. “Grupo tecnológico X” is a pseudonym for a Spanish software company; its figures are real and published without naming the company.
+Bilingual (Spanish / English) portfolio of a Project Manager specialised in data. Plain HTML, CSS and JavaScript, no build step, published with GitHub Pages. Content lives in `content/` and is rendered by `assets/js/app.js`. Every figure is labelled as actual, reconstructed or illustrative. “Grupo tecnológico X” is a pseudonym for a Spanish software company.

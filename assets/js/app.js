@@ -416,6 +416,7 @@
 
     // Dashboards visibles: pestañas y un visor
     var dashboards = p.dashboards ? '<section class="dash" aria-labelledby="dash-title"><h2 id="dash-title">' + esc(ui("dashboards")) + "</h2>" +
+      (p.dashboardsNote ? '<p class="small muted dash-note">' + t(p.dashboardsNote) + "</p>" : "") +
       '<div class="dash-tabs" role="tablist">' + p.dashboards.map(function (d, i) {
         return '<button type="button" role="tab" id="dash-tab-' + i + '" aria-controls="dash-panel" aria-selected="' + (i === 0) + '"' +
           ' data-src="' + esc(d.src) + '" data-text="' + esc(t(d.text)) + '" data-title="' + esc(t(d.name)) + '">' + t(d.name) + "</button>";

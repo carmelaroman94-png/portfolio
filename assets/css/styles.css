@@ -371,6 +371,7 @@ img { max-width: 100%; display: block; }
 .d-icon { flex: none; width: 48px; height: 48px; border-radius: 50%; display: grid; place-items: center; background: var(--rose-soft); color: var(--rose); }
 .d-icon svg { width: 28px; height: 28px; }
 .dash { margin-top: var(--space-7); }
+.dash-note { margin: calc(-1 * var(--space-2)) 0 var(--space-4); }
 .dash-tabs { display: flex; flex-wrap: wrap; gap: var(--space-2); margin-bottom: var(--space-4); }
 .dash-tabs [role="tab"] {
   font: inherit; font-size: var(--fs-s); font-weight: 700; cursor: pointer;

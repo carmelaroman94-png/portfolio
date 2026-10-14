@@ -13,8 +13,8 @@ window.PF = window.PF || {};
   shortTitle: "Grupo tecnológico X",
   org: { es: "Grupo tecnológico X · empresa de software española", en: "Grupo tecnológico X · Spanish software company" },
   orgNote: {
-    es: "«Grupo tecnológico X» es un pseudónimo que preserva la identidad de la empresa; el contexto es una empresa de software española. En los dashboards, los nombres comerciales de los productos se sustituyeron por letras.",
-    en: "“Grupo tecnológico X” is a pseudonym that protects the company's identity; the context is a Spanish software company. In the dashboards, product brand names were replaced by letters."
+    es: "«Grupo tecnológico X» es un pseudónimo que preserva la identidad de la empresa; el contexto es una empresa de software española.",
+    en: "“Grupo tecnológico X” is a pseudonym that protects the company's identity; the context is a Spanish software company."
   },
   problem: {
     es: "Marketing y Comercial no podían evaluar sus acciones ni priorizar oportunidades: el dato del CRM se recogía sin criterios comunes y no existía ninguna herramienta analítica.",
@@ -40,16 +40,17 @@ window.PF = window.PF || {};
     { icon: "model", es: "Modelo de probabilidad de venta con recomendaciones.", en: "Sales probability model with recommendations." }
   ],
 
+  dashboardsNote: { es: "Se muestran solo los dashboards que no contienen información sensible.", en: "Only dashboards without sensitive information are shown." },
   dashboards: [
-    { name: { es: "Pipeline de oportunidades", en: "Opportunity pipeline" },
-      text: { es: "Evolución de la creación de oportunidades, ciclos de las abiertas y tasas de éxito por unidad.", en: "Opportunity creation over time, cycles of open opportunities and win rates by unit." },
-      src: "dashboards/oportunidades.html" },
     { name: { es: "Ciclo de ventas y customer journey", en: "Sales cycle and customer journey" },
       text: { es: "Recorrido completo de potencial a cierre, fuga del embudo por etapa y segmentación por unidad y tipo.", en: "Full journey from lead to close, funnel leakage by stage and segmentation by unit and type." },
       src: "dashboards/ciclos.html" },
     { name: { es: "Unidad Cloud", en: "Cloud unit" },
       text: { es: "Ciclos de ganadas frente a perdidas, relación entre duración e importe y atribución por canal.", en: "Won vs lost cycles, relationship between length and amount, and channel attribution." },
-      src: "dashboards/cloud.html" }
+      src: "dashboards/cloud.html" },
+    { name: { es: "Pipeline de oportunidades", en: "Opportunity pipeline" },
+      text: { es: "Evolución de la creación de oportunidades, ciclos de las abiertas y tasas de éxito por unidad.", en: "Opportunity creation over time, cycles of open opportunities and win rates by unit." },
+      src: "dashboards/oportunidades.html" }
   ],
 
   card: {
@@ -59,39 +60,6 @@ window.PF = window.PF || {};
       { es: "<b>Entregables:</b> informe con recomendaciones de mejora, dashboards interactivos para mejorar la toma de decisiones", en: "<b>Deliverables:</b> report with improvement recommendations, interactive dashboards to support decision-making" }
     ]
   },
-  highlight: {
-    title: { es: "Del hallazgo a la decisión", en: "From finding to decision" },
-    blocks: [
-      { type: "table",
-        summary: { es: "Hallazgos del análisis, decisión tomada y estado de cada una", en: "Analysis findings, decision taken and status of each" },
-        head: [{ es: "Hallazgo", en: "Finding" }, { es: "Decisión o acción", en: "Decision or action" }, { es: "Estado", en: "Status" }],
-        rows: [
-          [{ es: "El 28 % de las oportunidades no tenía unidad de negocio y no existía una clasificación por sector.", en: "28% of opportunities had no business unit and there was no sector classification." },
-           { es: "Envié a Ventas un Excel para clasificar cada tipo de oportunidad por unidad de negocio y sector.", en: "I sent Sales a spreadsheet to classify each opportunity type by business unit and sector." },
-           { es: "<b>Implementado.</b> Ventas lo completó: se infirieron las unidades faltantes (quedaron 18 registros sin asignar) y se creó la variable de sector.", en: "<b>Implemented.</b> Sales completed it: missing units were inferred (18 records left unassigned) and a sector variable was created." }],
-          [{ es: "64 oportunidades (el 4 % de las 1.519 abiertas) llevaban más de 350 días abiertas y distorsionaban los tiempos medios.", en: "64 opportunities (4% of the 1,519 open ones) had been open for over 350 days and distorted average times." },
-           { es: "Las separé en una base aparte.", en: "I moved them to a separate base." },
-           { es: "<b>Implementado.</b> Se enviaron a los comerciales para su corrección.", en: "<b>Implemented.</b> They were sent to the sales reps for correction." }],
-          [{ es: "Casi la mitad de los registros entra como potencial, pero más del 60 % se pierde antes de ser oportunidad. El 72 % de las oportunidades viene de clientes previos y el win rate es del 44 %.", en: "Almost half of all records enter as leads, but over 60% are lost before becoming opportunities. 72% of opportunities come from existing clients and the win rate is 44%." },
-           { es: "Recomendé priorizar la calificación de leads por encima del proceso comercial, que funcionaba bien.", en: "I recommended prioritising lead qualification over the sales process, which was working well." },
-           { es: "Recomendación entregada.", en: "Recommendation delivered." }],
-          [{ es: "Cloud, unidad prioritaria: sus ventas ganadas se cierran en una mediana de 7 días y las perdidas en 62. Las perdidas tienen mayor importe (mediana de 300 € frente a 84 €).", en: "Cloud, a priority unit: won deals close in a median of 7 days and lost ones in 62. Lost deals are larger (median €300 vs €84)." },
-           { es: "Análisis en profundidad de Cloud, a petición de la empresa. Recomendé campañas de reactivación temprana a las 2–3 semanas y acompañamiento específico para las oportunidades grandes.", en: "In-depth analysis of Cloud, at the company's request. I recommended early reactivation campaigns at 2–3 weeks and dedicated follow-up for large opportunities." },
-           { es: "Recomendación entregada.", en: "Recommendation delivered." }],
-          [{ es: "Ningún servicio se dirige solo al sector público, aunque crecer en ese sector era un objetivo de 2026.", en: "No service targets the public sector alone, although growing in that sector was a 2026 goal." },
-           { es: "Lo compartí con Marketing y con la dirección.", en: "I shared it with Marketing and senior management." },
-           { es: "Hallazgo compartido.", en: "Finding shared." }],
-          [{ es: "En noviembre de 2025 las oportunidades del Producto C se multiplicaron por seis respecto a su nivel habitual, en Editorial y distribución: la unidad que pierde el 70 % de sus oportunidades cerradas.", en: "In November 2025, Product C opportunities rose sixfold over their usual level, in Publishing and distribution: the unit that loses 70% of its closed opportunities." },
-           { es: "Lo señalé a Marketing para identificar qué acción generó el pico y revisar por qué esa unidad pierde la mayoría de sus oportunidades.", en: "I flagged it to Marketing to identify which action caused the spike and to review why that unit loses most of its opportunities." },
-           { es: "Hallazgo compartido.", en: "Finding shared." }],
-          [{ es: "El 11 de noviembre de 2025 se crearon 113 oportunidades y 98 se perdieron.", en: "On 11 November 2025, 113 opportunities were created and 98 were lost." },
-           { es: "Segmenté esas oportunidades por tipo para identificar su origen.", en: "I segmented those opportunities by type to identify their origin." },
-           { es: "Hallazgo compartido.", en: "Finding shared." }]
-        ],
-        caption: { es: "La columna «Estado» indica solo lo que consta.", en: "The “Status” column states only what is documented." } }
-    ]
-  },
-
   sections: [
     { key: "context", blocks: [
       { type: "p", text: { es: "Empresa tecnológica española con varias unidades de negocio (software sectorial, cloud, BI, web y marketing online, entre otras). La gestión comercial se registra en el CRM Microsoft Dynamics 365, en dos bases: <b>potenciales</b> (leads aún no calificados) y <b>oportunidades</b> (leads calificados hasta su cierre como ganados o perdidos).",
@@ -140,9 +108,7 @@ window.PF = window.PF || {};
       { type: "list", items: [
         { es: "<b>Gestión:</b> ordenar el trabajo en sprints, mantener el backlog, coordinar con Marketing, Comercial y Calidad, preparar las revisiones y comunicar resultados.", en: "<b>Management:</b> organising work into sprints, maintaining the backlog, coordinating with Marketing, Sales and Quality, preparing reviews and communicating results." },
         { es: "<b>Análisis:</b> como no había analista, asumí por iniciativa propia la extracción, limpieza, integración, análisis, visualización y modelado.", en: "<b>Analysis:</b> as there was no analyst, I took on extraction, cleaning, integration, analysis, visualisation and modelling on my own initiative." }
-      ] },
-      { type: "note", text: { es: "Identifiqué que el proyecto no podía avanzar sin capacidad analítica y decidí cubrirla yo, sin dejar de coordinar a las tres áreas.",
-                              en: "I saw that the project could not move forward without analytical capacity and decided to cover it myself, while still coordinating the three teams." } }
+      ] }
     ] },
 
     { key: "approach", blocks: [
@@ -198,8 +164,8 @@ window.PF = window.PF || {};
     ] },
 
     { key: "data", blocks: [
-      { type: "p", text: { es: "Fuente: CRM Microsoft Dynamics 365, de enero de 2025 a abril de 2026. Construí tres bases, cada una para una pregunta distinta:",
-                           en: "Source: Microsoft Dynamics 365 CRM, January 2025 to April 2026. I built three bases, each for a different question:" } },
+      { type: "p", text: { es: "Fuente: CRM Microsoft Dynamics 365. Construí tres bases, cada una para una pregunta distinta:",
+                           en: "Source: Microsoft Dynamics 365 CRM. I built three bases, each for a different question:" } },
       { type: "kpis", items: [
         { value: "6.452", label: { es: "oportunidades, para el análisis exploratorio", en: "opportunities, for exploratory analysis" } },
         { value: "9.625", label: { es: "registros de potenciales y oportunidades unidos, para el customer journey", en: "joined lead and opportunity records, for the customer journey" } },
@@ -214,14 +180,11 @@ window.PF = window.PF || {};
       { type: "note", heading: { es: "Una decisión de método", en: "A methodological decision" },
         text: { es: "No eliminé los casos extremos (275 ventas ganadas después de 93 días y 92 perdidas después de 232): los traté por separado, porque podían corresponder a clientes del sector público, con ciclos más largos.",
                 en: "I did not remove extreme cases (275 deals won after 93 days and 92 lost after 232): I analysed them separately, because they could correspond to public-sector clients with longer cycles." } },
-      { type: "pairs", title: { es: "Unidad Cloud: las perdidas tardan más y valen más", en: "Cloud unit: lost deals take longer and are worth more" },
+      { type: "pairs", title: { es: "Unidad Cloud: las perdidas tardan más en cerrarse", en: "Cloud unit: lost deals take longer to close" },
         groups: [
           { title: { es: "Días hasta el cierre (mediana)", en: "Days to close (median)" }, items: [
             { label: { es: "Ganadas", en: "Won" }, value: 7, display: { es: "7 días", en: "7 days" } },
-            { label: { es: "Perdidas", en: "Lost" }, value: 62, display: { es: "62 días", en: "62 days" }, muted: true } ] },
-          { title: { es: "Importe (mediana)", en: "Amount (median)" }, items: [
-            { label: { es: "Ganadas", en: "Won" }, value: 84, display: "84 €" },
-            { label: { es: "Perdidas", en: "Lost" }, value: 300, display: "300 €", muted: true } ] }
+            { label: { es: "Perdidas", en: "Lost" }, value: 62, display: { es: "62 días", en: "62 days" }, muted: true } ] }
         ],
         dataHead: [{ es: "Medida", en: "Measure" }, { es: "Valor", en: "Value" }],
         caption: { es: "De aquí salió la recomendación: reactivar a las 2–3 semanas y acompañar de forma específica las oportunidades grandes.", en: "This led to the recommendation: reactivate at 2–3 weeks and give large opportunities dedicated follow-up." } },
