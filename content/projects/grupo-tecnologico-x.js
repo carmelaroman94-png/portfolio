@@ -33,7 +33,7 @@ window.PF = window.PF || {};
   tools: { es: "CRM Microsoft Dynamics 365, Python (pandas, Plotly, scikit-learn) en Google Colab y VS Code, Power BI y Excel.",
            en: "Microsoft Dynamics 365 CRM, Python (pandas, Plotly, scikit-learn) in Google Colab and VS Code, Power BI and Excel." },
   deliverables: [
-    { icon: "report", es: "Dos informes de hallazgos para Marketing (base de oportunidades; customer journey y Cloud), con recomendaciones de mejora y análisis de factibilidad.", en: "Two findings reports for Marketing (opportunity base; customer journey and Cloud), with improvement recommendations and feasibility analysis." },
+    { icon: "report", es: "Dos informes de hallazgos: acá se nombran necesidades, oportunidades de mejora y análisis de factibilidad.", en: "Two findings reports: they set out needs, improvement opportunities and feasibility analysis." },
     { icon: "database", es: "Bases de potenciales y oportunidades integradas y sistematizadas.", en: "Lead and opportunity databases, integrated and systematised." },
     { icon: "dashboard", es: "Tres dashboards interactivos en HTML: pipeline de oportunidades, ciclo de ventas completo y unidad Cloud.", en: "Three interactive HTML dashboards: opportunity pipeline, full sales cycle and the Cloud unit." },
     { icon: "chart", es: "Panel en Power BI centrado en ciclos de venta, segmentado por unidad de negocio y producto.", en: "Power BI panel focused on sales cycles, segmented by business unit and product." },
@@ -116,7 +116,7 @@ window.PF = window.PF || {};
         head: [{ es: "Elemento", en: "Element" }, { es: "Cómo se aplicó", en: "How it was applied" }],
         rows: [
           ["Product Owner", { es: "Directora de Marketing: validaba prioridades y aceptaba entregables.", en: "Head of Marketing: validated priorities and accepted deliverables." }],
-          [{ es: "Scrum Master / gestión", en: "Scrum Master / management" }, { es: "Yo: organizaba sprints, backlog, reuniones y riesgos.", en: "Me: I organised sprints, backlog, meetings and risks." }],
+          [{ es: "Scrum Master / gestión", en: "Scrum Master / management" }, { es: "Yo: organizaba sprints, backlog y reuniones.", en: "Me: I organised sprints, backlog and meetings." }],
           [{ es: "Equipo de desarrollo", en: "Development team" }, { es: "Calidad, para implementar las mejoras de recolección; yo, en el rol de analista de datos.", en: "Quality, to implement data-capture improvements; me, as data analyst." }],
           ["Sprints", { es: "4 sprints de 2 semanas.", en: "4 two-week sprints." }],
           ["Sprint planning", { es: "Reunión con la directora de Marketing al inicio de cada sprint.", en: "Meeting with the head of Marketing at the start of each sprint." }],
@@ -187,18 +187,16 @@ window.PF = window.PF || {};
             { label: { es: "Perdidas", en: "Lost" }, value: 62, display: { es: "62 días", en: "62 days" }, muted: true } ] }
         ],
         dataHead: [{ es: "Medida", en: "Measure" }, { es: "Valor", en: "Value" }],
-        caption: { es: "De aquí salió la recomendación: reactivar a las 2–3 semanas y acompañar de forma específica las oportunidades grandes.", en: "This led to the recommendation: reactivate at 2–3 weeks and give large opportunities dedicated follow-up." } },
-      { type: "note", heading: { es: "Antes de modelar, comprobar la intuición", en: "Before modelling, test the intuition" },
-        text: { es: "El 70 % de las fechas estimadas de cierre eran acertadas y la estimación de éxito de los comerciales coincidía mayoritariamente con el resultado. Por eso el modelo de probabilidad de venta (Random Forest y Gradient Boosting) se planteó como apoyo a esa intuición, no como sustituto.",
-                en: "70% of estimated close dates were accurate and the sales reps' success estimates mostly matched the outcome. So the sales probability model (Random Forest and Gradient Boosting) was framed as support for that intuition, not a replacement." } }
+        caption: { es: "De aquí salió la recomendación: reactivar a las 2–3 semanas y acompañar de forma específica las oportunidades grandes.", en: "This led to the recommendation: reactivate at 2–3 weeks and give large opportunities dedicated follow-up." } }
     ] },
 
     { key: "results", blocks: [
-      { type: "list", items: [
-        { es: "Ventas clasificó cada tipo de oportunidad por unidad de negocio y sector: nació la variable de sector y solo quedaron 18 registros sin unidad.", en: "Sales classified every opportunity type by business unit and sector: a sector variable was created and only 18 records were left without a unit." },
-        { es: "Las 64 oportunidades abiertas desde hacía más de 350 días volvieron a los comerciales para su corrección.", en: "The 64 opportunities open for over 350 days went back to the sales reps for correction." },
-        { es: "Marketing y la dirección recibieron recomendaciones concretas (calificación de leads, reactivación temprana en Cloud) y un hallazgo estratégico: no había oferta específica para el sector público, un objetivo del año.", en: "Marketing and senior management received concrete recommendations (lead qualification, early reactivation in Cloud) and a strategic finding: there was no specific offer for the public sector, one of the year's goals." },
-        { es: "La empresa pasó de no tener ninguna herramienta analítica a tener tres dashboards interactivos, un panel de KPIs y bases integradas.", en: "The company went from having no analytical tool to having three interactive dashboards, a KPI panel and integrated databases." }
+      { type: "iconlist", items: [
+        { icon: "fill", text: { es: "Se infirieron muchos de los valores faltantes para permitir elaborar herramientas analíticas.", en: "Many of the missing values were inferred, making it possible to build analytical tools." } },
+        { icon: "clipboard", text: { es: "Se acompañó la implementación de algunas oportunidades de mejora en la recolección del dato.", en: "Support was given to implementing some of the improvement opportunities in data collection." } },
+        { icon: "idea", text: { es: "Marketing y la dirección recibieron recomendaciones concretas (calificación de leads, reactivación temprana en Cloud) y un hallazgo estratégico: no había oferta específica para el sector público.", en: "Marketing and senior management received concrete recommendations (lead qualification, early reactivation in Cloud) and a strategic finding: there was no specific offer for the public sector." } },
+        { icon: "dashboard", text: { es: "La empresa pasó de no tener ninguna herramienta analítica a contar con dashboards interactivos, un panel de KPIs y bases integradas.", en: "The company went from having no analytical tool to having interactive dashboards, a KPI panel and integrated databases." } },
+        { icon: "cycle", text: { es: "Se conocieron los ciclos de venta específicos de los productos y las probabilidades de pérdida en función de ellos, y se apoyó el diseño de estrategias específicas para ciclos de venta costosos.", en: "Product-specific sales cycles and the related probability of loss became known, supporting the design of specific strategies for costly sales cycles." } }
       ] }
     ] },
 
@@ -211,23 +209,7 @@ window.PF = window.PF || {};
           [{ es: "Casos extremos que distorsionaban las medias.", en: "Extreme cases distorting the averages." }, { es: "Separarlos y analizarlos aparte en lugar de eliminarlos.", en: "Separated and analysed them instead of deleting them." }],
           [{ es: "Picos anómalos de creación y pérdida de oportunidades en un solo día.", en: "Unusual one-day spikes in opportunities created and lost." }, { es: "Segmentación por tipo para identificar el origen antes de sacar conclusiones.", en: "Segmentation by type to find the origin before drawing conclusions." }]
         ] }
-    ] },
-
-    { key: "today", blocks: [
-      { type: "list", title: { es: "Qué sumaría para medir el éxito del proyecto", en: "What I would add to measure the project's success" }, ev: "ilu", items: [
-        { es: "Un KPI de éxito del propio proyecto: % de oportunidades con los campos críticos completos, medido cada mes desde la línea de base (fase de canalización: 4 % completa).", en: "A success KPI for the project itself: % of opportunities with critical fields completed, measured monthly from the baseline (pipeline stage: 4% complete)." },
-        { es: "Un árbol de métricas del embudo: potencial → oportunidad → ganada, con tasa de conversión y tiempo por etapa.", en: "A funnel metric tree: lead → opportunity → won, with conversion rate and time per stage." },
-        { es: "Un backlog visible en un tablero compartido, en lugar del Excel de seguimiento.", en: "A visible backlog on a shared board instead of the tracking spreadsheet." }
-      ] }
-    ] },
-
-    { key: "takeaways", blocks: [
-      { type: "list", items: [
-        { es: "Convertir un encargo abierto en un problema concreto, a partir de conversaciones con las áreas.", en: "Turning an open brief into a concrete problem through conversations with each team." },
-        { es: "Adaptar Scrum a la escala real del proyecto y explicar qué se usó y qué no.", en: "Adapting Scrum to the project's real scale and being explicit about what was used and what wasn't." },
-        { es: "Detectar un hueco de capacidad y cubrirlo sin perder la coordinación.", en: "Spotting a capability gap and covering it without losing coordination." },
-        { es: "Llevar cada hallazgo de datos a una decisión con responsable: Ventas, comerciales, Marketing y dirección.", en: "Turning each data finding into a decision with an owner: Sales, sales reps, Marketing and senior management." }
-      ] }
     ] }
+
   ]
 });
