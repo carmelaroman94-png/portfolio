@@ -10,6 +10,7 @@ No hace falta tocar `assets/js/app.js` ni el HTML para cambiar contenido.
 ## Reglas básicas
 
 1. **Cada texto va en los dos idiomas:** `{ es: "…", en: "…" }`. Si un texto es igual en ambos (un nombre propio, una cifra), puede ir como texto simple: `"Power BI"`.
+   Las cifras sueltas se escriben en formato español (`"6.452"`, `"0,86"`, `"96 %"`); en inglés el sitio las muestra como `6,452`, `0.86` y `96%`. Si la cifra lleva texto (`"7 días"`), escríbela en los dos idiomas.
 2. **Se puede usar HTML sencillo** dentro de los textos: `<b>`, `<i>`, `<a href="…">`. Para el signo «menor que» escribe `&lt;`.
 3. **Cuidado con las comillas y las comas.** Cada elemento de una lista termina en coma, salvo el último. Si la página queda en blanco, casi siempre es una coma o una comilla de más o de menos: abre la consola del navegador (F12) y busca el error.
 
@@ -69,7 +70,7 @@ Todos los bloques aceptan `title` y `caption` opcionales.
 | `raci` | Matriz RACI filtrable | `roles`, `rows: [{ task, cells: ["R","A","C","I",""] }]` |
 | `matrix` | Matriz interés–influencia | `items: [{ name, role, interest, influence, strategy }]` con `low`, `mid` o `high` |
 | `verdicts` | Hipótesis y veredictos | `items: [{ id, text, verdict, result, evidence }]`, `result`: `yes`, `partial` o `no` |
-| `embed` | Dashboard que se carga al pedirlo | `name`, `text`, `src` (ruta local o enlace de Power BI) |
+| `embed` | Dashboard embebido | `name`, `text`, `src` (ruta local o enlace de Power BI), `autoload` (`true` para mostrarlo sin hacer clic) |
 
 ## Cambiar la paleta o la tipografía
 

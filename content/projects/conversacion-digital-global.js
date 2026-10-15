@@ -128,7 +128,7 @@ window.PF = window.PF || {};
                            en: "There is a paradox I don't want to dodge: the agent that reviewed the language model is itself a language model. Its review worked because I gave it quantitative evidence and explicit rules. The final judgement on what to claim stayed with me." } },
       { type: "list", title: { es: "Si repitiera el trabajo", en: "If I did it again" }, items: [
         { es: "Ejecutaría los prompts varias veces y con distintos modelos, para medir la estabilidad de las hipótesis.", en: "Run the prompts several times and with different models, to measure how stable the hypotheses are." },
-        { es: "Reservaría una parte de los datos solo para las pruebas estadísticas: aquí el ANOVA usa la base completa, incluida la partición que inspiró las hipótesis.", en: "Hold out part of the data for the statistical tests only: here the ANOVA uses the full base, including the split that inspired the hypotheses." },
+        { es: "Reservaría una parte de los datos solo para las pruebas estadísticas: aquí el ANOVA usa la base completa, incluida la partición que inspiró las hipótesis.", en: "Hold out part of the data for the statistical tests only: here the ANOVA uses the full dataset, including the split that inspired the hypotheses." },
         { es: "Aplicaría el flujo a datos reales.", en: "Apply the workflow to real data." }
       ] }
     ] },

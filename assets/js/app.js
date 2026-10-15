@@ -29,9 +29,19 @@
   /* Traduce: acepta string (igual en ambos idiomas) u objeto {es, en} */
   function t(x) {
     if (x === null || x === undefined) return "";
-    if (typeof x === "string" || typeof x === "number") return String(x);
+    if (typeof x === "string") return num(x);
+    if (typeof x === "number") return String(x);
     if (Array.isArray(x)) return x.map(t);
     return x[LANG] !== undefined ? x[LANG] : (x.es !== undefined ? x.es : "");
+  }
+  /* Cifras sueltas escritas en formato español ("6.452", "0,86", "96 %"):
+     en inglés se muestran como "6,452", "0.86" y "96%". Solo afecta a textos que son únicamente una cifra. */
+  function num(s) {
+    if (LANG !== "en" || !/\d/.test(s) || !/^[\d\s.,%±+−-]+$/.test(s)) return s;
+    return s.replace(/(\d)\.(?=\d{3}(?!\d))/g, "$1\u0001")
+      .replace(/(\d),(?=\d)/g, "$1.")
+      .replace(/\u0001/g, ",")
+      .replace(/(\d) %/g, "$1%");
   }
   function ui(key) { return t(UI[key]) || key; }
 
@@ -196,7 +206,7 @@
         '<span class="hbar-value" style="' + (inside ? "left:0.5rem;color:#1E2A25" : "left:calc(" + pct.toFixed(1) + "% + 0.5rem)") + '">' + esc(label) + "</span></span>" +
         '<span class="visually-hidden">' + esc(label) + "</span></li>";
     }).join("") + "</ul>";
-    if (b.dataHead) html += dataTable(b.dataHead, b.items.map(function (i) { return [t(i.label), t(i.display || String(i.value))]; }));
+    if (b.dataHead) html += dataTable(b.dataHead, b.items.map(function (i) { return [i.label, i.display || String(i.value)]; }));
     return html;
   }
 
@@ -205,7 +215,7 @@
       return '<div class="pair"><h4>' + t(g.title) + "</h4>" + bars({ items: g.items, max: b.max }) + "</div>";
     }).join("") + "</div>" +
       (b.dataHead ? dataTable(b.dataHead, b.groups.reduce(function (acc, g) {
-        return acc.concat(g.items.map(function (i) { return [t(g.title) + " · " + t(i.label), t(i.display)]; }));
+        return acc.concat(g.items.map(function (i) { return [t(g.title) + " · " + t(i.label), i.display]; }));
       }, [])) : "");
   }
 

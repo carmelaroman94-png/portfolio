@@ -57,7 +57,7 @@ window.PF = window.PF || {};
     points: [
       { es: "<b>4</b> sprints de 2 semanas", en: "<b>4</b> two-week sprints" },
       { es: "Trabajo interdepartamental para conectar necesidades y propuestas técnicas", en: "Cross-department work to connect needs with technical proposals" },
-      { es: "<b>Entregables:</b> informe con recomendaciones de mejora, dashboards interactivos para mejorar la toma de decisiones", en: "<b>Deliverables:</b> report with improvement recommendations, interactive dashboards to support decision-making" }
+      { es: "<b>Entregables:</b> informe con recomendaciones de mejora, dashboards interactivos para mejorar la toma de decisiones", en: "<b>Deliverables:</b> report with improvement recommendations, interactive dashboards to improve decision-making" }
     ]
   },
   sections: [

@@ -10,10 +10,10 @@ Sitio publicado: <https://carmelaroman94-png.github.io/portfolio/>
 
 | Página | Contenido |
 | --- | --- |
-| `index.html` | Portada: foto, nombre, rol y elección de idioma. |
-| `home.html` | Bienvenida, acceso a «Acerca de mí» y «Proyectos», y los tres casos laborales. |
+| `index.html` | Portada: foto, nombre, rol, descripción en inglés y elección de idioma. |
+| `home.html` | Bienvenida y acceso a «Acerca de mí» y «Proyectos». |
 | `about.html` | Línea de tiempo, cómo trabajo, habilidades, idiomas y formación. |
-| `projects.html` | Casos laborales, cómo elijo la metodología, proyectos académicos y laboratorio de visualización. |
+| `projects.html` | Casos laborales, proyectos académicos y laboratorio de visualización. |
 | `case.html?id=…` | Una página por caso, con resumen visible y secciones desplegables. |
 
 Casos, del más reciente al más antiguo:
@@ -29,8 +29,9 @@ Proyectos académicos: TFM sobre la multicausalidad de la inflación y «La conv
 HTML, CSS y JavaScript sin frameworks ni paso de compilación. Elegí esta opción porque es fácil de mantener, carga rápido y se puede explicar entera en una entrevista.
 
 - **El contenido está separado del diseño.** Todos los textos están en `content/`. Para cambiar una frase no hace falta tocar HTML.
+- **Cifras en los dos idiomas:** las cifras sueltas se escriben en formato español (`6.452`, `0,86`, `96 %`) y en inglés se muestran como `6,452`, `0.86` y `96%`.
 - **Un único motor** (`assets/js/app.js`) lee el contenido, aplica el idioma elegido y dibuja cada página.
-- **Detalles bajo demanda:** cada caso muestra primero el resumen (problema, rol, período, metodología, cifras clave y entregables) y deja el detalle en secciones desplegables. Los dashboards solo se cargan cuando se piden.
+- **Detalles bajo demanda:** cada caso muestra primero el resumen (problema, rol, período, metodología, cifras clave y entregables) y deja el detalle en secciones desplegables. Los dashboards de Grupo tecnológico X se muestran en pestañas y el Power BI de Development International se carga al abrir la sección.
 - **Accesibilidad:** contraste AA o superior con la paleta del sitio, navegación por teclado, enlace para saltar al contenido, gráficos con su tabla de datos, etiquetas que no dependen solo del color y respeto por la preferencia de movimiento reducido.
 
 ```

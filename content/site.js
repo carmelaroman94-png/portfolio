@@ -115,7 +115,7 @@ window.PF.site = {
         title: { es: "Aprender a resolver problemas", en: "Learning to solve problems" },
         paras: [
           { es: "Me involucro en el activismo social, en comedores comunitarios y espacios de alfabetización. Empiezo a coordinar y a proponer metodologías desde la intuición. Aprendo a gestionar equipos y a trabajar con actores diferentes.",
-            en: "I get involved in social activism, community kitchens and literacy programmes. I start coordinating and proposing methods by intuition. I learn to manage teams and to work with very different actors." },
+            en: "I get involved in social activism, community kitchens and literacy programmes. I start coordinating and proposing methods by intuition. I learn to manage teams and to work with different actors." },
           { es: "Desarrollo la que creo que es la más importante de mis habilidades: encontrar soluciones con los recursos disponibles, aunque sean escasos.",
             en: "I develop what I believe is my most important skill: finding solutions with the resources at hand, however scarce." }
         ]
@@ -125,7 +125,7 @@ window.PF.site = {
         title: { es: "Aprender a gestionar", en: "Learning to manage" },
         paras: [
           { es: "Preocupada por los modelos de gestión pública y privada, hago el Diploma de Posgrado en Gobernabilidad, Gerencia Política y Gestión Pública (UCC, BID y PNUD). Conozco el marco de gestión de proyectos para resultados del Banco Interamericano de Desarrollo (PM4R).",
-            en: "Interested in public and private management models, I complete a Postgraduate Diploma in Governance, Political Management and Public Administration (UCC, IDB and UNDP). I learn the Inter-American Development Bank's Project Management for Results framework (PM4R)." },
+            en: "Concerned about public and private management models, I complete a Postgraduate Diploma in Governance, Political Management and Public Administration (UCC, IDB and UNDP). I learn the Inter-American Development Bank's Project Management for Results framework (PM4R)." },
           { es: "Ese mismo año empiezo en el Ministerio de Justicia y Derechos Humanos de Córdoba, donde gestiono un proyecto de inclusión laboral de personas trans.",
             en: "That same year I join the Ministry of Justice and Human Rights of Córdoba, where I manage an employment inclusion project for trans people." },
           { es: "Gestionar no es solo hacer: es generar resultados.", en: "Managing is not just doing: it is delivering results." }
@@ -215,7 +215,7 @@ window.PF.site = {
           "Web Scraping",
           { es: "Buenas prácticas de visualización y reporting", en: "Good practices in visualization and reporting" },
           { es: "Refuerzo Microsoft Power BI", en: "Strengthening Microsoft Power BI" },
-          { es: "Aprendo herramientas de visualización más controladas, como Streamlit", en: "More controlled visualization tools, such as Streamlit" },
+          { es: "Herramientas de visualización más controladas, como Streamlit", en: "More controlled visualization tools, such as Streamlit" },
           { es: "Técnicas de Machine Learning", en: "Machine learning techniques" },
           { es: "Métricas de calidad", en: "Quality metrics" },
           { es: "Algoritmos de explicabilidad y transparencia", en: "Explainability and transparency algorithms" },
@@ -250,9 +250,9 @@ window.PF.site = {
     principles: [
       { icon: "method", title: { es: "Elijo la metodología según el problema", en: "I choose the methodology to fit the problem" } },
       { icon: "increments", title: { es: "Prefiero validar entregas incrementales", en: "I prefer to validate incremental deliveries" } },
-      { icon: "target", title: { es: "Elijo objetivos SMART (específicos, medibles, alcanzables, relevantes, delimitados temporalmente)", en: "I set SMART objectives (specific, measurable, achievable, relevant, time-bound)" } },
-      { icon: "listen", title: { es: "Con escucha activa, implicando a los actores afectados", en: "With active listening, involving the people affected" } },
-      { icon: "team", title: { es: "Con trabajo colaborativo", en: "Through collaborative work" } }
+      { icon: "target", title: { es: "Elijo objetivos SMART (específicos, medibles, alcanzables, relevantes, delimitados temporalmente)", en: "I choose SMART objectives (specific, measurable, achievable, relevant, time-bound)" } },
+      { icon: "listen", title: { es: "Con escucha activa, implicando a los actores afectados", en: "With active listening, involving the affected stakeholders" } },
+      { icon: "team", title: { es: "Con trabajo colaborativo", en: "With collaborative work" } }
     ],
 
     skills_title: { es: "Habilidades", en: "Skills" },

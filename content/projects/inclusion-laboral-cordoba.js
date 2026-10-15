@@ -84,7 +84,7 @@ window.PF = window.PF || {};
       { type: "table", title: { es: "Árbol de soluciones: tres componentes", en: "Solution tree: three components" },
         head: [{ es: "Rama", en: "Branch" }, { es: "Medio", en: "Means" }, { es: "Componente", en: "Component" }],
         rows: [
-          [{ es: "Demanda", en: "Demand" }, { es: "Empresas sensibilizadas, que conocen la Ley 26.743 y se comprometen a incorporar", en: "Trained companies that know Law 26,743 and commit to hiring" }, "C1"],
+          [{ es: "Demanda", en: "Demand" }, { es: "Empresas sensibilizadas, que conocen la Ley 26.743 y se comprometen a incorporar", en: "Sensitised companies that know Law 26,743 and commit to hiring" }, "C1"],
           [{ es: "Oferta", en: "Supply" }, { es: "Personas trans formadas en oficios ajustados a los puestos de las empresas", en: "Trans people trained in trades matched to the companies' jobs" }, "C2"],
           [{ es: "Vinculación", en: "Matching" }, { es: "Intermediación, incorporación por programas provinciales y acompañamiento psicosocial", en: "Brokering, placement through provincial programmes and psychosocial support" }, "C3"]
         ] },

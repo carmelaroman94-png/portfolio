@@ -40,7 +40,7 @@ window.PF = window.PF || {};
   card: {
     points: [
       { es: "Se propuso una metodología de trabajo", en: "A working methodology was proposed" },
-      { es: "Construcción de métricas", en: "Metric design" },
+      { es: "Construcción de métricas", en: "Building metrics" },
       { es: "<b>Entregables:</b> Power BI interactivo + informe técnico", en: "<b>Deliverables:</b> interactive Power BI + technical report" }
     ]
   },
