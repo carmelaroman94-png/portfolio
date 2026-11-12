@@ -12,7 +12,6 @@ window.PF = window.PF || {};
   title: { es: "Multicausalidad de la inflación: perfiles monetario-fiscales y heterogeneidad de trayectorias (2000-2020)", en: "The multicausality of inflation: monetary-fiscal profiles and heterogeneous inflation paths (2000-2020)" },
   shortTitle: { es: "TFM · Inflación", en: "Thesis · Inflation" },
   org: { es: "Trabajo de Fin de Máster · Máster en Ciencia de Datos aplicada a las Ciencias Sociales, Universidad de Granada", en: "Master's thesis · Master's in Data Science applied to the Social Sciences, Universidad de Granada" },
-  academicNote: { es: "Proyecto académico, reconstruido después de la defensa como un pipeline reproducible. Los resultados se recalcularon por completo.", en: "Academic project, rebuilt after the defence as a reproducible pipeline. All results were recalculated." },
   problem: {
     es: "La literatura explica la inflación desde tradiciones distintas (monetaria, institucional, estructural y sociodemográfica) cuyos resultados varían según el contexto. ¿Cómo analizarlas juntas en un único estudio empírico comparado?",
     en: "The literature explains inflation from different traditions (monetary, institutional, structural and socio-demographic) whose results vary by context. How can they be analysed together in a single comparative empirical study?"
@@ -24,15 +23,11 @@ window.PF = window.PF || {};
     why: { es: "Machine Learning como herramienta exploratoria, con cuidado de no caer en un trabajo puramente data-driven: la teoría decide las dimensiones y las reglas de decisión se fijan antes de ver los resultados.",
            en: "Machine learning as an exploratory tool, careful not to become purely data-driven: theory decides the dimensions, and decision rules are fixed before looking at the results." }
   },
-  tools: { es: "Python (pandas, scikit-learn, statsmodels, Plotly); World Development Indicators y WITS (Banco Mundial), V-Dem v16; un modelo de lenguaje de pesos abiertos (gpt-oss-120b vía Groq) para clasificar indicadores; imputación KNN, PCA, K-means, regresión OLS con errores HC3, pruebas por permutación, bootstrap, corrección de Holm y validación cruzada fuera de muestra. <a href=\"https://github.com/carmelaroman94-png/TFM_portfolio\" rel=\"noopener\">Ver el código en GitHub</a>.",
-           en: "Python (pandas, scikit-learn, statsmodels, Plotly); World Development Indicators and WITS (World Bank), V-Dem v16; an open-weights language model (gpt-oss-120b via Groq) to classify indicators; KNN imputation, PCA, K-means, OLS regression with HC3 errors, permutation tests, bootstrap, Holm correction and out-of-sample cross-validation. <a href=\"https://github.com/carmelaroman94-png/TFM_portfolio\" rel=\"noopener\">See the code on GitHub</a>." },
-  metrics: [
-    { value: "183", label: { es: "países miembros de la ONU analizados", en: "UN member states analysed" } },
-    { value: "0,83", label: { es: "kappa de Cohen entre la clasificación del LLM y la humana", en: "Cohen's kappa between LLM and human classification" } },
-    { value: "5", label: { es: "perfiles monetario-fiscales de países", en: "monetary-fiscal country profiles" } }
-  ],
-
-  dashboardsNote: { es: "Seis dashboards interactivos en dos bloques: análisis exploratorio (datos, clasificación, inflación, distribuciones y casos extremos) y modelado (H1 y H2-H3). <a href=\"https://github.com/carmelaroman94-png/TFM_portfolio\" rel=\"noopener\">Código y notebooks en GitHub</a>.", en: "Six interactive dashboards in two blocks: exploratory analysis (data, classification, inflation, distributions and extreme cases) and modelling (H1 and H2-H3). <a href=\"https://github.com/carmelaroman94-png/TFM_portfolio\" rel=\"noopener\">Code and notebooks on GitHub</a>." },
+  tools: {
+    es: "<p><b>Herramientas y fuentes de datos</b></p><ul><li>Python y sus librerías: pandas, scikit-learn, statsmodels y Plotly.</li><li>Bases de datos: World Development Indicators (Banco Mundial), WITS y V-Dem v16.</li><li>Modelo de lenguaje: GPT-OSS-120B, ejecutado mediante Groq.</li></ul><p><b>Técnicas metodológicas y estadísticas</b></p><ul><li>Imputación KNN.</li><li>PCA y K-means.</li><li>Regresión OLS con errores HC3.</li><li>Pruebas por permutación y bootstrap.</li><li>Corrección de Holm.</li><li>Validación cruzada fuera de muestra.</li></ul>",
+    en: "<p><b>Tools and data sources</b></p><ul><li>Python and its libraries: pandas, scikit-learn, statsmodels and Plotly.</li><li>Databases: World Development Indicators (World Bank), WITS and V-Dem v16.</li><li>Language model: GPT-OSS-120B, run through Groq.</li></ul><p><b>Methodological and statistical techniques</b></p><ul><li>KNN imputation.</li><li>PCA and K-means.</li><li>OLS regression with HC3 errors.</li><li>Permutation tests and bootstrap.</li><li>Holm correction.</li><li>Out-of-sample cross-validation.</li></ul>"
+  },
+  dashboardsNote: { es: "Seis dashboards interactivos en dos bloques: análisis exploratorio (datos, clasificación, inflación, distribuciones y casos extremos) y modelado (H1 y H2-H3).", en: "Six interactive dashboards in two blocks: exploratory analysis (data, classification, inflation, distributions and extreme cases) and modelling (H1 and H2-H3)." },
   dashboards: [
     { name: { es: "Inicio", en: "Overview" },
       text: { es: "Pregunta de investigación, veredicto de cada hipótesis y acceso a todos los análisis.", en: "Research question, verdict on each hypothesis and access to every analysis." },
@@ -65,8 +60,9 @@ window.PF = window.PF || {};
       { es: "Regresiones", en: "Regression models" }
     ]
   },
+  highlightAfterDashboards: true,
   highlight: {
-    title: { es: "Tres hipótesis, tres veredictos", en: "Three hypotheses, three verdicts" },
+    title: { es: "Hipótesis", en: "Hypotheses" },
     blocks: [
       { type: "verdicts", items: [
         { id: "H1", text: { es: "La similitud en los perfiles monetario-fiscales no implica necesariamente trayectorias inflacionarias homogéneas entre países.", en: "Similar monetary-fiscal profiles do not necessarily imply homogeneous inflation paths across countries." },

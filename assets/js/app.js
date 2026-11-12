@@ -478,7 +478,7 @@
       summary +
       (p.metrics ? figures(p.metrics) : "") +
       "</div></header>" +
-      '<div class="wrap">' + highlight + deliverables + dashboards +
+      '<div class="wrap">' + (p.highlightAfterDashboards ? deliverables + dashboards + highlight : highlight + deliverables + dashboards) +
       '<div class="sections-bar"><h2 style="margin:0">' + esc(ui("case_detail")) + '</h2><div><button type="button" class="btn btn--quiet" data-toggle-all>' + esc(ui("open_all")) + "</button></div></div>" +
       secs + pager + "</div></article>";
   }
