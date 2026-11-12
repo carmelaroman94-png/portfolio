@@ -1,21 +1,17 @@
 /* =========================================================
-   Caso laboral · Grupo tecnológico X (pseudónimo)
+   Caso laboral · Empresa de software, Granada
    Fuente: documento de trabajo del caso (borrador v2, Scrum).
    Cifras del CRM, publicadas sin nombrar a la empresa.
    ========================================================= */
 window.PF = window.PF || {};
 (window.PF.projects = window.PF.projects || []).push({
-  id: "grupo-tecnologico-x",
+  id: "empresa-software",
   type: "work",
   sort: 300,
   year: "2026",
   title: { es: "Calidad del dato comercial y analítica del pipeline", en: "Commercial data quality and pipeline analytics" },
-  shortTitle: "Grupo tecnológico X",
-  org: { es: "Grupo tecnológico X · empresa de software española", en: "Grupo tecnológico X · Spanish software company" },
-  orgNote: {
-    es: "«Grupo tecnológico X» es un pseudónimo que preserva la identidad de la empresa; el contexto es una empresa de software española.",
-    en: "“Grupo tecnológico X” is a pseudonym that protects the company's identity; the context is a Spanish software company."
-  },
+  shortTitle: { es: "Empresa de software", en: "Software company" },
+  org: { es: "Empresa de software · Granada, España", en: "Software company · Granada, Spain" },
   problem: {
     es: "Marketing y Comercial no podían evaluar sus acciones ni priorizar oportunidades: el dato del CRM se recogía sin criterios comunes y no existía ninguna herramienta analítica.",
     en: "Marketing and Sales could not evaluate their actions or prioritise opportunities: CRM data was captured without shared criteria and there was no analytical tool."

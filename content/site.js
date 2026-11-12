@@ -229,8 +229,8 @@ window.PF.site = {
         year: "2026",
         title: { es: "Mi primer proyecto de datos en el sector tecnológico", en: "My first data project in the tech sector" },
         paras: [
-          { es: "En una empresa de software española (Grupo tecnológico X, pseudónimo) gestiono un proyecto de calidad del dato comercial con Marketing, Comercial y Calidad, en cuatro sprints. Es mi primera vez trabajando en una empresa tecnológica.",
-            en: "At a Spanish software company (Grupo tecnológico X, a pseudonym) I manage a commercial data quality project with Marketing, Sales and Quality, over four sprints. It is my first time working at a tech company." },
+          { es: "En una empresa de software de Granada, España, gestiono un proyecto de calidad del dato comercial con Marketing, Comercial y Calidad, en cuatro sprints. Es mi primera vez trabajando en una empresa tecnológica.",
+            en: "At a software company in Granada, Spain, I manage a commercial data quality project with Marketing, Sales and Quality, over four sprints. It is my first time working at a tech company." },
           { es: "Termino el Máster en Ciencia de Datos aplicada a las Ciencias Sociales (Universidad de Granada) con un Trabajo de Fin de Máster sobre la multicausalidad de la inflación.",
             en: "I complete the Master's in Data Science applied to the Social Sciences (Universidad de Granada) with a thesis on the multicausality of inflation." }
         ],
@@ -240,7 +240,7 @@ window.PF.site = {
                   en: "Today my focus is connecting business needs with data- and technology-based solutions, managing digital and data projects in multidisciplinary teams." }
         },
         links: [
-          { id: "grupo-tecnologico-x", label: { es: "Ver el caso de Grupo tecnológico X", en: "See the Grupo tecnológico X case" } },
+          { id: "empresa-software", label: { es: "Ver el caso de la empresa de software", en: "See the software company case" } },
           { id: "tfm-inflacion", label: { es: "Ver el TFM", en: "See the thesis" } }
         ]
       }
