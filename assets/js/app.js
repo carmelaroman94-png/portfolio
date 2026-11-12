@@ -349,8 +349,8 @@
       "<h1>" + t(h.title) + "</h1>" +
       '<p class="welcome-lead">' + t(h.lead) + "</p>" +
       '<div class="doors">' +
-      '<a class="door" href="' + url("about.html") + '"><span class="door-title">' + esc(ui("nav_about")) + '</span><span class="door-text">' + t(h.about_text) + "</span></a>" +
-      '<a class="door" href="' + url("projects.html") + '"><span class="door-title">' + esc(ui("nav_projects")) + '</span><span class="door-text">' + t(h.projects_text) + "</span></a>" +
+      '<a class="door" href="' + url("about.html") + '"><span class="door-title">' + esc(ui("nav_about")) + "</span>" + (h.about_text ? '<span class="door-text">' + t(h.about_text) + "</span>" : "") + "</a>" +
+      '<a class="door" href="' + url("projects.html") + '"><span class="door-title">' + esc(ui("nav_projects")) + "</span>" + (h.projects_text ? '<span class="door-text">' + t(h.projects_text) + "</span>" : "") + "</a>" +
       "</div></div></section>";
   }
 

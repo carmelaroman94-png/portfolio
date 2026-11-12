@@ -95,8 +95,8 @@ window.PF.site = {
   home: {
     title: { es: "¡Bienvenidas y bienvenidos! Soy Carmela.", en: "Welcome! I'm Carmela." },
     lead: { es: "Te invito a explorar mi perfil y algunos de mis proyectos más relevantes.", en: "I invite you to explore my profile and some of my most relevant projects." },
-    about_text: { es: "Mi recorrido, de la gestión de proyectos sociales a la gestión con datos.", en: "My path, from managing social projects to managing with data." },
-    projects_text: { es: "Casos laborales y académicos", en: "Work and academic case studies" }
+    about_text: null,
+    projects_text: null
   },
 
   /* ---------- Acerca de mí ---------- */
