@@ -50,6 +50,7 @@ window.PF.site = {
     problem: { es: "Problema", en: "Problem" },
     role: { es: "Mi rol", en: "My role" },
     period: { es: "Período", en: "Period" },
+    techniques: { es: "Técnicas", en: "Techniques" },
     method: { es: "Metodología", en: "Methodology" },
     tools: { es: "Herramientas", en: "Tools" },
     deliverables: { es: "Entregables", en: "Deliverables" },

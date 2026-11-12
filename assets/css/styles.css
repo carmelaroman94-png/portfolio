@@ -345,6 +345,8 @@ img { max-width: 100%; display: block; }
 .summary dd ul { margin: 0 0 var(--space-3); padding-left: 1.1rem; }
 .summary dd ul:last-child { margin-bottom: 0; }
 .summary .wide { grid-column: 1 / -1; background: var(--rose-soft); }
+.summary--5 { grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); }
+.case-block { margin: var(--space-7) 0; }
 .summary .wide dd { font-size: var(--fs-l); font-family: var(--font-display); }
 
 .figures {

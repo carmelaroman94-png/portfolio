@@ -5,157 +5,364 @@
    ========================================================= */
 window.PF = window.PF || {};
 (window.PF.projects = window.PF.projects || []).push({
-  id: "tfm-inflacion",
-  type: "academic",
-  sort: 50,
-  year: "2026",
-  title: { es: "Multicausalidad de la inflación: perfiles monetario-fiscales y heterogeneidad de trayectorias (2000-2020)", en: "The multicausality of inflation: monetary-fiscal profiles and heterogeneous inflation paths (2000-2020)" },
-  shortTitle: { es: "TFM · Inflación", en: "Thesis · Inflation" },
-  org: { es: "Trabajo de Fin de Máster · Máster en Ciencia de Datos aplicada a las Ciencias Sociales, Universidad de Granada", en: "Master's thesis · Master's in Data Science applied to the Social Sciences, Universidad de Granada" },
-  problem: {
-    es: "La literatura explica la inflación desde tradiciones distintas (monetaria, institucional, estructural y sociodemográfica) cuyos resultados varían según el contexto. ¿Cómo analizarlas juntas en un único estudio empírico comparado?",
-    en: "The literature explains inflation from different traditions (monetary, institutional, structural and socio-demographic) whose results vary by context. How can they be analysed together in a single comparative empirical study?"
+  "id": "tfm-inflacion",
+  "type": "academic",
+  "sort": 50,
+  "year": "2026",
+  "title": {
+    "es": "Multicausalidad de la inflación: perfiles monetario-fiscales y heterogeneidad de trayectorias (2000-2020)",
+    "en": "The multicausality of inflation: monetary-fiscal profiles and heterogeneous inflation paths (2000-2020)"
   },
-  role: { es: "Autora. Diseñé la metodología y apliqué las técnicas de análisis.", en: "Author. I designed the methodology and applied the analytical techniques." },
-  period: "2000-2020",
-  method: {
-    name: { es: "Investigación cuantitativa", en: "Quantitative research" },
-    why: { es: "Machine Learning como herramienta exploratoria, con cuidado de no caer en un trabajo puramente data-driven: la teoría decide las dimensiones y las reglas de decisión se fijan antes de ver los resultados.",
-           en: "Machine learning as an exploratory tool, careful not to become purely data-driven: theory decides the dimensions, and decision rules are fixed before looking at the results." }
+  "shortTitle": {
+    "es": "TFM · Inflación",
+    "en": "Thesis · Inflation"
   },
-  tools: {
-    es: "<p><b>Herramientas y fuentes de datos</b></p><ul><li>Python y sus librerías: pandas, scikit-learn, statsmodels y Plotly.</li><li>Bases de datos: World Development Indicators (Banco Mundial), WITS y V-Dem v16.</li><li>Modelo de lenguaje: GPT-OSS-120B, ejecutado mediante Groq.</li></ul><p><b>Técnicas metodológicas y estadísticas</b></p><ul><li>Imputación KNN.</li><li>PCA y K-means.</li><li>Regresión OLS con errores HC3.</li><li>Pruebas por permutación y bootstrap.</li><li>Corrección de Holm.</li><li>Validación cruzada fuera de muestra.</li></ul>",
-    en: "<p><b>Tools and data sources</b></p><ul><li>Python and its libraries: pandas, scikit-learn, statsmodels and Plotly.</li><li>Databases: World Development Indicators (World Bank), WITS and V-Dem v16.</li><li>Language model: GPT-OSS-120B, run through Groq.</li></ul><p><b>Methodological and statistical techniques</b></p><ul><li>KNN imputation.</li><li>PCA and K-means.</li><li>OLS regression with HC3 errors.</li><li>Permutation tests and bootstrap.</li><li>Holm correction.</li><li>Out-of-sample cross-validation.</li></ul>"
+  "org": {
+    "es": "Trabajo de Fin de Máster · Máster en Ciencia de Datos aplicada a las Ciencias Sociales, Universidad de Granada",
+    "en": "Master's thesis · Master's in Data Science applied to the Social Sciences, Universidad de Granada"
   },
-  dashboardsNote: { es: "Seis dashboards interactivos en dos bloques: análisis exploratorio (datos, clasificación, inflación, distribuciones y casos extremos) y modelado (H1 y H2-H3).", en: "Six interactive dashboards in two blocks: exploratory analysis (data, classification, inflation, distributions and extreme cases) and modelling (H1 and H2-H3)." },
-  dashboards: [
-    { name: { es: "Inicio", en: "Overview" },
-      text: { es: "Pregunta de investigación, veredicto de cada hipótesis y acceso a todos los análisis.", en: "Research question, verdict on each hypothesis and access to every analysis." },
-      src: "https://carmelaroman94-png.github.io/TFM_portfolio/dashboards/index.html" },
-    { name: { es: "Datos", en: "Data" },
-      text: { es: "Cobertura de las fuentes, del catálogo al universo de análisis y datos faltantes por país.", en: "Source coverage, from catalogue to analysis universe, and missing data by country." },
-      src: "https://carmelaroman94-png.github.io/TFM_portfolio/dashboards/01_datos.html" },
-    { name: { es: "Clasificación con LLM", en: "LLM classification" },
-      text: { es: "Validación del modelo de lenguaje contra la clasificación manual y estabilidad entre corridas.", en: "Validation of the language model against manual labelling and stability across runs." },
-      src: "https://carmelaroman94-png.github.io/TFM_portfolio/dashboards/02_clasificacion.html" },
-    { name: { es: "Inflación", en: "Inflation" },
-      text: { es: "Explorador por país, episodios de inflación alta y los tres estadísticos de trayectoria.", en: "Country explorer, high-inflation episodes and the three path statistics." },
-      src: "https://carmelaroman94-png.github.io/TFM_portfolio/dashboards/03_inflacion.html" },
-    { name: { es: "Distribuciones y extremos", en: "Distributions and extremes" },
-      text: { es: "Forma de las distribuciones, ocho reglas de detección de casos extremos, pruebas y tratamiento.", en: "Shape of the distributions, eight rules for detecting extreme cases, tests and treatment." },
-      src: "https://carmelaroman94-png.github.io/TFM_portfolio/dashboards/04_extremos.html" },
-    { name: "H1", text: { es: "Perfiles monetario-fiscales y heterogeneidad de la inflación dentro de ellos.", en: "Monetary-fiscal profiles and the heterogeneity of inflation within them." },
-      src: "https://carmelaroman94-png.github.io/TFM_portfolio/dashboards/05_h1_perfiles.html" },
-    { name: "H2-H3", text: { es: "Aporte de las dimensiones no monetarias, robustez en ocho especificaciones y validación fuera de muestra.", en: "Contribution of the non-monetary dimensions, robustness across eight specifications and out-of-sample validation." },
-      src: "https://carmelaroman94-png.github.io/TFM_portfolio/dashboards/06_h2_h3_modelos.html" }
-  ],
-
-  card: {
-    problem: null,
-    pointsTitle: { es: "Herramientas:", en: "Tools:" },
-    points: [
-      { es: "Modelos de lenguaje", en: "Language models" },
+  "problem": {
+    "es": "La literatura explica la inflación desde tradiciones distintas (monetaria, institucional, estructural y sociodemográfica) cuyos resultados varían según el contexto. ¿Cómo analizarlas juntas en un único estudio empírico comparado?",
+    "en": "The literature explains inflation from different traditions (monetary, institutional, structural and socio-demographic) whose results vary by context. How can they be analysed together in a single comparative empirical study?"
+  },
+  "role": {
+    "es": "Autora. Diseñé la metodología y apliqué las técnicas de análisis.",
+    "en": "Author. I designed the methodology and applied the analytical techniques."
+  },
+  "periodLabel": {
+    "es": "Período estudiado",
+    "en": "Study period"
+  },
+  "period": "2000-2020",
+  "method": {
+    "name": {
+      "es": "Investigación cuantitativa",
+      "en": "Quantitative research"
+    },
+    "why": {
+      "es": "Machine Learning como herramienta exploratoria, con cuidado de no caer en un trabajo puramente data-driven: la teoría decide las dimensiones y las reglas de decisión se fijan antes de ver los resultados.",
+      "en": "Machine learning as an exploratory tool, careful not to become purely data-driven: theory decides the dimensions, and decision rules are fixed before looking at the results."
+    }
+  },
+  "tools": {
+    "es": "<ul><li>Python y sus librerías: pandas, scikit-learn, statsmodels y Plotly.</li><li>Bases de datos: World Development Indicators (Banco Mundial), WITS y V-Dem v16.</li><li>Modelo de lenguaje: GPT-OSS-120B, ejecutado mediante Groq.</li></ul>",
+    "en": "<ul><li>Python and its libraries: pandas, scikit-learn, statsmodels and Plotly.</li><li>Databases: World Development Indicators (World Bank), WITS and V-Dem v16.</li><li>Language model: GPT-OSS-120B, run through Groq.</li></ul>"
+  },
+  "techniques": {
+    "es": "<ul><li>Imputación KNN.</li><li>PCA y K-means.</li><li>Regresión OLS con errores HC3.</li><li>Pruebas por permutación y bootstrap.</li><li>Corrección de Holm.</li><li>Validación cruzada fuera de muestra.</li></ul>",
+    "en": "<ul><li>KNN imputation.</li><li>PCA and K-means.</li><li>OLS regression with HC3 errors.</li><li>Permutation tests and bootstrap.</li><li>Holm correction.</li><li>Out-of-sample cross-validation.</li></ul>"
+  },
+  "card": {
+    "problem": null,
+    "pointsTitle": {
+      "es": "Herramientas:",
+      "en": "Tools:"
+    },
+    "points": [
+      {
+        "es": "Modelos de lenguaje",
+        "en": "Language models"
+      },
       "Clustering",
-      { es: "Reducción de dimensionalidad", en: "Dimensionality reduction" },
-      { es: "Regresiones", en: "Regression models" }
+      {
+        "es": "Reducción de dimensionalidad",
+        "en": "Dimensionality reduction"
+      },
+      {
+        "es": "Regresiones",
+        "en": "Regression models"
+      }
     ]
   },
-  highlightAfterDashboards: true,
-  highlight: {
-    title: { es: "Hipótesis", en: "Hypotheses" },
-    blocks: [
-      { type: "verdicts", items: [
-        { id: "H1", text: { es: "La similitud en los perfiles monetario-fiscales no implica necesariamente trayectorias inflacionarias homogéneas entre países.", en: "Similar monetary-fiscal profiles do not necessarily imply homogeneous inflation paths across countries." },
-          verdict: { es: "Respaldada", en: "Supported" }, result: "yes",
-          evidence: { es: "El perfil explica el 25 % de la variación de la inflación media, el 1 % de la tendencia y el 35 % de la volatilidad: entre el 65 % y el 99 % ocurre dentro de los grupos. Se mantiene con cualquier configuración estable de clustering, y el perfil explica unas tres veces más que la región.", en: "The profile explains 25% of the variation in mean inflation, 1% of the trend and 35% of the volatility: between 65% and 99% occurs within groups. It holds for every stable clustering configuration, and the profile explains about three times more than region." } },
-        { id: "H2", text: { es: "Con perfiles monetario-fiscales comparables, cada dimensión no monetaria (institucional, estructural y sociodemográfica) aporta por separado a explicar las trayectorias.", en: "Given comparable monetary-fiscal profiles, each non-monetary dimension (institutional, structural and socio-demographic) contributes separately to explaining inflation paths." },
-          verdict: { es: "No respaldada", en: "Not supported" }, result: "no",
-          evidence: { es: "Con las cuatro dimensiones en igualdad de condiciones, ninguna aporta por sí sola después de corregir por comparaciones múltiples (Holm). Solo aparece un caso aislado, con el deflactor, en 1 de 7 especificaciones.", en: "With the four dimensions on an equal footing, none contributes on its own after correcting for multiple comparisons (Holm). Only one isolated case appears, with the deflator, in 1 of 7 specifications." } },
-        { id: "H3", text: { es: "Incorporar juntas las cuatro dimensiones caracteriza mejor las trayectorias que la dimensión monetario-fiscal sola.", en: "Combining all four dimensions characterises inflation paths better than the monetary-fiscal dimension alone." },
-          verdict: { es: "Parcial: asociación, no predicción", en: "Partial: association, not prediction" }, result: "partial",
-          evidence: { es: "El R² ajustado del nivel de inflación pasa de 0,27 a 0,33 (f² = 0,17, efecto mediano; Holm p &lt; 0,001), en 7 de 8 especificaciones; también mejora la volatilidad (0,31 → 0,36). Pero la mejora casi no se traslada a la predicción fuera de muestra y desaparece si el control monetario incluye las tasas de interés nominales.", en: "Adjusted R² for the level of inflation rises from 0.27 to 0.33 (f² = 0.17, a medium effect; Holm p &lt; 0.001) in 7 of 8 specifications; volatility also improves (0.31 → 0.36). But the gain barely carries over to out-of-sample prediction and disappears if the monetary control includes nominal interest rates." } }
-      ] }
+  "before": [
+    {
+      "title": {
+        "es": "Hipótesis",
+        "en": "Hypotheses"
+      },
+      "blocks": [
+        {
+          "type": "verdicts",
+          "items": [
+            {
+              "id": "H1",
+              "text": {
+                "es": "La similitud en los perfiles monetario-fiscales no implica necesariamente trayectorias inflacionarias homogéneas entre países.",
+                "en": "Similar monetary-fiscal profiles do not necessarily imply homogeneous inflation paths across countries."
+              }
+            },
+            {
+              "id": "H2",
+              "text": {
+                "es": "Con perfiles monetario-fiscales comparables, cada dimensión no monetaria (institucional, estructural y sociodemográfica) aporta por separado a explicar las trayectorias.",
+                "en": "Given comparable monetary-fiscal profiles, each non-monetary dimension (institutional, structural and socio-demographic) contributes separately to explaining inflation paths."
+              }
+            },
+            {
+              "id": "H3",
+              "text": {
+                "es": "Incorporar juntas las cuatro dimensiones caracteriza mejor las trayectorias que la dimensión monetario-fiscal sola.",
+                "en": "Combining all four dimensions characterises inflation paths better than the monetary-fiscal dimension alone."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": {
+        "es": "Método",
+        "en": "Method"
+      },
+      "blocks": [
+        {
+          "type": "flow",
+          "steps": [
+            {
+              "title": {
+                "es": "PCA por dimensión",
+                "en": "PCA by dimension"
+              },
+              "text": {
+                "es": "12 PCA independientes (4 dimensiones × 3 estadísticos), tras eliminar duplicados casi exactos (|r| > 0,99); KMO ≥ 0,60 y 70 % de varianza retenida.",
+                "en": "12 independent PCAs (4 dimensions × 3 statistics), after removing near-duplicates (|r| > 0.99); KMO ≥ 0.60 and 70% of variance retained."
+              }
+            },
+            {
+              "title": {
+                "es": "Clustering",
+                "en": "Clustering"
+              },
+              "text": {
+                "es": "Grilla de K-means, jerárquico y mezclas gaussianas sobre el perfil monetario-fiscal. Regla fijada antes de ver los resultados: grupos de ≥ 5 países, estabilidad bootstrap (ARI ≥ 0,60) y máxima silhouette. Elige K-means con k = 5 (ARI 0,86).",
+                "en": "A grid of K-means, hierarchical and Gaussian mixtures on the monetary-fiscal profile. Rule fixed before seeing results: groups of ≥ 5 countries, bootstrap stability (ARI ≥ 0.60) and maximum silhouette. It selects K-means with k = 5 (ARI 0.86)."
+              }
+            },
+            {
+              "title": {
+                "es": "Prueba de H1",
+                "en": "Testing H1"
+              },
+              "text": {
+                "es": "Kruskal-Wallis, prueba por permutación y descomposición de la variación entre y dentro de los grupos, con la región ONU como referencia.",
+                "en": "Kruskal-Wallis, a permutation test and a between/within-group decomposition of variation, with UN region as a benchmark."
+              }
+            },
+            {
+              "title": {
+                "es": "Regresión anidada",
+                "en": "Nested regression"
+              },
+              "text": {
+                "es": "Modelo monetario frente a modelos que añaden cada dimensión (H2) o las tres juntas (H3), con 4 componentes por dimensión para que ningún bloque tenga ventaja. Inferencia con HC3, permutación, bootstrap y corrección de Holm; tamaño del efecto (f²), validación fuera de muestra y ocho especificaciones de robustez.",
+                "en": "A monetary model versus models adding each dimension (H2) or all three together (H3), with 4 components per dimension so no block has an advantage. Inference with HC3, permutation, bootstrap and Holm correction; effect size (f²), out-of-sample validation and eight robustness specifications."
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "dashboardsNote": {
+    "es": "Seis dashboards interactivos en dos bloques: análisis exploratorio (datos, clasificación, inflación, distribuciones y casos extremos) y modelado (H1 y H2-H3).",
+    "en": "Six interactive dashboards in two blocks: exploratory analysis (data, classification, inflation, distributions and extreme cases) and modelling (H1 and H2-H3)."
+  },
+  "dashTabs": false,
+  "dashboards": [
+    {
+      "name": {
+        "es": "Inicio",
+        "en": "Overview"
+      },
+      "text": {
+        "es": "Pregunta de investigación, veredicto de cada hipótesis y acceso a todos los análisis.",
+        "en": "Research question, verdict on each hypothesis and access to every analysis."
+      },
+      "src": "https://carmelaroman94-png.github.io/TFM_portfolio/dashboards/index.html"
+    }
+  ],
+  "highlightAfterDashboards": true,
+  "highlight": {
+    "title": {
+      "es": "Resultados de las hipótesis",
+      "en": "Hypothesis results"
+    },
+    "blocks": [
+      {
+        "type": "verdicts",
+        "items": [
+          {
+            "id": "H1",
+            "text": {
+              "es": "La similitud en los perfiles monetario-fiscales no implica necesariamente trayectorias inflacionarias homogéneas entre países.",
+              "en": "Similar monetary-fiscal profiles do not necessarily imply homogeneous inflation paths across countries."
+            },
+            "verdict": {
+              "es": "Respaldada",
+              "en": "Supported"
+            },
+            "result": "yes",
+            "evidence": {
+              "es": "El perfil explica el 25 % de la variación de la inflación media, el 1 % de la tendencia y el 35 % de la volatilidad: entre el 65 % y el 99 % ocurre dentro de los grupos. Se mantiene con cualquier configuración estable de clustering, y el perfil explica unas tres veces más que la región.",
+              "en": "The profile explains 25% of the variation in mean inflation, 1% of the trend and 35% of the volatility: between 65% and 99% occurs within groups. It holds for every stable clustering configuration, and the profile explains about three times more than region."
+            }
+          },
+          {
+            "id": "H2",
+            "text": {
+              "es": "Con perfiles monetario-fiscales comparables, cada dimensión no monetaria (institucional, estructural y sociodemográfica) aporta por separado a explicar las trayectorias.",
+              "en": "Given comparable monetary-fiscal profiles, each non-monetary dimension (institutional, structural and socio-demographic) contributes separately to explaining inflation paths."
+            },
+            "verdict": {
+              "es": "No respaldada",
+              "en": "Not supported"
+            },
+            "result": "no",
+            "evidence": {
+              "es": "Con las cuatro dimensiones en igualdad de condiciones, ninguna aporta por sí sola después de corregir por comparaciones múltiples (Holm). Solo aparece un caso aislado, con el deflactor, en 1 de 7 especificaciones.",
+              "en": "With the four dimensions on an equal footing, none contributes on its own after correcting for multiple comparisons (Holm). Only one isolated case appears, with the deflator, in 1 of 7 specifications."
+            }
+          },
+          {
+            "id": "H3",
+            "text": {
+              "es": "Incorporar juntas las cuatro dimensiones caracteriza mejor las trayectorias que la dimensión monetario-fiscal sola.",
+              "en": "Combining all four dimensions characterises inflation paths better than the monetary-fiscal dimension alone."
+            },
+            "verdict": {
+              "es": "Parcial: asociación, no predicción",
+              "en": "Partial: association, not prediction"
+            },
+            "result": "partial",
+            "evidence": {
+              "es": "El R² ajustado del nivel de inflación pasa de 0,27 a 0,33 (f² = 0,17, efecto mediano; Holm p &lt; 0,001), en 7 de 8 especificaciones; también mejora la volatilidad (0,31 → 0,36). Pero la mejora casi no se traslada a la predicción fuera de muestra y desaparece si el control monetario incluye las tasas de interés nominales.",
+              "en": "Adjusted R² for the level of inflation rises from 0.27 to 0.33 (f² = 0.17, a medium effect; Holm p &lt; 0.001) in 7 of 8 specifications; volatility also improves (0.31 → 0.36). But the gain barely carries over to out-of-sample prediction and disappears if the monetary control includes nominal interest rates."
+            }
+          }
+        ]
+      }
     ]
   },
-
-  sections: [
-    { key: "question", blocks: [
-      { type: "note", heading: { es: "Pregunta de investigación", en: "Research question" },
-        text: { es: "¿En qué medida compartir un perfil monetario-fiscal se asocia a la convergencia inflacionaria entre países, y qué aportan las dimensiones institucional, estructural y sociodemográfica a la heterogeneidad restante?",
-                en: "To what extent is sharing a monetary-fiscal profile associated with inflation convergence across countries, and what do the institutional, structural and socio-demographic dimensions add to the remaining heterogeneity?" } },
-      { type: "p", text: { es: "<b>Objetivo general:</b> analizar comparativamente las trayectorias inflacionarias de los países entre 2000 y 2020, evaluando si la similitud monetario-fiscal basta para producir trayectorias homogéneas y si la heterogeneidad observada se asocia con configuraciones institucionales, estructurales y sociodemográficas diferenciadas.",
-                           en: "<b>Overall objective:</b> compare countries' inflation paths between 2000 and 2020, assessing whether monetary-fiscal similarity is enough to produce homogeneous paths, and whether the observed heterogeneity is associated with distinct institutional, structural and socio-demographic configurations." } },
-      { type: "list", title: { es: "Cuatro tradiciones teóricas, cuatro dimensiones", en: "Four theoretical traditions, four dimensions" }, items: [
-        { es: "<b>Monetario-fiscal</b> (Friedman): expansión monetaria, agregados, tasas, crédito y variables fiscales.", en: "<b>Monetary-fiscal</b> (Friedman): monetary expansion, aggregates, rates, credit and fiscal variables." },
-        { es: "<b>Institucional</b> (Cukierman; Acemoglu): independencia del banco central, credibilidad y calidad democrática.", en: "<b>Institutional</b> (Cukierman; Acemoglu): central bank independence, credibility and democratic quality." },
-        { es: "<b>Estructural</b> (Prebisch): pugna distributiva, posición centro-periferia y estructura del mercado.", en: "<b>Structural</b> (Prebisch): distributive conflict, core-periphery position and market structure." },
-        { es: "<b>Sociodemográfica</b> (Coibion): expectativas heterogéneas; educación e ingreso condicionan el acceso a la información.", en: "<b>Socio-demographic</b> (Coibion): heterogeneous expectations; education and income shape access to information." }
-      ] }
-    ] },
-
-    { key: "dataset", blocks: [
-      { type: "p", text: { es: "Construí un dataset propio para los 193 miembros de la ONU entre 2000 y 2020 a partir de tres fuentes: World Development Indicators (1.498 indicadores), V-Dem v16 (79 índices de nivel intermedio) y el índice Herfindahl-Hirschman de concentración de exportaciones (WITS). La variable dependiente es la inflación anual del IPC; el deflactor del PIB se usa como alternativa.",
-                           en: "I built my own dataset for the 193 UN member states between 2000 and 2020 from three sources: World Development Indicators (1,498 indicators), V-Dem v16 (79 mid-level indices) and the Herfindahl-Hirschman export concentration index (WITS). The dependent variable is annual CPI inflation; the GDP deflator is used as an alternative." } },
-      { type: "list", title: { es: "Decisiones de construcción", en: "Construction decisions" }, items: [
-        { text: { es: "<b>Clasificación con un LLM, validada:</b> un modelo de lenguaje (gpt-oss-120b, ejecutado a través de Groq) asignó cada uno de los cientos de indicadores a una de las cuatro dimensiones teóricas definidas en la revisión bibliográfica. La clasificación se validó contra una muestra etiquetada a mano.", en: "<b>LLM classification, validated:</b> a language model (gpt-oss-120b, run through Groq) assigned each of several hundred indicators to one of the four theoretical dimensions defined in the literature review. The classification was validated against a hand-labelled sample." } },
-        { text: { es: "<b>Datos faltantes:</b> se excluyen 10 países con más del 40 % de features sin dato (quedan 183) y el resto se imputa con KNN; k = 8 por validación cruzada.", en: "<b>Missing data:</b> 10 countries with more than 40% of features missing are excluded (183 remain) and the rest is imputed with KNN; k = 8 by cross-validation." } },
-        { text: { es: "<b>Casos extremos:</b> se detectan con ocho reglas explícitas. Un país solo se excluye si falta información para medirlo o si su perfil monetario distorsionaría el agrupamiento; la inflación alta nunca es motivo de exclusión. Su efecto se controla con transformaciones logarítmicas, inferencia robusta y especificaciones alternativas, y los resultados se mantienen sin los países más influyentes.", en: "<b>Extreme cases:</b> they are detected with eight explicit rules. A country is only excluded if there is not enough information to measure it or if its monetary profile would distort the clustering; high inflation is never a reason for exclusion. Its effect is controlled with log transformations, robust inference and alternative specifications, and the results hold without the most influential countries." } }
-      ] }
-    ] },
-
-    { key: "data", title: { es: "Análisis exploratorio y casos extremos", en: "Exploratory analysis and extreme cases" }, blocks: [
-      { type: "p", text: { es: "Antes de modelar, exploré la forma de las distribuciones y definí cómo tratar los casos extremos. Las trayectorias de inflación son muy asimétricas: unos pocos países concentran valores altísimos (asimetría de 4,5 en la media). El logaritmo la lleva a −0,1, y como ninguna distribución es normal, la inferencia se apoya en errores robustos, permutaciones y bootstrap.",
-                           en: "Before modelling, I explored the shape of the distributions and decided how to handle extreme cases. Inflation paths are highly skewed: a few countries concentrate very high values (skewness of 4.5 in the mean). The logarithm brings it down to −0.1, and since no distribution is normal, inference relies on robust errors, permutations and bootstrap." } },
-      { type: "kpis", items: [
-        { value: "8", label: { es: "reglas explícitas para detectar casos extremos", en: "explicit rules to detect extreme cases" } },
-        { value: "58", label: { es: "países marcados por al menos una regla", en: "countries flagged by at least one rule" } },
-        { value: "26", label: { es: "fuera de los modelos, siempre por falta de información para medirlos", en: "left out of the models, always for lack of information to measure them" } }
-      ] },
-      { type: "table", title: { es: "Detección y tratamiento", en: "Detection and treatment" },
-        head: [{ es: "Problema", en: "Issue" }, { es: "Criterio", en: "Criterion" }, { es: "Países", en: "Countries" }, { es: "Tratamiento", en: "Treatment" }],
-        num: [2],
-        rows: [
-          [{ es: "Features faltantes", en: "Missing features" }, { es: "&gt; 40 % sin dato", en: "&gt; 40% missing" }, "10", { es: "Excluidos del análisis", en: "Excluded from the analysis" }],
-          [{ es: "Inflación sin dato o serie corta", en: "Missing or short inflation series" }, { es: "&lt; 13 de 21 años de IPC", en: "&lt; 13 of 21 years of CPI" }, "10", { es: "Fuera de los modelos; variante con el deflactor", en: "Out of the models; deflator variant" }],
-          [{ es: "Perfil monetario atípico", en: "Atypical monetary profile" }, "Tukey (Q3 + 1,5·RIC)", "9", { es: "Fuera del clustering; variante «con atípicos»", en: "Out of the clustering; «with outliers» variant" }],
-          [{ es: "Inflación extrema o episodios &gt; 40 %", en: "Extreme inflation or episodes &gt; 40%" }, { es: "Tukey en log; picos anuales", en: "Tukey on logs; annual peaks" }, "21", { es: "Se mantienen; mediana y Theil-Sen como variantes", en: "Kept; median and Theil-Sen as variants" }],
-          [{ es: "IPC y deflactor no coinciden", en: "CPI and deflator disagree" }, { es: "Diferencia &gt; 2×", en: "Gap &gt; 2×" }, "13", { es: "Se mantienen; variante con el deflactor", en: "Kept; deflator variant" }],
-          [{ es: "Alta influencia en el modelo", en: "High influence on the model" }, "Cook &gt; 4/n", "17", { es: "Se mantienen; reestimación sin ellos y jackknife", en: "Kept; re-estimation without them and jackknife" }]
-        ],
-        caption: { es: "Algunos países cumplen varias reglas a la vez. Ningún valor de inflación se recorta ni se winsoriza: la inflación alta es parte de lo que se quiere explicar.", en: "Some countries meet several rules at once. No inflation value is trimmed or winsorised: high inflation is part of what the study sets out to explain." } },
-      { type: "note", heading: { es: "¿Dependen los resultados de los extremos?", en: "Do the results depend on the extremes?" },
-        text: { es: "No. Sin los países más influyentes, la mejora de H3 en el nivel pasa de 0,056 a 0,132; quitando los países de a uno se mantiene entre 0,046 y 0,081, con p &lt; 0,005 en todos los casos. Los extremos no sostienen el resultado; si algo, lo atenúan.",
-                en: "No. Without the most influential countries, the H3 gain in the level rises from 0.056 to 0.132; removing countries one at a time it stays between 0.046 and 0.081, with p &lt; 0.005 in every case. The extremes do not drive the result; if anything, they dampen it." } }
-    ] },
-
-    { key: "method", blocks: [
-      { type: "flow", steps: [
-        { title: { es: "PCA por dimensión", en: "PCA by dimension" }, text: { es: "12 PCA independientes (4 dimensiones × 3 estadísticos), tras eliminar duplicados casi exactos (|r| > 0,99); KMO ≥ 0,60 y 70 % de varianza retenida.", en: "12 independent PCAs (4 dimensions × 3 statistics), after removing near-duplicates (|r| > 0.99); KMO ≥ 0.60 and 70% of variance retained." } },
-        { title: { es: "Clustering", en: "Clustering" }, text: { es: "Grilla de K-means, jerárquico y mezclas gaussianas sobre el perfil monetario-fiscal. Regla fijada antes de ver los resultados: grupos de ≥ 5 países, estabilidad bootstrap (ARI ≥ 0,60) y máxima silhouette. Elige K-means con k = 5 (ARI 0,86).", en: "A grid of K-means, hierarchical and Gaussian mixtures on the monetary-fiscal profile. Rule fixed before seeing results: groups of ≥ 5 countries, bootstrap stability (ARI ≥ 0.60) and maximum silhouette. It selects K-means with k = 5 (ARI 0.86)." } },
-        { title: { es: "Prueba de H1", en: "Testing H1" }, text: { es: "Kruskal-Wallis, prueba por permutación y descomposición de la variación entre y dentro de los grupos, con la región ONU como referencia.", en: "Kruskal-Wallis, a permutation test and a between/within-group decomposition of variation, with UN region as a benchmark." } },
-        { title: { es: "Regresión anidada", en: "Nested regression" }, text: { es: "Modelo monetario frente a modelos que añaden cada dimensión (H2) o las tres juntas (H3), con 4 componentes por dimensión para que ningún bloque tenga ventaja. Inferencia con HC3, permutación, bootstrap y corrección de Holm; tamaño del efecto (f²), validación fuera de muestra y ocho especificaciones de robustez.", en: "A monetary model versus models adding each dimension (H2) or all three together (H3), with 4 components per dimension so no block has an advantage. Inference with HC3, permutation, bootstrap and Holm correction; effect size (f²), out-of-sample validation and eight robustness specifications." } }
-      ] }
-    ] },
-
-    { key: "findings", blocks: [
-      { type: "bars", title: { es: "Cinco perfiles monetario-fiscales (K-means, k = 5)", en: "Five monetary-fiscal profiles (K-means, k = 5)" },
-        items: [
-          { label: { es: "Ingreso medio", en: "Middle income" }, value: 74, display: { es: "74 países", en: "74 countries" } },
-          { label: { es: "Baja profundidad financiera", en: "Low financial depth" }, value: 41, display: { es: "41 países", en: "41 countries" } },
-          { label: { es: "Avanzadas", en: "Advanced" }, value: 29, display: { es: "29 países", en: "29 countries" } },
-          { label: { es: "Rentistas de recursos", en: "Resource-rent economies" }, value: 22, display: { es: "22 países", en: "22 countries" } },
-          { label: { es: "Pequeñas con Estado grande", en: "Small, large-state economies" }, value: 8, display: { es: "8 países", en: "8 countries" } }
-        ],
-        dataHead: [{ es: "Perfil", en: "Profile" }, { es: "Países", en: "Countries" }],
-        caption: { es: "174 países agrupados; 9 casos atípicos quedan fuera del clustering. Dentro de un mismo perfil la inflación varía mucho: en «Rentistas de recursos» la media va del 0,4 % (Brunéi) al 47,0 % (Angola).", en: "174 countries grouped; 9 outliers are left out of the clustering. Within a profile inflation varies widely: among resource-rent economies the mean ranges from 0.4% (Brunei) to 47.0% (Angola)." } },
-      { type: "list", title: { es: "Conclusiones", en: "Conclusions" }, items: [
-        { es: "El perfil monetario-fiscal ordena una parte significativa pero minoritaria de las diferencias: compartir perfil no implica compartir trayectoria inflacionaria.", en: "The monetary-fiscal profile accounts for a significant but minority share of the differences: sharing a profile does not mean sharing an inflation path." },
-        { es: "Más allá de ese perfil, las configuraciones no monetarias se asocian con <b>cuánta</b> inflación tiene un país y con <b>cuán estable</b> es, con un efecto de tamaño mediano.", en: "Beyond that profile, non-monetary configurations are associated with <b>how much</b> inflation a country has and <b>how stable</b> it is, with a medium-sized effect." },
-        { es: "Ese aporte es conjunto: no se atribuye de forma robusta a una sola dimensión.", en: "That contribution is joint: it cannot be robustly attributed to a single dimension." },
-        { es: "Es una asociación, no una herramienta de pronóstico: la mejora casi no se traslada a la predicción de países que el modelo no vio.", en: "It is an association, not a forecasting tool: the gain barely carries over to predicting countries the model has not seen." },
-        { es: "<b>Alcance:</b> son asociaciones entre perfiles de largo plazo, no efectos causales. El resultado de H3 depende de no incluir las tasas de interés nominales en el control monetario (contienen la inflación esperada), y la muestra no cubre los episodios más extremos, como Argentina o Venezuela después de 2016.", en: "<b>Scope:</b> these are associations between long-run profiles, not causal effects. The H3 result depends on not including nominal interest rates in the monetary control (they embed expected inflation), and the sample does not cover the most extreme episodes, such as Argentina or Venezuela after 2016." },
-        { es: "Integrar las cuatro dimensiones fue posible combinando Machine Learning (un LLM validado para clasificar indicadores, PCA y clustering) con inferencia estadística tradicional y un enfoque que prioriza la interpretabilidad.", en: "Integrating the four dimensions was possible by combining machine learning (a validated LLM to classify indicators, PCA and clustering) with traditional statistical inference and an approach that prioritises interpretability." }
-      ] }
-    ] }
-  ]
+  "after": [
+    {
+      "title": {
+        "es": "Hallazgos",
+        "en": "Findings"
+      },
+      "blocks": [
+        {
+          "type": "bars",
+          "title": {
+            "es": "Cinco perfiles monetario-fiscales (K-means, k = 5)",
+            "en": "Five monetary-fiscal profiles (K-means, k = 5)"
+          },
+          "items": [
+            {
+              "label": {
+                "es": "Ingreso medio",
+                "en": "Middle income"
+              },
+              "value": 74,
+              "display": {
+                "es": "74 países",
+                "en": "74 countries"
+              }
+            },
+            {
+              "label": {
+                "es": "Baja profundidad financiera",
+                "en": "Low financial depth"
+              },
+              "value": 41,
+              "display": {
+                "es": "41 países",
+                "en": "41 countries"
+              }
+            },
+            {
+              "label": {
+                "es": "Avanzadas",
+                "en": "Advanced"
+              },
+              "value": 29,
+              "display": {
+                "es": "29 países",
+                "en": "29 countries"
+              }
+            },
+            {
+              "label": {
+                "es": "Rentistas de recursos",
+                "en": "Resource-rent economies"
+              },
+              "value": 22,
+              "display": {
+                "es": "22 países",
+                "en": "22 countries"
+              }
+            },
+            {
+              "label": {
+                "es": "Pequeñas con Estado grande",
+                "en": "Small, large-state economies"
+              },
+              "value": 8,
+              "display": {
+                "es": "8 países",
+                "en": "8 countries"
+              }
+            }
+          ],
+          "dataHead": [
+            {
+              "es": "Perfil",
+              "en": "Profile"
+            },
+            {
+              "es": "Países",
+              "en": "Countries"
+            }
+          ],
+          "caption": {
+            "es": "174 países agrupados; 9 casos atípicos quedan fuera del clustering. Dentro de un mismo perfil la inflación varía mucho: en «Rentistas de recursos» la media va del 0,4 % (Brunéi) al 47,0 % (Angola).",
+            "en": "174 countries grouped; 9 outliers are left out of the clustering. Within a profile inflation varies widely: among resource-rent economies the mean ranges from 0.4% (Brunei) to 47.0% (Angola)."
+          }
+        },
+        {
+          "type": "list",
+          "title": {
+            "es": "Conclusiones",
+            "en": "Conclusions"
+          },
+          "items": [
+            {
+              "es": "El perfil monetario-fiscal ordena una parte significativa pero minoritaria de las diferencias: compartir perfil no implica compartir trayectoria inflacionaria.",
+              "en": "The monetary-fiscal profile accounts for a significant but minority share of the differences: sharing a profile does not mean sharing an inflation path."
+            },
+            {
+              "es": "Más allá de ese perfil, las configuraciones no monetarias se asocian con <b>cuánta</b> inflación tiene un país y con <b>cuán estable</b> es, con un efecto de tamaño mediano.",
+              "en": "Beyond that profile, non-monetary configurations are associated with <b>how much</b> inflation a country has and <b>how stable</b> it is, with a medium-sized effect."
+            },
+            {
+              "es": "Ese aporte es conjunto: no se atribuye de forma robusta a una sola dimensión.",
+              "en": "That contribution is joint: it cannot be robustly attributed to a single dimension."
+            },
+            {
+              "es": "Es una asociación, no una herramienta de pronóstico: la mejora casi no se traslada a la predicción de países que el modelo no vio.",
+              "en": "It is an association, not a forecasting tool: the gain barely carries over to predicting countries the model has not seen."
+            },
+            {
+              "es": "<b>Alcance:</b> son asociaciones entre perfiles de largo plazo, no efectos causales. El resultado de H3 depende de no incluir las tasas de interés nominales en el control monetario (contienen la inflación esperada), y la muestra no cubre los episodios más extremos, como Argentina o Venezuela después de 2016.",
+              "en": "<b>Scope:</b> these are associations between long-run profiles, not causal effects. The H3 result depends on not including nominal interest rates in the monetary control (they embed expected inflation), and the sample does not cover the most extreme episodes, such as Argentina or Venezuela after 2016."
+            },
+            {
+              "es": "Integrar las cuatro dimensiones fue posible combinando Machine Learning (un LLM validado para clasificar indicadores, PCA y clustering) con inferencia estadística tradicional y un enfoque que prioriza la interpretabilidad.",
+              "en": "Integrating the four dimensions was possible by combining machine learning (a validated LLM to classify indicators, PCA and clustering) with traditional statistical inference and an approach that prioritises interpretability."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": []
 });

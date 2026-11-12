@@ -254,7 +254,7 @@
     return '<ul class="verdicts">' + items.map(function (v) {
       return '<li class="verdict"><span class="verdict-id">' + esc(v.id) + "</span><div>" +
         '<p class="verdict-text">' + t(v.text) + "</p>" +
-        '<span class="verdict-result" data-v="' + v.result + '">' + t(v.verdict) + "</span>" +
+        (v.verdict ? '<span class="verdict-result" data-v="' + v.result + '">' + t(v.verdict) + "</span>" : "") +
         (v.evidence ? '<p class="small muted" style="margin-top:.5rem">' + t(v.evidence) + "</p>" : "") +
         "</div></li>";
     }).join("") + "</ul>";
@@ -428,10 +428,12 @@
     var summary = '<dl class="summary">' +
       '<div class="wide"><dt>' + esc(ui("problem")) + "</dt><dd>" + t(p.problem) + "</dd></div>" +
       "<div><dt>" + esc(ui("role")) + "</dt><dd>" + t(p.role) + "</dd></div>" +
-      "<div><dt>" + esc(ui("period")) + "</dt><dd>" + t(p.period) + "</dd></div>" +
+      "<div><dt>" + (p.periodLabel ? t(p.periodLabel) : esc(ui("period"))) + "</dt><dd>" + t(p.period) + "</dd></div>" +
       "<div><dt>" + esc(ui("method")) + "</dt><dd><b>" + t(p.method.label || p.method.name) + "</b>" + (p.method.why ? '<br><span class="small muted">' + t(p.method.why) + "</span>" : "") + "</dd></div>" +
       (p.tools ? "<div><dt>" + esc(ui("tools")) + "</dt><dd class=\"small\">" + t(p.tools) + "</dd></div>" : "") +
+      (p.techniques ? "<div><dt>" + esc(ui("techniques")) + "</dt><dd class=\"small\">" + t(p.techniques) + "</dd></div>" : "") +
       "</dl>";
+    if (p.techniques) summary = summary.replace('<dl class="summary">', '<dl class="summary summary--5">');
 
     var withIcons = (p.deliverables || []).some(function (d) { return d.icon; });
     var deliverables = p.deliverables ? "<h2>" + esc(ui("deliverables")) + '</h2><ul class="deliverables' + (withIcons ? " with-icons" : "") + '">' +
@@ -444,18 +446,24 @@
     // Dashboards visibles: pestañas y un visor
     var dashboards = p.dashboards ? '<section class="dash" aria-labelledby="dash-title"><h2 id="dash-title">' + esc(ui("dashboards")) + "</h2>" +
       (p.dashboardsNote ? '<p class="small muted dash-note">' + t(p.dashboardsNote) + "</p>" : "") +
-      '<div class="dash-tabs" role="tablist">' + p.dashboards.map(function (d, i) {
+      (p.dashTabs === false ? "" : '<div class="dash-tabs" role="tablist">' + p.dashboards.map(function (d, i) {
         return '<button type="button" role="tab" id="dash-tab-' + i + '" aria-controls="dash-panel" aria-selected="' + (i === 0) + '"' +
           ' data-src="' + esc(d.src) + '" data-text="' + esc(t(d.text)) + '" data-title="' + esc(t(d.name)) + '">' + t(d.name) + "</button>";
-      }).join("") + "</div>" +
-      '<div class="dash-panel" id="dash-panel" role="tabpanel" aria-labelledby="dash-tab-0">' +
-      '<div class="dash-bar"><p class="small muted" data-dash-text>' + t(p.dashboards[0].text) + "</p>" +
+      }).join("") + "</div>") +
+      '<div class="dash-panel" id="dash-panel"' + (p.dashTabs === false ? "" : ' role="tabpanel" aria-labelledby="dash-tab-0"') + ">" +
+      '<div class="dash-bar"><p class="small muted" data-dash-text>' + (p.dashTabs === false ? "" : t(p.dashboards[0].text)) + "</p>" +
       '<a class="btn btn--quiet" data-dash-open href="' + esc(p.dashboards[0].src) + '" target="_blank" rel="noopener">' + esc(ui("open_full")) + "</a></div>" +
       '<iframe class="embed-frame dash-frame" src="' + esc(p.dashboards[0].src) + '" title="' + esc(t(p.dashboards[0].name)) + '" loading="lazy"></iframe>' +
       "</div></section>" : "";
 
     var highlight = p.highlight ? '<section class="highlight" aria-label="' + esc(t(p.highlight.title)) + '"><h2>' + t(p.highlight.title) + "</h2>" +
       p.highlight.blocks.map(block).join("") + "</section>" : "";
+
+    function plain(list) {
+      return (list || []).map(function (s) {
+        return '<section class="case-block"><h2>' + t(s.title) + "</h2>" + s.blocks.map(block).join("") + "</section>";
+      }).join("");
+    }
 
     var secs = (p.sections || []).map(function (s, i) {
       var label = t(s.title) || t(SITE.sections[s.key]);
@@ -478,8 +486,8 @@
       summary +
       (p.metrics ? figures(p.metrics) : "") +
       "</div></header>" +
-      '<div class="wrap">' + (p.highlightAfterDashboards ? deliverables + dashboards + highlight : highlight + deliverables + dashboards) +
-      '<div class="sections-bar"><h2 style="margin:0">' + esc(ui("case_detail")) + '</h2><div><button type="button" class="btn btn--quiet" data-toggle-all>' + esc(ui("open_all")) + "</button></div></div>" +
+      '<div class="wrap">' + plain(p.before) + (p.highlightAfterDashboards ? deliverables + dashboards + highlight : highlight + deliverables + dashboards) + plain(p.after) +
+      (secs ? '<div class="sections-bar"><h2 style="margin:0">' + esc(ui("case_detail")) + '</h2><div><button type="button" class="btn btn--quiet" data-toggle-all>' + esc(ui("open_all")) + "</button></div></div>" : "") +
       secs + pager + "</div></article>";
   }
 
