@@ -54,10 +54,7 @@ window.PF = window.PF || {};
   },
   "card": {
     "problem": null,
-    "pointsTitle": {
-      "es": "Herramientas:",
-      "en": "Tools:"
-    },
+    "pointsCols": 2,
     "points": [
       {
         "es": "Modelos de lenguaje",

@@ -319,7 +319,7 @@
     var list = "";
     if (c.points) {
       list = (c.pointsTitle ? '<p class="case-points-title">' + t(c.pointsTitle) + "</p>" : "") +
-        '<ul class="case-points">' + c.points.map(function (x) { return "<li>" + t(x) + "</li>"; }).join("") + "</ul>";
+        '<ul class="case-points' + (c.pointsCols === 2 ? " case-points--2" : "") + '">' + c.points.map(function (x) { return "<li>" + t(x) + "</li>"; }).join("") + "</ul>";
     } else {
       var figs = (p.metrics || []).slice(0, 3).map(function (m) {
         return "<li><b>" + t(m.value) + "</b>" + t(m.label) + "</li>";
@@ -404,10 +404,10 @@
         '<button type="button" class="btn btn--quiet" data-view="' + esc(g.src) + '" data-title="' + esc(t(g.name)) + '">' + esc(ui("open_dashboard")) + "</button></div>";
     }).join("") + "</div>";
 
-    return '<section class="page-head"><div class="wrap"><h1>' + esc(ui("nav_projects")) + "</h1><p>" + t(pr.intro) + "</p></div></section>" +
-      '<section class="section" id="laborales"><div class="wrap"><h2>' + t(pr.work_title) + '</h2><p class="section-intro">' + t(pr.work_intro) + "</p>" +
+    return '<section class="page-head"><div class="wrap"><h1>' + esc(ui("nav_projects")) + "</h1>" + (pr.intro ? "<p>" + t(pr.intro) + "</p>" : "") + "</div></section>" +
+      '<section class="section" id="laborales"><div class="wrap">' + (pr.work_title ? "<h2>" + t(pr.work_title) + "</h2>" : "") + (pr.work_intro ? '<p class="section-intro">' + t(pr.work_intro) + "</p>" : "") +
       '<ul class="case-list">' + work.map(caseRow).join("") + "</ul></div></section>" +
-      '<section class="section" id="academicos"><div class="wrap"><h2>' + t(pr.academic_title) + "</h2>" +
+      '<section class="section" id="academicos"><div class="wrap">' + (pr.academic_title ? "<h2>" + t(pr.academic_title) + "</h2>" : "") +
       '<ul class="case-list">' + acad.map(caseRow).join("") + "</ul></div></section>" +
       '<section class="section" id="visualizacion"><div class="wrap"><h2>' + t(gallery.title) + '</h2><p class="section-intro">' + t(gallery.intro) + "</p>" +
       '<ol class="principles">' + gallery.principles.map(function (p) { return "<li><b>" + t(p.name) + "</b><span>" + t(p.text) + "</span></li>"; }).join("") + "</ol>" +

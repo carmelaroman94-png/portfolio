@@ -292,19 +292,16 @@ window.PF.site = {
 
   /* ---------- Proyectos ---------- */
   projectsPage: {
-    intro: { es: "Primero los casos laborales, del más reciente al más antiguo; después, los proyectos académicos y un laboratorio de visualización.",
-             en: "Work case studies first, most recent first; then academic projects and a visualization lab." },
-    work_title: { es: "Proyectos laborales", en: "Work projects" },
-    work_intro: { es: "Tres contextos distintos (empresa tecnológica, ONG internacional y sector público) y tres marcos de trabajo elegidos según el problema.",
-                  en: "Three different contexts (a tech company, an international NGO and the public sector) and three frameworks, each chosen to fit the problem." },
-    academic_title: { es: "Proyectos académicos", en: "Academic projects" }
+    intro: null,
+    work_title: null,
+    work_intro: null,
+    academic_title: null
   },
 
   /* ---------- Laboratorio de visualización (Power BI) ---------- */
   gallery: {
     title: { es: "Laboratorio de visualización", en: "Visualization lab" },
-    intro: { es: "Ejercicios de reporting en Power BI realizados en contexto académico. Lo que muestran son los principios con los que diseño cualquier tablero.",
-             en: "Power BI reporting exercises carried out in an academic context. What they show are the principles I use to design any dashboard." },
+    intro: { es: "Principios de visualización que persigo", en: "Visualization principles I pursue" },
     principles: [
       { name: { es: "Visión general primero", en: "Overview first" }, text: { es: "Mostrar primero un resumen de los datos más importantes y después permitir profundizar.", en: "Show a summary of the most important data first, then allow going deeper." } },
       { name: { es: "Detalles bajo demanda", en: "Details on demand" }, text: { es: "Mostrar información adicional solo cuando el usuario la necesita, por ejemplo al pasar el cursor o hacer clic.", en: "Show additional information only when the user needs it, for example on hover or click." } },
